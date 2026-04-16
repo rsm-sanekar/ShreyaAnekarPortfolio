@@ -1,0 +1,41 @@
+---
+title: "Customer Analytics & Targeting – Intuit QuickBooks"
+description: "Predictive customer targeting model using logistic regression and random forest to optimize outreach, achieving 0.82 AUC and 18% uplift in conversion rate"
+categories: [Python, Machine Learning, Customer Analytics, Regression]
+date: "2026-02-01"
+image: "../../files/intuit_thumb.png"
+---
+
+## Overview
+
+Built a predictive customer targeting model for **Intuit QuickBooks** to optimize marketing outreach strategy. The goal was to identify which customers were most likely to convert, enabling smarter spend allocation and higher ROI on campaigns.
+
+## Problem Statement
+
+With a large customer base and limited marketing budget, Intuit needed to move beyond broad-reach outreach and instead **target the right customers at the right time** — those with a genuine propensity to convert.
+
+## Approach
+
+- Developed and compared **Logistic Regression** and **Random Forest** classification models
+- Engineered features from customer behavioral, demographic, and engagement data
+- Used **uplift modeling** techniques to isolate the causal impact of outreach, not just correlation
+- Evaluated models with AUC-ROC, precision-recall curves, and incremental lift metrics
+
+## Results
+
+| Metric | Value |
+|--------|-------|
+| AUC-ROC | **0.82** |
+| Precision | **76%** |
+| Conversion Rate Uplift | **+18%** |
+| Projected Incremental Profit | **$410K** |
+
+## Key Contributions
+
+- Framed the business question as an **uplift/incremental modeling** problem rather than pure classification
+- Identified the top decile of customers driving the majority of incremental conversions
+- Delivered actionable targeting segments with clear business interpretation for marketing teams
+
+## Tech Stack
+
+`Python` · `Scikit-learn` · `Pandas` · `NumPy` · `Logistic Regression` · `Random Forest` · `Uplift Modeling`

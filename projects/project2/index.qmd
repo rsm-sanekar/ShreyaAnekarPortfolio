@@ -1,0 +1,40 @@
+---
+title: "Social Sentiment & Financial Analytics Dashboard"
+description: "3 interactive Tableau dashboards with NLP-driven sentiment analysis across 25 companies using RoBERTa and VADER, with custom financial metrics"
+categories: [Tableau, Python, NLP, Data Visualization, Finance]
+date: "2025-12-01"
+image: "../../files/sentiment_thumb.png"
+---
+
+## Overview
+
+Designed and built a **financial analytics platform** that bridges social media sentiment with stock market behavior. The system automates data collection, NLP-based sentiment scoring, and visualization — giving analysts an integrated view of how public discourse connects to price movements.
+
+## Problem Statement
+
+Analysts tracking equity markets lack a unified view of how social sentiment shifts relate to price volatility and volume anomalies. Manually aggregating and interpreting this signal at scale across multiple companies is infeasible.
+
+## Approach
+
+- Applied **RoBERTa** (transformer-based) and **VADER** (lexicon-based) NLP models to score sentiment from social data across **25 companies**
+- Engineered custom financial metrics including **Volume Z-Score** and **Rolling Volatility** to surface abnormal market behavior
+- Built **automated Tableau Prep workflows** for end-to-end data refresh without manual intervention
+- Designed **3 interactive Tableau dashboards** for sentiment trends, price correlation, and anomaly detection
+
+## Dashboards
+
+| Dashboard | Purpose |
+|-----------|---------|
+| Sentiment Trends | Track sentiment polarity over time by company and sector |
+| Price Correlation | Visualize lag relationships between sentiment shifts and price movement |
+| Anomaly Detector | Surface volume and volatility anomalies aligned with sentiment spikes |
+
+## Custom Metrics Engineered
+
+- **Volume Z-Score** — Flags abnormal trading volume relative to historical baseline
+- **Rolling Volatility** — Captures short-term price variance windows
+- **Sentiment Momentum** — Tracks directional sentiment shift velocity
+
+## Tech Stack
+
+`Python` · `RoBERTa` · `VADER` · `Tableau` · `Tableau Prep` · `Pandas` · `NLP` · `Financial Analytics`

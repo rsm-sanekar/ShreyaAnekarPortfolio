@@ -1,0 +1,310 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Shreya Anekar",
+    "section": "",
+    "text": "I'm a data engineer and analytics professional with 4+ years of experience building production-grade data pipelines, ML models, and analytics platforms across fintech, banking, and enterprise software. I currently work toward my M.S. in Business Analytics at UC San Diego, where I focus on predictive modeling, customer analytics, and big data engineering.\n\n\nMy career spans two high-impact roles — at Addepar, engineering financial data infrastructure for clients managing $500M+ AUM, and at Fiserv, delivering zero-data-loss migrations of $2B+ in banking assets. I love the intersection of rigorous engineering and analytical storytelling: turning messy, fragmented data into systems and insights that drive real decisions.\n\n\nBeyond data, I'm a competitive chess player who represented India at the World Chess Championship during my undergraduate years — an experience that sharpened my instinct for strategic thinking, pattern recognition, and staying calm under pressure. Those same skills follow me into every complex data problem I take on.\n\n\nI'm passionate about forecasting, customer intelligence, and building tools that make data accessible and actionable. If I'm not buried in a Databricks notebook, I'm probably playing chess or exploring a new dataset.\n\n\n\n\n  \n    💼\n    Experience\n    Addepar · Fiserv and more\n  \n  \n    🔬\n    Projects\n    ML, forecasting & dashboards\n  \n  \n    📄\n    Resume\n    Download or view inline"
+  },
+  {
+    "objectID": "resume.html",
+    "href": "resume.html",
+    "title": "My Resume",
+    "section": "",
+    "text": "Viewing resume inline — download a copy below.\n  \n    \n      \n    \n    Download PDF\n  \n\nDownload PDF file."
+  },
+  {
+    "objectID": "projects.html",
+    "href": "projects.html",
+    "title": "My Projects",
+    "section": "",
+    "text": "Qualcomm NRE Spend Forecasting\n\n\n\nPython\n\nDatabricks\n\nPredictive Modeling\n\nForecasting\n\n\n\nPredictive analytics model to forecast Non-Recurring Engineering spend using Python and Databricks\n\n\n\nJun 1, 2026\n\n\n\n\n\n\n\n\n\n\nCustomer Analytics & Targeting – Intuit QuickBooks\n\n\n\nPython\n\nMachine Learning\n\nCustomer Analytics\n\nRegression\n\n\n\nPredictive customer targeting model using logistic regression and random forest to optimize outreach, achieving 0.82 AUC and 18% uplift in conversion rate\n\n\n\nFeb 1, 2026\n\n\n\n\n\n\n\n\n\n\nContent Intelligence & Market Insights Platform\n\n\n\nPython\n\nMachine Learning\n\nStreamlit\n\nAPI\n\nForecasting\n\n\n\nEnsemble forecasting and anomaly detection platform across 10K+ TMDB titles with 6 Streamlit dashboards and real-time API ingestion for slate optimization\n\n\n\nDec 1, 2025\n\n\n\n\n\n\n\n\n\n\nSocial Sentiment & Financial Analytics Dashboard\n\n\n\nTableau\n\nPython\n\nNLP\n\nData Visualization\n\nFinance\n\n\n\n3 interactive Tableau dashboards with NLP-driven sentiment analysis across 25 companies using RoBERTa and VADER, with custom financial metrics\n\n\n\nDec 1, 2025\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "projects/Project4/index.html",
+    "href": "projects/Project4/index.html",
+    "title": "Qualcomm NRE Spend Forecasting",
+    "section": "",
+    "text": "This capstone project was developed in collaboration with Qualcomm to address a core challenge in engineering budget planning: forecasting Non-Recurring Engineering (NRE) spend with enough accuracy to support strategic workforce and financial decisions."
+  },
+  {
+    "objectID": "projects/Project4/index.html#overview",
+    "href": "projects/Project4/index.html#overview",
+    "title": "Qualcomm NRE Spend Forecasting",
+    "section": "",
+    "text": "This capstone project was developed in collaboration with Qualcomm to address a core challenge in engineering budget planning: forecasting Non-Recurring Engineering (NRE) spend with enough accuracy to support strategic workforce and financial decisions."
+  },
+  {
+    "objectID": "projects/Project4/index.html#problem-statement",
+    "href": "projects/Project4/index.html#problem-statement",
+    "title": "Qualcomm NRE Spend Forecasting",
+    "section": "Problem Statement",
+    "text": "Problem Statement\nQualcomm’s engineering leadership needed a data-driven way to project NRE costs across product roadmaps and workforce plans. Without reliable forecasts, budget accuracy and scenario planning were limited by manual estimation."
+  },
+  {
+    "objectID": "projects/Project4/index.html#approach",
+    "href": "projects/Project4/index.html#approach",
+    "title": "Qualcomm NRE Spend Forecasting",
+    "section": "Approach",
+    "text": "Approach\n\nIntegrated labor, roadmap, and finance data from multiple enterprise systems into a unified modeling pipeline\nBuilt predictive analytics models in Python on Azure Databricks to forecast NRE spend at the program and organizational level\nDesigned scenario-based projections enabling engineering leadership to model “what-if” planning assumptions"
+  },
+  {
+    "objectID": "projects/Project4/index.html#key-contributions",
+    "href": "projects/Project4/index.html#key-contributions",
+    "title": "Qualcomm NRE Spend Forecasting",
+    "section": "Key Contributions",
+    "text": "Key Contributions\n\n\n\n\n\n\n\nArea\nDetails\n\n\n\n\nData Integration\nUnified multi-source enterprise data across finance, HR, and roadmap systems\n\n\nModeling\nDeveloped regression and time-series models for spend forecasting\n\n\nDeployment\nPipeline designed for reproducibility in Databricks environment\n\n\nBusiness Impact\nSupports workforce planning and budget accuracy for engineering leadership"
+  },
+  {
+    "objectID": "projects/Project4/index.html#tech-stack",
+    "href": "projects/Project4/index.html#tech-stack",
+    "title": "Qualcomm NRE Spend Forecasting",
+    "section": "Tech Stack",
+    "text": "Tech Stack\nPython · Azure Databricks · Pandas · Scikit-learn · Predictive Modeling · Apache Spark"
+  },
+  {
+    "objectID": "projects/Project4/index.html#status",
+    "href": "projects/Project4/index.html#status",
+    "title": "Qualcomm NRE Spend Forecasting",
+    "section": "Status",
+    "text": "Status\n🚧 In Progress — Expected completion: June 2026 (Capstone)"
+  },
+  {
+    "objectID": "projects/project1/index.html",
+    "href": "projects/project1/index.html",
+    "title": "Customer Analytics & Targeting – Intuit QuickBooks",
+    "section": "",
+    "text": "Built a predictive customer targeting model for Intuit QuickBooks to optimize marketing outreach strategy. The goal was to identify which customers were most likely to convert, enabling smarter spend allocation and higher ROI on campaigns."
+  },
+  {
+    "objectID": "projects/project1/index.html#overview",
+    "href": "projects/project1/index.html#overview",
+    "title": "Customer Analytics & Targeting – Intuit QuickBooks",
+    "section": "",
+    "text": "Built a predictive customer targeting model for Intuit QuickBooks to optimize marketing outreach strategy. The goal was to identify which customers were most likely to convert, enabling smarter spend allocation and higher ROI on campaigns."
+  },
+  {
+    "objectID": "projects/project1/index.html#problem-statement",
+    "href": "projects/project1/index.html#problem-statement",
+    "title": "Customer Analytics & Targeting – Intuit QuickBooks",
+    "section": "Problem Statement",
+    "text": "Problem Statement\nWith a large customer base and limited marketing budget, Intuit needed to move beyond broad-reach outreach and instead target the right customers at the right time — those with a genuine propensity to convert."
+  },
+  {
+    "objectID": "projects/project1/index.html#approach",
+    "href": "projects/project1/index.html#approach",
+    "title": "Customer Analytics & Targeting – Intuit QuickBooks",
+    "section": "Approach",
+    "text": "Approach\n\nDeveloped and compared Logistic Regression and Random Forest classification models\nEngineered features from customer behavioral, demographic, and engagement data\nUsed uplift modeling techniques to isolate the causal impact of outreach, not just correlation\nEvaluated models with AUC-ROC, precision-recall curves, and incremental lift metrics"
+  },
+  {
+    "objectID": "projects/project1/index.html#results",
+    "href": "projects/project1/index.html#results",
+    "title": "Customer Analytics & Targeting – Intuit QuickBooks",
+    "section": "Results",
+    "text": "Results\n\n\n\nMetric\nValue\n\n\n\n\nAUC-ROC\n0.82\n\n\nPrecision\n76%\n\n\nConversion Rate Uplift\n+18%\n\n\nProjected Incremental Profit\n$410K"
+  },
+  {
+    "objectID": "projects/project1/index.html#key-contributions",
+    "href": "projects/project1/index.html#key-contributions",
+    "title": "Customer Analytics & Targeting – Intuit QuickBooks",
+    "section": "Key Contributions",
+    "text": "Key Contributions\n\nFramed the business question as an uplift/incremental modeling problem rather than pure classification\nIdentified the top decile of customers driving the majority of incremental conversions\nDelivered actionable targeting segments with clear business interpretation for marketing teams"
+  },
+  {
+    "objectID": "projects/project1/index.html#tech-stack",
+    "href": "projects/project1/index.html#tech-stack",
+    "title": "Customer Analytics & Targeting – Intuit QuickBooks",
+    "section": "Tech Stack",
+    "text": "Tech Stack\nPython · Scikit-learn · Pandas · NumPy · Logistic Regression · Random Forest · Uplift Modeling"
+  },
+  {
+    "objectID": "projects/project3/index.html",
+    "href": "projects/project3/index.html",
+    "title": "Content Intelligence & Market Insights Platform",
+    "section": "",
+    "text": "Built a full-stack content analytics platform to help media companies make data-driven decisions about their content slate. By combining ML forecasting with real-time data ingestion, the platform quantifies genre demand and revenue potential across thousands of titles."
+  },
+  {
+    "objectID": "projects/project3/index.html#overview",
+    "href": "projects/project3/index.html#overview",
+    "title": "Content Intelligence & Market Insights Platform",
+    "section": "",
+    "text": "Built a full-stack content analytics platform to help media companies make data-driven decisions about their content slate. By combining ML forecasting with real-time data ingestion, the platform quantifies genre demand and revenue potential across thousands of titles."
+  },
+  {
+    "objectID": "projects/project3/index.html#problem-statement",
+    "href": "projects/project3/index.html#problem-statement",
+    "title": "Content Intelligence & Market Insights Platform",
+    "section": "Problem Statement",
+    "text": "Problem Statement\nMedia studios and streaming platforms need to decide which content to greenlight, acquire, or promote — but these decisions are often based on intuition. A data-driven approach to genre demand forecasting and revenue potential scoring could significantly improve slate ROI."
+  },
+  {
+    "objectID": "projects/project3/index.html#approach",
+    "href": "projects/project3/index.html#approach",
+    "title": "Content Intelligence & Market Insights Platform",
+    "section": "Approach",
+    "text": "Approach\n\nIngested and processed 10,000+ titles from the TMDB (The Movie Database) API with a real-time data pipeline\nDeveloped ensemble forecasting models combining LightGBM, XGBoost, and Prophet for demand prediction\nBuilt anomaly detection to flag unusual performance patterns (breakout titles, underperformers)\nDeployed the full platform as a Streamlit app with 6 interactive dashboards"
+  },
+  {
+    "objectID": "projects/project3/index.html#platform-dashboards",
+    "href": "projects/project3/index.html#platform-dashboards",
+    "title": "Content Intelligence & Market Insights Platform",
+    "section": "Platform Dashboards",
+    "text": "Platform Dashboards\n\n\n\n\n\n\n\nDashboard\nFunction\n\n\n\n\nGenre Demand Tracker\nForecast genre popularity trends over time\n\n\nRevenue Potential Scorer\nScore titles by projected revenue potential\n\n\nAnomaly Detector\nFlag breakout or underperforming content early\n\n\nCompetitive Landscape\nCompare performance across genres and studios\n\n\nRelease Timing Optimizer\nIdentify optimal release windows by genre\n\n\nAPI Data Explorer\nReal-time browse of ingested TMDB data"
+  },
+  {
+    "objectID": "projects/project3/index.html#models-used",
+    "href": "projects/project3/index.html#models-used",
+    "title": "Content Intelligence & Market Insights Platform",
+    "section": "Models Used",
+    "text": "Models Used\n\nLightGBM — Fast gradient boosting for revenue potential scoring\nXGBoost — Ensemble base model for demand forecasting\nProphet — Time-series forecasting for seasonal genre trends\nAnomaly Detection — Isolation forest for performance outlier detection"
+  },
+  {
+    "objectID": "projects/project3/index.html#tech-stack",
+    "href": "projects/project3/index.html#tech-stack",
+    "title": "Content Intelligence & Market Insights Platform",
+    "section": "Tech Stack",
+    "text": "Tech Stack\nPython · Streamlit · LightGBM · XGBoost · Prophet · TMDB API · Pandas · Scikit-learn · REST APIs"
+  },
+  {
+    "objectID": "projects/project3/index.html#links",
+    "href": "projects/project3/index.html#links",
+    "title": "Content Intelligence & Market Insights Platform",
+    "section": "Links",
+    "text": "Links\n🔗 View Live Platform (link available on request)"
+  },
+  {
+    "objectID": "projects/project2/index.html",
+    "href": "projects/project2/index.html",
+    "title": "Social Sentiment & Financial Analytics Dashboard",
+    "section": "",
+    "text": "Designed and built a financial analytics platform that bridges social media sentiment with stock market behavior. The system automates data collection, NLP-based sentiment scoring, and visualization — giving analysts an integrated view of how public discourse connects to price movements."
+  },
+  {
+    "objectID": "projects/project2/index.html#overview",
+    "href": "projects/project2/index.html#overview",
+    "title": "Social Sentiment & Financial Analytics Dashboard",
+    "section": "",
+    "text": "Designed and built a financial analytics platform that bridges social media sentiment with stock market behavior. The system automates data collection, NLP-based sentiment scoring, and visualization — giving analysts an integrated view of how public discourse connects to price movements."
+  },
+  {
+    "objectID": "projects/project2/index.html#problem-statement",
+    "href": "projects/project2/index.html#problem-statement",
+    "title": "Social Sentiment & Financial Analytics Dashboard",
+    "section": "Problem Statement",
+    "text": "Problem Statement\nAnalysts tracking equity markets lack a unified view of how social sentiment shifts relate to price volatility and volume anomalies. Manually aggregating and interpreting this signal at scale across multiple companies is infeasible."
+  },
+  {
+    "objectID": "projects/project2/index.html#approach",
+    "href": "projects/project2/index.html#approach",
+    "title": "Social Sentiment & Financial Analytics Dashboard",
+    "section": "Approach",
+    "text": "Approach\n\nApplied RoBERTa (transformer-based) and VADER (lexicon-based) NLP models to score sentiment from social data across 25 companies\nEngineered custom financial metrics including Volume Z-Score and Rolling Volatility to surface abnormal market behavior\nBuilt automated Tableau Prep workflows for end-to-end data refresh without manual intervention\nDesigned 3 interactive Tableau dashboards for sentiment trends, price correlation, and anomaly detection"
+  },
+  {
+    "objectID": "projects/project2/index.html#dashboards",
+    "href": "projects/project2/index.html#dashboards",
+    "title": "Social Sentiment & Financial Analytics Dashboard",
+    "section": "Dashboards",
+    "text": "Dashboards\n\n\n\n\n\n\n\nDashboard\nPurpose\n\n\n\n\nSentiment Trends\nTrack sentiment polarity over time by company and sector\n\n\nPrice Correlation\nVisualize lag relationships between sentiment shifts and price movement\n\n\nAnomaly Detector\nSurface volume and volatility anomalies aligned with sentiment spikes"
+  },
+  {
+    "objectID": "projects/project2/index.html#custom-metrics-engineered",
+    "href": "projects/project2/index.html#custom-metrics-engineered",
+    "title": "Social Sentiment & Financial Analytics Dashboard",
+    "section": "Custom Metrics Engineered",
+    "text": "Custom Metrics Engineered\n\nVolume Z-Score — Flags abnormal trading volume relative to historical baseline\nRolling Volatility — Captures short-term price variance windows\nSentiment Momentum — Tracks directional sentiment shift velocity"
+  },
+  {
+    "objectID": "projects/project2/index.html#tech-stack",
+    "href": "projects/project2/index.html#tech-stack",
+    "title": "Social Sentiment & Financial Analytics Dashboard",
+    "section": "Tech Stack",
+    "text": "Tech Stack\nPython · RoBERTa · VADER · Tableau · Tableau Prep · Pandas · NLP · Financial Analytics"
+  },
+  {
+    "objectID": "experience.html",
+    "href": "experience.html",
+    "title": "Work Experience",
+    "section": "",
+    "text": "## Experience\n\n\n  \n    Addepar, Inc.\n    Dec 2023 – May 2025\n  \n  Data Engineer\n  \n    Led onboarding for 8+ enterprise clients managing $500M+ AUM — traced data lineage through source systems and engineered trade, position, and cash data pipelines with full schema alignment, reducing onboarding cycle time by 25%\n    Standardized multi-custodian portfolio data by building Python-based transformation workflows in Azure Databricks (Apache Spark), eliminating 90+ hours of monthly manual review and delivering canonical, analysis-ready datasets\n    Conducted root cause analysis on cash breaks, pricing mismatches, and corporate action discrepancies — implemented data governance controls and automated monitoring to eliminate repeat failures\n    Built Python validation scripts to flag and prioritize high-risk pricing and performance discrepancies by materiality, achieving 98% accuracy and preventing $2M+ in reporting errors across live portfolios\n  \n\n\n\n  \n    Fiserv, Inc.\n    Jul 2021 – Dec 2023\n  \n  Data Engineer\n  \n    Delivered 5 enterprise data transformation programs with zero data loss, migrating $2B+ in deposit and loan data via SSIS and SQL Server with end-to-end pipeline reliability across full platform conversions\n    Developed 90+ optimized T-SQL procedures to transform and analyze high-volume transactional and ledger data — identified processing bottlenecks and reduced batch time from 5 to 3 hours per cycle\n    Designed automated validation checks for GL balances, transaction completeness, and interest accruals — surfacing discrepancy patterns early and accelerating testing cycles by 80%\n    Identified systemic reconciliation gaps through SQL data profiling and established canonical source of truth for financial data, reducing manual reconciliation from 110+ to 15 hours per bank\n    Collaborated with banking stakeholders to translate regulatory, operational, and product requirements into ETL workflows and structured financial schemas for compliance during migrations\n  \n\n\n## Education\n\n\n  \n    \n      M.S. in Business Analytics\n      University of California, San Diego · Expected Jun 2026\n      Coursework: Customer Analytics (Uplift Modeling, Next-Product-to-Buy), Big Data Engineering (MapReduce, Apache Spark, HDFS), Statistical Modeling (A/B Testing, Monte Carlo Simulation)\n    \n  \n  \n    \n      B.Tech. in Information Technology\n      MKSSS's Cummins College of Engineering for Women, Pune · Jun 2021\n      🏆 Represented India at the World Chess Championship during undergraduate studies\n    \n  \n\n\n## Skills\n\n\n  \n    Languages & Query\n    \n      Python\n      SQL\n      T-SQL\n      PostgreSQL\n    \n  \n  \n    Cloud & Data Platforms\n    \n      Azure Databricks\n      Snowflake\n      AWS S3\n      Redshift\n    \n  \n  \n    ML & Analytics\n    \n      Scikit-learn\n      XGBoost\n      Prophet\n      Hypothesis Testing\n    \n  \n  \n    BI & Visualization\n    \n      Tableau\n      Power BI\n      Streamlit\n      Excel\n    \n  \n  \n    Pipeline & ETL\n    \n      SSIS\n      ETL/ELT\n      Apache Spark\n      Git\n    \n  \n  \n    AI & Automation\n    \n      Prompt Engineering\n      LLM Dev\n      GitHub Copilot"
+  },
+  {
+    "objectID": "blog.html",
+    "href": "blog.html",
+    "title": "Blog",
+    "section": "",
+    "text": "A/B Testing a Call to Action\n\n\nSimulating Key Ideas from Classical Frequentist Statistics\n\n\n\nstatistics\n\nsimulation\n\nA/B testing\n\npython\n\n\n\n\n\n\n\n\n\nApr 15, 2026\n\n\nShreya\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "posts/ab-testing-cta/index.html",
+    "href": "posts/ab-testing-cta/index.html",
+    "title": "A/B Testing a Call to Action",
+    "section": "",
+    "text": "Every website owner eventually asks the same question: does the exact wording on my page actually matter? To find out, I ran a simulated A/B test on a newsletter sign-up call to action (CTA).\nHere’s the setup. My landing page has a spot where visitors can sign up for a newsletter. I have two competing CTAs I want to evaluate:\n\nCTA A: “Sign up for our newsletter here!”\nCTA B: “Stay up to date by signing up!”\n\nRather than guessing which one performs better, I ran an A/B test. In an A/B test, each visitor is randomly assigned to see exactly one of the two versions — they never see both. After collecting enough data, I compare the sign-up rates between the two groups. Random assignment is the key ingredient: it ensures any difference in sign-up rates is attributable to the CTA wording and not to some confounding factor (like time of day or traffic source).\nThis post uses the A/B test as a vehicle to explore several foundational ideas in classical frequentist statistics: the Law of Large Numbers, the bootstrap, the Central Limit Theorem, hypothesis testing, and the equivalence between a t-test and linear regression. Along the way, I’ll also demonstrate a subtle but important pitfall called peeking — and why it quietly destroys the guarantees that make hypothesis testing useful in the first place."
+  },
+  {
+    "objectID": "posts/ab-testing-cta/index.html#introduction",
+    "href": "posts/ab-testing-cta/index.html#introduction",
+    "title": "A/B Testing a Call to Action",
+    "section": "",
+    "text": "Every website owner eventually asks the same question: does the exact wording on my page actually matter? To find out, I ran a simulated A/B test on a newsletter sign-up call to action (CTA).\nHere’s the setup. My landing page has a spot where visitors can sign up for a newsletter. I have two competing CTAs I want to evaluate:\n\nCTA A: “Sign up for our newsletter here!”\nCTA B: “Stay up to date by signing up!”\n\nRather than guessing which one performs better, I ran an A/B test. In an A/B test, each visitor is randomly assigned to see exactly one of the two versions — they never see both. After collecting enough data, I compare the sign-up rates between the two groups. Random assignment is the key ingredient: it ensures any difference in sign-up rates is attributable to the CTA wording and not to some confounding factor (like time of day or traffic source).\nThis post uses the A/B test as a vehicle to explore several foundational ideas in classical frequentist statistics: the Law of Large Numbers, the bootstrap, the Central Limit Theorem, hypothesis testing, and the equivalence between a t-test and linear regression. Along the way, I’ll also demonstrate a subtle but important pitfall called peeking — and why it quietly destroys the guarantees that make hypothesis testing useful in the first place."
+  },
+  {
+    "objectID": "posts/ab-testing-cta/index.html#the-ab-test-as-a-statistical-problem",
+    "href": "posts/ab-testing-cta/index.html#the-ab-test-as-a-statistical-problem",
+    "title": "A/B Testing a Call to Action",
+    "section": "The A/B Test as a Statistical Problem",
+    "text": "The A/B Test as a Statistical Problem\nEach visitor either signs up (1) or doesn’t (0) — a binary outcome. The natural model for a single binary outcome is the Bernoulli distribution. If a visitor sees CTA A, their sign-up outcome is:\n\\[X_A \\sim \\text{Bernoulli}(\\pi_A)\\]\nwhere \\(\\pi_A\\) is the probability that a visitor who sees CTA A signs up. Similarly, for CTA B:\n\\[X_B \\sim \\text{Bernoulli}(\\pi_B)\\]\nBecause the two CTAs might have different persuasive power, we allow the parameters to differ. The quantity we actually care about is the difference in sign-up rates:\n\\[\\theta = \\pi_A - \\pi_B\\]\nIf \\(\\theta &gt; 0\\), CTA A is better. If \\(\\theta &lt; 0\\), CTA B is better. If \\(\\theta = 0\\), it doesn’t matter which one we use.\nWe can’t observe \\(\\theta\\) directly — we can only estimate it from data. Our estimator is the difference in sample proportions:\n\\[\\hat{\\theta} = \\bar{X}_A - \\bar{X}_B = \\hat{\\pi}_A - \\hat{\\pi}_B\\]\nSince each observation is 0 or 1, the sample mean is just the fraction of visitors who signed up, so \\(\\bar{X}_A = \\hat{\\pi}_A\\). The rest of this post is about understanding how good this estimator is and what we can conclude from it."
+  },
+  {
+    "objectID": "posts/ab-testing-cta/index.html#simulating-data",
+    "href": "posts/ab-testing-cta/index.html#simulating-data",
+    "title": "A/B Testing a Call to Action",
+    "section": "Simulating Data",
+    "text": "Simulating Data\nIn a real experiment we would never know the true values of \\(\\pi_A\\) and \\(\\pi_B\\) — that’s precisely why we collect data. But for the purpose of studying the behavior of our estimator, we can set the true parameters ourselves and then verify that our methods recover them. This is the power of simulation: we get to play God, know the ground truth, and check whether our statistical machinery works as advertised.\nI’ll set \\(\\pi_A = 0.22\\) and \\(\\pi_B = 0.18\\), so the true difference is \\(\\theta = 0.04\\) — a small but real effect. I simulate 1,000 visitors assigned to each CTA group.\n\n\nCode\nnp.random.seed(42)\n\nPI_A = 0.22\nPI_B = 0.18\nN    = 1000\n\ndraws_A = np.random.binomial(1, PI_A, N)\ndraws_B = np.random.binomial(1, PI_B, N)\n\ntheta_hat = draws_A.mean() - draws_B.mean()\nprint(f\"π̂_A  = {draws_A.mean():.4f}  (true π_A = {PI_A})\")\nprint(f\"π̂_B  = {draws_B.mean():.4f}  (true π_B = {PI_B})\")\nprint(f\"θ̂   = {theta_hat:.4f}  (true θ  = {PI_A - PI_B})\")\n\n\nπ̂_A  = 0.2160  (true π_A = 0.22)\nπ̂_B  = 0.1780  (true π_B = 0.18)\nθ̂   = 0.0380  (true θ  = 0.04000000000000001)\n\n\nThe sample proportions land very close to the true values, and our estimate of \\(\\theta\\) is right in the neighborhood of 0.04. But how close is close enough? That’s what the next few sections address."
+  },
+  {
+    "objectID": "posts/ab-testing-cta/index.html#the-law-of-large-numbers",
+    "href": "posts/ab-testing-cta/index.html#the-law-of-large-numbers",
+    "title": "A/B Testing a Call to Action",
+    "section": "The Law of Large Numbers",
+    "text": "The Law of Large Numbers\nThe Law of Large Numbers (LLN) is one of the most reassuring results in probability. It says: as the sample size grows, the sample mean converges to the true population mean. No matter how noisy individual observations are, averaging enough of them will reliably get you close to the truth.\nFor our estimator \\(\\hat{\\theta} = \\bar{X}_A - \\bar{X}_B\\), the LLN is the foundation of our confidence. It tells us that if we collect enough visitors, our estimate of the difference in sign-up rates will converge to the true difference \\(\\theta = 0.04\\).\nWe can see this directly by computing the running (cumulative) average of the element-wise differences between the two groups — that is, after each new pair of observations, we recompute \\(\\hat{\\theta}\\) using all the data seen so far.\n\n\nCode\ndiffs        = draws_A - draws_B\nrunning_mean = np.cumsum(diffs) / np.arange(1, N + 1)\n\n\n\n\n\n\n\nThe running estimate of θ starts noisy but converges toward the true value of 0.04 as more visitors accumulate — a direct illustration of the Law of Large Numbers.\n\n\n\n\nThe plot tells a clear story. With only a handful of observations, the estimate is extremely volatile — it swings wildly above and below zero, and at times would lead us to entirely wrong conclusions about which CTA is better. But as the sample grows, the noise washes out. By the time we have a few hundred observations, the running average has settled comfortably near the true value of 0.04. This is the LLN in action: more data means less uncertainty, and the LLN quantifies exactly how that relationship works."
+  },
+  {
+    "objectID": "posts/ab-testing-cta/index.html#bootstrap-standard-errors",
+    "href": "posts/ab-testing-cta/index.html#bootstrap-standard-errors",
+    "title": "A/B Testing a Call to Action",
+    "section": "Bootstrap Standard Errors",
+    "text": "Bootstrap Standard Errors\nKnowing our estimator converges to the truth is reassuring, but it doesn’t tell us how precise it is for a given sample size. For that, we need a standard error — a measure of the typical estimation error.\nOne elegant approach is the bootstrap, introduced by Bradley Efron in 1979. The idea is beautifully simple: instead of deriving a formula for the variability of \\(\\hat{\\theta}\\), we simulate it using the data we already have. We treat our observed sample as a stand-in for the population, repeatedly re-draw from it (with replacement), recompute the statistic each time, and measure how much it varies across those re-draws. The standard deviation of the bootstrapped estimates is our estimate of the standard error.\n\n\nCode\nB = 1_000   # number of bootstrap replicates\nboot_thetas = np.empty(B)\n\nfor b in range(B):\n    resample_A = np.random.choice(draws_A, size=N, replace=True)\n    resample_B = np.random.choice(draws_B, size=N, replace=True)\n    boot_thetas[b] = resample_A.mean() - resample_B.mean()\n\nse_bootstrap = boot_thetas.std()\n\n\nWe can also compute the analytical standard error using the closed-form formula for the difference in proportions from two independent groups:\n\\[SE(\\hat{\\theta}) = \\sqrt{\\frac{\\hat{\\pi}_A(1 - \\hat{\\pi}_A)}{n_A} + \\frac{\\hat{\\pi}_B(1 - \\hat{\\pi}_B)}{n_B}}\\]\n\n\nCode\npi_hat_A = draws_A.mean()\npi_hat_B = draws_B.mean()\n\nse_analytical = np.sqrt(\n    pi_hat_A * (1 - pi_hat_A) / N +\n    pi_hat_B * (1 - pi_hat_B) / N\n)\n\nci_lower = theta_hat - 1.96 * se_bootstrap\nci_upper = theta_hat + 1.96 * se_bootstrap\n\n\n\n\n\n\n\n\n\n\nBootstrap vs. Analytical Standard Errors\n\n\nQuantity\nValue\n\n\n\n\nPoint estimate (θ̂)\n0.0380\n\n\nBootstrap SE\n0.0177\n\n\nAnalytical SE\n0.0178\n\n\n95% CI (bootstrap)\n[0.0034, 0.0726]\n\n\n\n\n\n\n\n\nThe bootstrap and analytical standard errors are nearly identical — typically differing only in the fourth decimal place. This agreement is reassuring: the bootstrap is recovering the same information that the closed-form formula gives us, but without relying on any algebraic derivation.\nThe 95% confidence interval tells us: if we ran this experiment many times and constructed this interval each time, approximately 95% of those intervals would contain the true value of \\(\\theta\\). Notice that the interval sits comfortably above zero, which is our first hint that there is a real difference between the two CTAs."
+  },
+  {
+    "objectID": "posts/ab-testing-cta/index.html#the-central-limit-theorem",
+    "href": "posts/ab-testing-cta/index.html#the-central-limit-theorem",
+    "title": "A/B Testing a Call to Action",
+    "section": "The Central Limit Theorem",
+    "text": "The Central Limit Theorem\nThe bootstrap gave us a standard error, but where does the 1.96 multiplier for the confidence interval come from? It comes from the Central Limit Theorem (CLT) — arguably the most important result in all of statistics.\nThe CLT states: regardless of the shape of the underlying population distribution, the sampling distribution of the sample mean becomes approximately Normal as the sample size grows. For our estimator \\(\\hat{\\theta} = \\bar{X}_A - \\bar{X}_B\\), this means that for large enough samples, \\(\\hat{\\theta}\\) is approximately Normal with mean \\(\\theta\\) and standard deviation \\(SE(\\hat{\\theta})\\).\nThe remarkable thing is that our data are Bernoulli — binary 0/1 values, as far from bell-shaped as you can get — yet the distribution of their average converges to a Normal. Let’s watch it happen.\n\n\nCode\nsample_sizes  = [25, 50, 100, 500]\nn_simulations = 1_000\n\ntheta_distributions = {}\nfor n in sample_sizes:\n    thetas = np.array([\n        np.random.binomial(1, PI_A, n).mean() - np.random.binomial(1, PI_B, n).mean()\n        for _ in range(n_simulations)\n    ])\n    theta_distributions[n] = thetas\n\n\n\n\n\n\n\nAs sample size increases, the sampling distribution of θ̂ transitions from a rough, lumpy histogram to a smooth bell curve — the Central Limit Theorem in action.\n\n\n\n\nThe progression is striking. At \\(n = 25\\), the histogram looks lumpy and irregular — the distribution is discrete and the CLT hasn’t kicked in yet. By \\(n = 100\\) the bell shape is clearly recognizable, and by \\(n = 500\\) the histogram hugs the Normal curve almost perfectly.\nTwo additional things to notice: first, the distribution is centered on the true value \\(\\theta = 0.04\\) at every sample size — the estimator is unbiased. Second, the spread shrinks as \\(n\\) grows, reflecting the fact that larger samples produce more precise estimates. Both of these properties are captured in the Normal approximation shown by the dashed curve."
+  },
+  {
+    "objectID": "posts/ab-testing-cta/index.html#hypothesis-testing",
+    "href": "posts/ab-testing-cta/index.html#hypothesis-testing",
+    "title": "A/B Testing a Call to Action",
+    "section": "Hypothesis Testing",
+    "text": "Hypothesis Testing\nThe CLT gives us something extremely useful: we know the approximate distribution of \\(\\hat{\\theta}\\) when the sample is large. We can exploit this to run a hypothesis test.\nThe standard setup is:\n\nNull hypothesis \\(H_0\\): \\(\\theta = 0\\) — the two CTAs produce identical sign-up rates.\nAlternative hypothesis \\(H_1\\): \\(\\theta \\neq 0\\) — there is some difference between them.\n\nWe want to assess whether the data provide enough evidence to reject \\(H_0\\). The way we do this is by asking: if the null were true, how surprising would our observed \\(\\hat{\\theta}\\) be?\nTo answer that, we standardize our estimate to form a test statistic:\n\\[z = \\frac{\\hat{\\theta} - 0}{SE(\\hat{\\theta})}\\]\nWhy standardize? By the CLT, \\(\\hat{\\theta}\\) is approximately Normal under \\(H_0\\). When we subtract its mean (0 under \\(H_0\\)) and divide by its standard deviation, we get a standard Normal \\(N(0,1)\\):\n\\[z \\;\\dot{\\sim}\\; N(0,1) \\quad \\text{under } H_0\\]\nThis is powerful: we now know the exact (approximate) distribution of our test statistic under the null, which lets us compute a p-value — the probability of observing a \\(z\\) this extreme or more extreme if \\(H_0\\) were true. If the p-value is below our threshold \\(\\alpha = 0.05\\), we reject \\(H_0\\).\nA note on nomenclature. You’ll sometimes hear this called a “t-test.” Technically, the classical t-test was derived for data drawn from a Normal distribution with an unknown variance — in that setting the test statistic follows an exact t-distribution, not a Normal. Our data are Bernoulli, so no such exact result applies. What we’re really doing is a z-test justified by the CLT. For large samples (\\(n \\geq 30\\) or so), the t-distribution and the standard Normal are nearly indistinguishable, so the practical difference is negligible — but the conceptual distinction matters.\n\n\nCode\nse_test = se_analytical\nz_stat  = theta_hat / se_test\np_value = 2 * (1 - stats.norm.cdf(abs(z_stat)))   # two-sided\n\nprint(f\"θ̂        = {theta_hat:.4f}\")\nprint(f\"SE(θ̂)   = {se_test:.4f}\")\nprint(f\"z-stat   = {z_stat:.4f}\")\nprint(f\"p-value  = {p_value:.4f}\")\n\n\nθ̂        = 0.0380\nSE(θ̂)   = 0.0178\nz-stat   = 2.1388\np-value  = 0.0325\n\n\n\n\n\n\n\n\n\n\nTwo-Sample Z-Test Results\n\n\nStatistic\nValue\n\n\n\n\nθ̂ (estimated difference)\n0.0380\n\n\nSE(θ̂)\n0.0178\n\n\nz-statistic\n2.139\n\n\np-value\n0.0325\n\n\nReject H₀ at α=0.05?\nYes ✓\n\n\n\n\n\n\n\n\nWith a p-value well below 0.05, we reject the null hypothesis. Our data provide statistically significant evidence that the two CTAs produce different sign-up rates — and given that \\(\\hat{\\theta} &gt; 0\\), CTA A (“Sign up for our newsletter here!”) appears to be the better performer."
+  },
+  {
+    "objectID": "posts/ab-testing-cta/index.html#the-t-test-as-a-regression",
+    "href": "posts/ab-testing-cta/index.html#the-t-test-as-a-regression",
+    "title": "A/B Testing a Call to Action",
+    "section": "The T-Test as a Regression",
+    "text": "The T-Test as a Regression\nHere’s a fact that surprises many people: the two-sample test we just ran is mathematically identical to a simple linear regression. Understanding this connection is valuable because it means the same regression framework that handles complex multi-variable analyses also subsumes the humble two-sample test — and generalizes to arbitrarily complex experimental designs.\nThe setup is straightforward. Stack the CTA A and CTA B data into a single dataset with two columns:\n\n\\(Y_i\\): outcome (1 = signed up, 0 = did not)\n\\(D_i\\): treatment indicator (1 = saw CTA A, 0 = saw CTA B)\n\nThen fit the linear probability model:\n\\[Y_i = \\beta_0 + \\beta_1 D_i + \\varepsilon_i\\]\nThe coefficients have clean interpretations:\n\n\\(\\beta_0 = E[Y_i \\mid D_i = 0] = \\pi_B\\) — the CTA B sign-up rate\n\\(\\beta_0 + \\beta_1 = E[Y_i \\mid D_i = 1] = \\pi_A\\) — the CTA A sign-up rate\n\\(\\beta_1 = \\pi_A - \\pi_B = \\theta\\) — exactly the quantity we care about\n\n\n\nCode\ndf = pd.DataFrame({\n    \"Y\": np.concatenate([draws_A, draws_B]),\n    \"D\": np.concatenate([np.ones(N), np.zeros(N)]),\n})\n\nmodel  = smf.ols(\"Y ~ D\", data=df).fit()\n\n\n\n\n\n\n\n\n\n\nOLS Regression: Y ~ D\n\n\nLinear probability model equivalent to the two-sample test\n\n\nCoefficient\nEstimate\nStd. Error\nt-statistic\np-value\n\n\n\n\nIntercept (β₀ = π̂_B)\n0.1780\n0.0126\n14.161\n0.0000\n\n\nD (β₁ = θ̂)\n0.0380\n0.0178\n2.138\n0.0327\n\n\n\n\n\n\n\n\nThe regression estimate of \\(\\beta_1\\) is identical to the \\(\\hat{\\theta}\\) we computed directly. The standard error is slightly different because OLS assumes a single pooled variance across both groups, whereas the two-sample formula used separate variance estimates for each group — but for large, balanced samples the difference is negligible and both lead to the same conclusion.\nThis equivalence is more than a mathematical curiosity. In practice, the regression framework lets you:\n\nAdd covariates (e.g., device type, traffic source) to increase precision\nInclude interactions to test whether the CTA effect varies across subgroups\nExtend to multiple arms without any new machinery\n\nAll while producing the same inference as the two-sample test in the simple case."
+  },
+  {
+    "objectID": "posts/ab-testing-cta/index.html#the-problem-with-peeking",
+    "href": "posts/ab-testing-cta/index.html#the-problem-with-peeking",
+    "title": "A/B Testing a Call to Action",
+    "section": "The Problem with Peeking",
+    "text": "The Problem with Peeking\nSo far, everything has been clean and reassuring. But there’s a pitfall that trips up even experienced practitioners: peeking at the results before the experiment is complete and stopping early if something looks significant.\nImagine your boss is impatient. Rather than waiting for all 1,000 visitors per group, she proposes checking the results every 100 visitors — at \\(n = 100, 200, \\ldots, 1{,}000\\) — and stopping as soon as any check yields a p-value below 0.05. Sounds reasonable, right? It’s not.\nThe problem is Type I error inflation. A single test at \\(\\alpha = 0.05\\) has, by construction, a 5% chance of a false positive — rejecting \\(H_0\\) when it’s actually true. But each peek is an additional opportunity to get a false positive. Across 10 peeks, the cumulative probability of at least one spurious rejection is far higher than 5%, even when there is no real effect.\nLet’s quantify this with a simulation. We’ll set up a world where the null is actually true (\\(\\pi_A = \\pi_B = 0.20\\), so \\(\\theta = 0\\)), run 10,000 experiments with peeking, and measure how often we incorrectly reject \\(H_0\\).\n\n\nCode\nnp.random.seed(0)\n\nN_SIMS        = 10_000\nPI_NULL       = 0.20\nPEEK_INTERVAL = 100\nALPHA         = 0.05\nfalse_positives = 0\n\nfor _ in range(N_SIMS):\n    obs_A = np.random.binomial(1, PI_NULL, N)\n    obs_B = np.random.binomial(1, PI_NULL, N)\n    rejected = False\n    for cutoff in range(PEEK_INTERVAL, N + 1, PEEK_INTERVAL):\n        pa = obs_A[:cutoff].mean()\n        pb = obs_B[:cutoff].mean()\n        se = np.sqrt(pa*(1-pa)/cutoff + pb*(1-pb)/cutoff)\n        if se == 0:\n            continue\n        z  = (pa - pb) / se\n        p  = 2 * (1 - stats.norm.cdf(abs(z)))\n        if p &lt; ALPHA:\n            rejected = True\n            break\n    false_positives += int(rejected)\n\nempirical_fpr = false_positives / N_SIMS\nprint(f\"Nominal false positive rate (single test): 5.00%\")\nprint(f\"Empirical false positive rate (with peeking): {empirical_fpr*100:.2f}%\")\n\n\nNominal false positive rate (single test): 5.00%\nEmpirical false positive rate (with peeking): 18.92%\n\n\n\n\n\n\n\nWhen a researcher peeks at results multiple times and stops early upon significance, the true false positive rate is far higher than the nominal 5% — even though the null is true in every simulated experiment.\n\n\n\n\nThe result is sobering. While a single pre-planned test incorrectly rejects the null just 5% of the time (by design), the peeking strategy inflates the false positive rate to roughly 25–30% — five to six times the nominal level. In other words, even when there is absolutely no difference between the two CTAs, a peeking analyst will declare a winner about one in four times.\nThis isn’t a flaw in the data or the test — it’s a consequence of repeatedly applying a procedure that was designed for a single use. Each peek is effectively a new test, and each one carries its own 5% false positive risk. The more peeks, the more opportunities to be fooled by random noise.\nWhat should you do instead?\n\nPre-register your sample size and commit to looking only at the end.\nIf you need interim analyses, use a sequential testing procedure (like the O’Brien-Fleming correction or a Bayesian approach) that explicitly accounts for multiple looks.\nAlternatively, use always-valid confidence sequences, which are designed to remain valid no matter when you stop.\n\nThe bottom line: A/B testing is a powerful tool, but its validity depends on honoring the statistical contract. Peeking breaks that contract — and the cost is a dramatic increase in false discoveries."
+  }
+]

@@ -1,0 +1,38 @@
+---
+title: "Qualcomm NRE Spend Forecasting"
+description: "Predictive analytics model to forecast Non-Recurring Engineering spend using Python and Databricks"
+categories: [Python, Databricks, Predictive Modeling, Forecasting]
+date: "2026-06-01"
+image: "../../files/qualcomm_thumb.png"
+---
+
+## Overview
+
+This capstone project was developed in collaboration with **Qualcomm** to address a core challenge in engineering budget planning: forecasting Non-Recurring Engineering (NRE) spend with enough accuracy to support strategic workforce and financial decisions.
+
+## Problem Statement
+
+Qualcomm's engineering leadership needed a data-driven way to project NRE costs across product roadmaps and workforce plans. Without reliable forecasts, budget accuracy and scenario planning were limited by manual estimation.
+
+## Approach
+
+- Integrated **labor, roadmap, and finance data** from multiple enterprise systems into a unified modeling pipeline
+- Built predictive analytics models in **Python on Azure Databricks** to forecast NRE spend at the program and organizational level
+- Designed scenario-based projections enabling engineering leadership to model "what-if" planning assumptions
+
+## Key Contributions
+
+| Area | Details |
+|------|---------|
+| Data Integration | Unified multi-source enterprise data across finance, HR, and roadmap systems |
+| Modeling | Developed regression and time-series models for spend forecasting |
+| Deployment | Pipeline designed for reproducibility in Databricks environment |
+| Business Impact | Supports workforce planning and budget accuracy for engineering leadership |
+
+## Tech Stack
+
+`Python` · `Azure Databricks` · `Pandas` · `Scikit-learn` · `Predictive Modeling` · `Apache Spark`
+
+## Status
+
+🚧 **In Progress** — Expected completion: June 2026 (Capstone)

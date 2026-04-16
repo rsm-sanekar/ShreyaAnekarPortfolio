@@ -1,0 +1,297 @@
+---
+title: "Work Experience"
+---
+
+```{=html}
+<style>
+.exp-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.exp-entry {
+  position: relative;
+  padding-left: 2rem;
+  margin-bottom: 3rem;
+  border-left: 2px solid #e5e7eb;
+}
+
+.exp-entry::before {
+  content: '';
+  position: absolute;
+  left: -6px;
+  top: 6px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #1a6cf5;
+  border: 2px solid #ffffff;
+  box-shadow: 0 0 0 2px #1a6cf5;
+}
+
+.exp-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 0.3rem;
+}
+
+.exp-company {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #0f1117;
+  font-family: 'DM Serif Display', Georgia, serif;
+}
+
+.exp-dates {
+  font-size: 0.8rem;
+  color: #6b7280;
+  font-weight: 500;
+  background: #f3f4f6;
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+  white-space: nowrap;
+}
+
+.exp-role {
+  font-size: 0.9rem;
+  color: #1a6cf5;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  letter-spacing: 0.02em;
+}
+
+.exp-bullets {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.exp-bullets li {
+  font-size: 0.9rem;
+  color: #374151;
+  line-height: 1.65;
+  padding-left: 1.2rem;
+  position: relative;
+}
+
+.exp-bullets li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: #1a6cf5;
+  font-size: 0.75rem;
+  top: 0.15rem;
+}
+
+.exp-highlight {
+  display: inline-block;
+  background: #e8f0fe;
+  color: #1a6cf5;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.1rem 0.45rem;
+  border-radius: 4px;
+  white-space: nowrap;
+}
+
+.edu-section {
+  margin-top: 3rem;
+}
+
+.edu-entry {
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.edu-degree {
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: #0f1117;
+}
+
+.edu-school {
+  font-size: 0.85rem;
+  color: #6b7280;
+  margin-top: 0.15rem;
+}
+
+.edu-coursework {
+  font-size: 0.8rem;
+  color: #374151;
+  margin-top: 0.5rem;
+  line-height: 1.6;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.skill-group {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 1rem 1.2rem;
+}
+
+.skill-group-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: #1a6cf5;
+  margin-bottom: 0.5rem;
+}
+
+.skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+}
+
+.skill-tag {
+  font-size: 0.75rem;
+  background: #f3f4f6;
+  color: #374151;
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+h2 {
+  font-family: 'DM Serif Display', Georgia, serif;
+  font-size: 1.6rem;
+  margin-top: 2.5rem;
+  margin-bottom: 1.2rem;
+  color: #0f1117;
+}
+</style>
+
+<div class="exp-container">
+
+## Experience
+
+<div class="exp-entry">
+  <div class="exp-header">
+    <div class="exp-company">Addepar, Inc.</div>
+    <div class="exp-dates">Dec 2023 – May 2025</div>
+  </div>
+  <div class="exp-role">Data Engineer</div>
+  <ul class="exp-bullets">
+    <li>Led onboarding for <span class="exp-highlight">8+ enterprise clients</span> managing $500M+ AUM — traced data lineage through source systems and engineered trade, position, and cash data pipelines with full schema alignment, <strong>reducing onboarding cycle time by 25%</strong></li>
+    <li>Standardized multi-custodian portfolio data by building Python-based transformation workflows in <span class="exp-highlight">Azure Databricks (Apache Spark)</span>, eliminating 90+ hours of monthly manual review and delivering canonical, analysis-ready datasets</li>
+    <li>Conducted root cause analysis on cash breaks, pricing mismatches, and corporate action discrepancies — implemented data governance controls and automated monitoring to eliminate repeat failures</li>
+    <li>Built Python validation scripts to flag and prioritize high-risk pricing and performance discrepancies by materiality, achieving <strong>98% accuracy</strong> and preventing <span class="exp-highlight">$2M+ in reporting errors</span> across live portfolios</li>
+  </ul>
+</div>
+
+<div class="exp-entry">
+  <div class="exp-header">
+    <div class="exp-company">Fiserv, Inc.</div>
+    <div class="exp-dates">Jul 2021 – Dec 2023</div>
+  </div>
+  <div class="exp-role">Data Engineer</div>
+  <ul class="exp-bullets">
+    <li>Delivered <span class="exp-highlight">5 enterprise data transformation programs</span> with zero data loss, migrating $2B+ in deposit and loan data via SSIS and SQL Server with end-to-end pipeline reliability across full platform conversions</li>
+    <li>Developed <strong>90+ optimized T-SQL procedures</strong> to transform and analyze high-volume transactional and ledger data — identified processing bottlenecks and <strong>reduced batch time from 5 to 3 hours per cycle</strong></li>
+    <li>Designed automated validation checks for GL balances, transaction completeness, and interest accruals — surfacing discrepancy patterns early and <span class="exp-highlight">accelerating testing cycles by 80%</span></li>
+    <li>Identified systemic reconciliation gaps through SQL data profiling and established canonical source of truth for financial data, <strong>reducing manual reconciliation from 110+ to 15 hours per bank</strong></li>
+    <li>Collaborated with banking stakeholders to translate regulatory, operational, and product requirements into ETL workflows and structured financial schemas for compliance during migrations</li>
+  </ul>
+</div>
+
+## Education
+
+<div class="edu-section">
+  <div class="edu-entry">
+    <div>
+      <div class="edu-degree">M.S. in Business Analytics</div>
+      <div class="edu-school">University of California, San Diego · Expected Jun 2026</div>
+      <div class="edu-coursework"><strong>Coursework:</strong> Customer Analytics (Uplift Modeling, Next-Product-to-Buy), Big Data Engineering (MapReduce, Apache Spark, HDFS), Statistical Modeling (A/B Testing, Monte Carlo Simulation)</div>
+    </div>
+  </div>
+  <div class="edu-entry">
+    <div>
+      <div class="edu-degree">B.Tech. in Information Technology</div>
+      <div class="edu-school">MKSSS's Cummins College of Engineering for Women, Pune · Jun 2021</div>
+      <div class="edu-coursework">🏆 Represented <strong>India</strong> at the World Chess Championship during undergraduate studies</div>
+    </div>
+  </div>
+</div>
+
+## Skills
+
+<div class="skills-grid">
+  <div class="skill-group">
+    <div class="skill-group-label">Languages & Query</div>
+    <div class="skill-tags">
+      <span class="skill-tag">Python</span>
+      <span class="skill-tag">SQL</span>
+      <span class="skill-tag">T-SQL</span>
+      <span class="skill-tag">PostgreSQL</span>
+    </div>
+  </div>
+  <div class="skill-group">
+    <div class="skill-group-label">Cloud & Data Platforms</div>
+    <div class="skill-tags">
+      <span class="skill-tag">Azure Databricks</span>
+      <span class="skill-tag">Snowflake</span>
+      <span class="skill-tag">AWS S3</span>
+      <span class="skill-tag">Redshift</span>
+    </div>
+  </div>
+  <div class="skill-group">
+    <div class="skill-group-label">ML & Analytics</div>
+    <div class="skill-tags">
+      <span class="skill-tag">Scikit-learn</span>
+      <span class="skill-tag">XGBoost</span>
+      <span class="skill-tag">Prophet</span>
+      <span class="skill-tag">Hypothesis Testing</span>
+    </div>
+  </div>
+  <div class="skill-group">
+    <div class="skill-group-label">BI & Visualization</div>
+    <div class="skill-tags">
+      <span class="skill-tag">Tableau</span>
+      <span class="skill-tag">Power BI</span>
+      <span class="skill-tag">Streamlit</span>
+      <span class="skill-tag">Excel</span>
+    </div>
+  </div>
+  <div class="skill-group">
+    <div class="skill-group-label">Pipeline & ETL</div>
+    <div class="skill-tags">
+      <span class="skill-tag">SSIS</span>
+      <span class="skill-tag">ETL/ELT</span>
+      <span class="skill-tag">Apache Spark</span>
+      <span class="skill-tag">Git</span>
+    </div>
+  </div>
+  <div class="skill-group">
+    <div class="skill-group-label">AI & Automation</div>
+    <div class="skill-tags">
+      <span class="skill-tag">Prompt Engineering</span>
+      <span class="skill-tag">LLM Dev</span>
+      <span class="skill-tag">GitHub Copilot</span>
+    </div>
+  </div>
+</div>
+
+</div>
+```

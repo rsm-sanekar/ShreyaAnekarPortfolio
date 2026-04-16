@@ -1,0 +1,48 @@
+---
+title: "Content Intelligence & Market Insights Platform"
+description: "Ensemble forecasting and anomaly detection platform across 10K+ TMDB titles with 6 Streamlit dashboards and real-time API ingestion for slate optimization"
+categories: [Python, Machine Learning, Streamlit, API, Forecasting]
+date: "2025-12-01"
+image: "../../files/content_thumb.png"
+---
+
+## Overview
+
+Built a full-stack **content analytics platform** to help media companies make data-driven decisions about their content slate. By combining ML forecasting with real-time data ingestion, the platform quantifies genre demand and revenue potential across thousands of titles.
+
+## Problem Statement
+
+Media studios and streaming platforms need to decide which content to greenlight, acquire, or promote — but these decisions are often based on intuition. A data-driven approach to **genre demand forecasting and revenue potential scoring** could significantly improve slate ROI.
+
+## Approach
+
+- Ingested and processed **10,000+ titles** from the TMDB (The Movie Database) API with a real-time data pipeline
+- Developed **ensemble forecasting models** combining LightGBM, XGBoost, and Prophet for demand prediction
+- Built **anomaly detection** to flag unusual performance patterns (breakout titles, underperformers)
+- Deployed the full platform as a **Streamlit app** with 6 interactive dashboards
+
+## Platform Dashboards
+
+| Dashboard | Function |
+|-----------|---------|
+| Genre Demand Tracker | Forecast genre popularity trends over time |
+| Revenue Potential Scorer | Score titles by projected revenue potential |
+| Anomaly Detector | Flag breakout or underperforming content early |
+| Competitive Landscape | Compare performance across genres and studios |
+| Release Timing Optimizer | Identify optimal release windows by genre |
+| API Data Explorer | Real-time browse of ingested TMDB data |
+
+## Models Used
+
+- **LightGBM** — Fast gradient boosting for revenue potential scoring
+- **XGBoost** — Ensemble base model for demand forecasting
+- **Prophet** — Time-series forecasting for seasonal genre trends
+- **Anomaly Detection** — Isolation forest for performance outlier detection
+
+## Tech Stack
+
+`Python` · `Streamlit` · `LightGBM` · `XGBoost` · `Prophet` · `TMDB API` · `Pandas` · `Scikit-learn` · `REST APIs`
+
+## Links
+
+🔗 [View Live Platform](#) *(link available on request)*

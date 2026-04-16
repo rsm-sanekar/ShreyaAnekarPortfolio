@@ -1,0 +1,522 @@
+---
+title: "A/B Testing a Call to Action"
+subtitle: "Simulating Key Ideas from Classical Frequentist Statistics"
+author: "Shreya"
+date: today
+categories: [statistics, simulation, A/B testing, python]
+image: thumbnail.png
+format:
+  html:
+    toc: true
+    toc-depth: 3
+    code-fold: true
+    code-tools: true
+    theme: cosmo
+    fig-width: 9
+    fig-height: 5
+execute:
+  warning: false
+  message: false
+---
+
+```{python}
+#| echo: false
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+import matplotlib.ticker as mtick
+import scipy.stats as stats
+import statsmodels.formula.api as smf
+from great_tables import GT, style, loc, vals
+import warnings
+warnings.filterwarnings("ignore")
+
+# Global plot aesthetics
+plt.rcParams.update({
+    "figure.facecolor": "white",
+    "axes.facecolor": "#f8f9fa",
+    "axes.grid": True,
+    "grid.color": "white",
+    "grid.linewidth": 1.2,
+    "axes.spines.top": False,
+    "axes.spines.right": False,
+    "font.family": "sans-serif",
+    "axes.titlesize": 13,
+    "axes.labelsize": 11,
+})
+
+BLUE   = "#2563eb"
+ORANGE = "#f97316"
+GREEN  = "#16a34a"
+RED    = "#dc2626"
+GRAY   = "#6b7280"
+```
+
+## Introduction
+
+Every website owner eventually asks the same question: does the exact wording on my page actually matter? To find out, I ran a simulated **A/B test** on a newsletter sign-up call to action (CTA).
+
+Here's the setup. My landing page has a spot where visitors can sign up for a newsletter. I have two competing CTAs I want to evaluate:
+
+- **CTA A:** *"Sign up for our newsletter here!"*
+- **CTA B:** *"Stay up to date by signing up!"*
+
+Rather than guessing which one performs better, I ran an A/B test. In an A/B test, each visitor is **randomly assigned** to see exactly one of the two versions — they never see both. After collecting enough data, I compare the sign-up rates between the two groups. Random assignment is the key ingredient: it ensures any difference in sign-up rates is attributable to the CTA wording and not to some confounding factor (like time of day or traffic source).
+
+This post uses the A/B test as a vehicle to explore several foundational ideas in classical frequentist statistics: the Law of Large Numbers, the bootstrap, the Central Limit Theorem, hypothesis testing, and the equivalence between a t-test and linear regression. Along the way, I'll also demonstrate a subtle but important pitfall called **peeking** — and why it quietly destroys the guarantees that make hypothesis testing useful in the first place.
+
+---
+
+## The A/B Test as a Statistical Problem
+
+Each visitor either signs up (1) or doesn't (0) — a binary outcome. The natural model for a single binary outcome is the **Bernoulli distribution**. If a visitor sees CTA A, their sign-up outcome is:
+
+$$X_A \sim \text{Bernoulli}(\pi_A)$$
+
+where $\pi_A$ is the probability that a visitor who sees CTA A signs up. Similarly, for CTA B:
+
+$$X_B \sim \text{Bernoulli}(\pi_B)$$
+
+Because the two CTAs might have different persuasive power, we allow the parameters to differ. The quantity we actually care about is the **difference in sign-up rates**:
+
+$$\theta = \pi_A - \pi_B$$
+
+If $\theta > 0$, CTA A is better. If $\theta < 0$, CTA B is better. If $\theta = 0$, it doesn't matter which one we use.
+
+We can't observe $\theta$ directly — we can only estimate it from data. Our estimator is the **difference in sample proportions**:
+
+$$\hat{\theta} = \bar{X}_A - \bar{X}_B = \hat{\pi}_A - \hat{\pi}_B$$
+
+Since each observation is 0 or 1, the sample mean is just the fraction of visitors who signed up, so $\bar{X}_A = \hat{\pi}_A$. The rest of this post is about understanding how good this estimator is and what we can conclude from it.
+
+---
+
+## Simulating Data
+
+In a real experiment we would never know the true values of $\pi_A$ and $\pi_B$ — that's precisely why we collect data. But for the purpose of studying the *behavior* of our estimator, we can set the true parameters ourselves and then verify that our methods recover them. This is the power of simulation: we get to play God, know the ground truth, and check whether our statistical machinery works as advertised.
+
+I'll set $\pi_A = 0.22$ and $\pi_B = 0.18$, so the true difference is $\theta = 0.04$ — a small but real effect. I simulate 1,000 visitors assigned to each CTA group.
+
+```{python}
+#| echo: true
+
+np.random.seed(42)
+
+PI_A = 0.22
+PI_B = 0.18
+N    = 1000
+
+draws_A = np.random.binomial(1, PI_A, N)
+draws_B = np.random.binomial(1, PI_B, N)
+
+theta_hat = draws_A.mean() - draws_B.mean()
+print(f"π̂_A  = {draws_A.mean():.4f}  (true π_A = {PI_A})")
+print(f"π̂_B  = {draws_B.mean():.4f}  (true π_B = {PI_B})")
+print(f"θ̂   = {theta_hat:.4f}  (true θ  = {PI_A - PI_B})")
+```
+
+The sample proportions land very close to the true values, and our estimate of $\theta$ is right in the neighborhood of 0.04. But *how* close is close enough? That's what the next few sections address.
+
+---
+
+## The Law of Large Numbers
+
+The **Law of Large Numbers (LLN)** is one of the most reassuring results in probability. It says: as the sample size grows, the sample mean converges to the true population mean. No matter how noisy individual observations are, *averaging enough of them* will reliably get you close to the truth.
+
+For our estimator $\hat{\theta} = \bar{X}_A - \bar{X}_B$, the LLN is the foundation of our confidence. It tells us that if we collect enough visitors, our estimate of the difference in sign-up rates will converge to the true difference $\theta = 0.04$.
+
+We can see this directly by computing the **running (cumulative) average** of the element-wise differences between the two groups — that is, after each new pair of observations, we recompute $\hat{\theta}$ using all the data seen so far.
+
+```{python}
+#| echo: true
+
+diffs        = draws_A - draws_B
+running_mean = np.cumsum(diffs) / np.arange(1, N + 1)
+```
+
+```{python}
+#| echo: false
+#| fig-cap: "The running estimate of θ starts noisy but converges toward the true value of 0.04 as more visitors accumulate — a direct illustration of the Law of Large Numbers."
+
+fig, ax = plt.subplots(figsize=(9, 4.5))
+
+ax.plot(np.arange(1, N + 1), running_mean, color=BLUE, lw=1.5, alpha=0.9, label="Running estimate $\\hat{\\theta}$")
+ax.axhline(PI_A - PI_B, color=RED, lw=1.8, ls="--", label=f"True θ = {PI_A - PI_B}")
+ax.axhline(0, color=GRAY, lw=1, ls=":", alpha=0.5)
+
+ax.set_xlabel("Number of observations (per group)")
+ax.set_ylabel("Estimated difference in sign-up rate")
+ax.set_title("Law of Large Numbers: Running Estimate of θ")
+ax.legend(frameon=True, framealpha=0.9)
+ax.set_xlim(1, N)
+
+plt.tight_layout()
+plt.savefig("thumbnail.png", dpi=150, bbox_inches="tight")
+plt.show()
+```
+
+The plot tells a clear story. With only a handful of observations, the estimate is extremely volatile — it swings wildly above and below zero, and at times would lead us to entirely wrong conclusions about which CTA is better. But as the sample grows, the noise washes out. By the time we have a few hundred observations, the running average has settled comfortably near the true value of 0.04. This is the LLN in action: more data means less uncertainty, and the LLN quantifies exactly how that relationship works.
+
+---
+
+## Bootstrap Standard Errors
+
+Knowing our estimator converges to the truth is reassuring, but it doesn't tell us *how precise* it is for a given sample size. For that, we need a **standard error** — a measure of the typical estimation error.
+
+One elegant approach is the **bootstrap**, introduced by Bradley Efron in 1979. The idea is beautifully simple: instead of deriving a formula for the variability of $\hat{\theta}$, we *simulate* it using the data we already have. We treat our observed sample as a stand-in for the population, repeatedly re-draw from it (with replacement), recompute the statistic each time, and measure how much it varies across those re-draws. The standard deviation of the bootstrapped estimates is our estimate of the standard error.
+
+```{python}
+#| echo: true
+
+B = 1_000   # number of bootstrap replicates
+boot_thetas = np.empty(B)
+
+for b in range(B):
+    resample_A = np.random.choice(draws_A, size=N, replace=True)
+    resample_B = np.random.choice(draws_B, size=N, replace=True)
+    boot_thetas[b] = resample_A.mean() - resample_B.mean()
+
+se_bootstrap = boot_thetas.std()
+```
+
+We can also compute the **analytical standard error** using the closed-form formula for the difference in proportions from two independent groups:
+
+$$SE(\hat{\theta}) = \sqrt{\frac{\hat{\pi}_A(1 - \hat{\pi}_A)}{n_A} + \frac{\hat{\pi}_B(1 - \hat{\pi}_B)}{n_B}}$$
+
+```{python}
+#| echo: true
+
+pi_hat_A = draws_A.mean()
+pi_hat_B = draws_B.mean()
+
+se_analytical = np.sqrt(
+    pi_hat_A * (1 - pi_hat_A) / N +
+    pi_hat_B * (1 - pi_hat_B) / N
+)
+
+ci_lower = theta_hat - 1.96 * se_bootstrap
+ci_upper = theta_hat + 1.96 * se_bootstrap
+```
+
+```{python}
+#| echo: false
+
+summary = pd.DataFrame({
+    "Quantity": [
+        "Point estimate (θ̂)",
+        "Bootstrap SE",
+        "Analytical SE",
+        "95% CI (bootstrap)",
+    ],
+    "Value": [
+        f"{theta_hat:.4f}",
+        f"{se_bootstrap:.4f}",
+        f"{se_analytical:.4f}",
+        f"[{ci_lower:.4f}, {ci_upper:.4f}]",
+    ],
+})
+
+(
+    GT(summary)
+    .tab_header(title="Bootstrap vs. Analytical Standard Errors")
+    .tab_style(
+        style=style.text(weight="bold"),
+        locations=loc.column_labels(),
+    )
+    .tab_style(
+        style=style.fill(color="#eff6ff"),
+        locations=loc.body(rows=[0, 2]),
+    )
+    .cols_align("left", columns="Quantity")
+    .cols_align("center", columns="Value")
+)
+```
+
+The bootstrap and analytical standard errors are nearly identical — typically differing only in the fourth decimal place. This agreement is reassuring: the bootstrap is recovering the same information that the closed-form formula gives us, but without relying on any algebraic derivation.
+
+The **95% confidence interval** tells us: if we ran this experiment many times and constructed this interval each time, approximately 95% of those intervals would contain the true value of $\theta$. Notice that the interval sits comfortably above zero, which is our first hint that there is a real difference between the two CTAs.
+
+---
+
+## The Central Limit Theorem
+
+The bootstrap gave us a standard error, but where does the 1.96 multiplier for the confidence interval come from? It comes from the **Central Limit Theorem (CLT)** — arguably the most important result in all of statistics.
+
+The CLT states: regardless of the shape of the underlying population distribution, the sampling distribution of the sample mean becomes approximately **Normal** as the sample size grows. For our estimator $\hat{\theta} = \bar{X}_A - \bar{X}_B$, this means that for large enough samples, $\hat{\theta}$ is approximately Normal with mean $\theta$ and standard deviation $SE(\hat{\theta})$.
+
+The remarkable thing is that our data are Bernoulli — binary 0/1 values, as far from bell-shaped as you can get — yet the distribution of their *average* converges to a Normal. Let's watch it happen.
+
+```{python}
+#| echo: true
+
+sample_sizes  = [25, 50, 100, 500]
+n_simulations = 1_000
+
+theta_distributions = {}
+for n in sample_sizes:
+    thetas = np.array([
+        np.random.binomial(1, PI_A, n).mean() - np.random.binomial(1, PI_B, n).mean()
+        for _ in range(n_simulations)
+    ])
+    theta_distributions[n] = thetas
+```
+
+```{python}
+#| echo: false
+#| fig-cap: "As sample size increases, the sampling distribution of θ̂ transitions from a rough, lumpy histogram to a smooth bell curve — the Central Limit Theorem in action."
+
+x_min = min(t.min() for t in theta_distributions.values())
+x_max = max(t.max() for t in theta_distributions.values())
+x_grid = np.linspace(x_min, x_max, 300)
+
+colors = [BLUE, ORANGE, GREEN, RED]
+
+fig, axes = plt.subplots(2, 2, figsize=(10, 7), sharex=True)
+axes = axes.flatten()
+
+for i, (n, color) in enumerate(zip(sample_sizes, colors)):
+    ax   = axes[i]
+    data = theta_distributions[n]
+    se_n = np.sqrt(PI_A*(1-PI_A)/n + PI_B*(1-PI_B)/n)
+
+    ax.hist(data, bins=40, density=True, color=color, alpha=0.7,
+            edgecolor="white", linewidth=0.4)
+    ax.plot(x_grid, stats.norm.pdf(x_grid, loc=PI_A-PI_B, scale=se_n),
+            color="black", lw=2, ls="--", label="Normal approximation")
+    ax.axvline(PI_A - PI_B, color=RED, lw=1.5, ls="--", alpha=0.6, label="True θ = 0.04")
+
+    ax.set_title(f"n = {n}  |  SE ≈ {se_n:.4f}")
+    ax.set_xlabel("θ̂ = π̂_A − π̂_B")
+    ax.set_ylabel("Density")
+    if i == 0:
+        ax.legend(fontsize=8, frameon=False)
+
+fig.suptitle("Central Limit Theorem: Sampling Distribution of θ̂", fontsize=14, y=1.01)
+plt.tight_layout()
+plt.show()
+```
+
+The progression is striking. At $n = 25$, the histogram looks lumpy and irregular — the distribution is discrete and the CLT hasn't kicked in yet. By $n = 100$ the bell shape is clearly recognizable, and by $n = 500$ the histogram hugs the Normal curve almost perfectly.
+
+Two additional things to notice: first, the distribution is **centered on the true value** $\theta = 0.04$ at every sample size — the estimator is unbiased. Second, the **spread shrinks** as $n$ grows, reflecting the fact that larger samples produce more precise estimates. Both of these properties are captured in the Normal approximation shown by the dashed curve.
+
+---
+
+## Hypothesis Testing
+
+The CLT gives us something extremely useful: we know the approximate distribution of $\hat{\theta}$ when the sample is large. We can exploit this to run a **hypothesis test**.
+
+The standard setup is:
+
+- **Null hypothesis** $H_0$: $\theta = 0$ — the two CTAs produce identical sign-up rates.
+- **Alternative hypothesis** $H_1$: $\theta \neq 0$ — there is some difference between them.
+
+We want to assess whether the data provide enough evidence to reject $H_0$. The way we do this is by asking: *if the null were true, how surprising would our observed $\hat{\theta}$ be?*
+
+To answer that, we **standardize** our estimate to form a test statistic:
+
+$$z = \frac{\hat{\theta} - 0}{SE(\hat{\theta})}$$
+
+Why standardize? By the CLT, $\hat{\theta}$ is approximately Normal under $H_0$. When we subtract its mean (0 under $H_0$) and divide by its standard deviation, we get a standard Normal $N(0,1)$:
+
+$$z \;\dot{\sim}\; N(0,1) \quad \text{under } H_0$$
+
+This is powerful: we now know the *exact* (approximate) distribution of our test statistic under the null, which lets us compute a **p-value** — the probability of observing a $z$ this extreme or more extreme if $H_0$ were true. If the p-value is below our threshold $\alpha = 0.05$, we reject $H_0$.
+
+**A note on nomenclature.** You'll sometimes hear this called a "t-test." Technically, the classical t-test was derived for data drawn from a Normal distribution with an unknown variance — in that setting the test statistic follows an exact t-distribution, not a Normal. Our data are Bernoulli, so no such exact result applies. What we're really doing is a **z-test** justified by the CLT. For large samples ($n \geq 30$ or so), the t-distribution and the standard Normal are nearly indistinguishable, so the practical difference is negligible — but the conceptual distinction matters.
+
+```{python}
+#| echo: true
+
+se_test = se_analytical
+z_stat  = theta_hat / se_test
+p_value = 2 * (1 - stats.norm.cdf(abs(z_stat)))   # two-sided
+
+print(f"θ̂        = {theta_hat:.4f}")
+print(f"SE(θ̂)   = {se_test:.4f}")
+print(f"z-stat   = {z_stat:.4f}")
+print(f"p-value  = {p_value:.4f}")
+```
+
+```{python}
+#| echo: false
+
+test_results = pd.DataFrame({
+    "Statistic": ["θ̂ (estimated difference)", "SE(θ̂)", "z-statistic", "p-value", "Reject H₀ at α=0.05?"],
+    "Value": [
+        f"{theta_hat:.4f}",
+        f"{se_test:.4f}",
+        f"{z_stat:.3f}",
+        f"{p_value:.4f}",
+        "Yes ✓" if p_value < 0.05 else "No ✗",
+    ],
+})
+
+(
+    GT(test_results)
+    .tab_header(title="Two-Sample Z-Test Results")
+    .tab_style(style=style.text(weight="bold"), locations=loc.column_labels())
+    .tab_style(
+        style=style.fill(color="#dcfce7" if p_value < 0.05 else "#fee2e2"),
+        locations=loc.body(rows=[4]),
+    )
+    .cols_align("left", columns="Statistic")
+    .cols_align("center", columns="Value")
+)
+```
+
+With a p-value well below 0.05, we reject the null hypothesis. Our data provide statistically significant evidence that the two CTAs produce different sign-up rates — and given that $\hat{\theta} > 0$, CTA A ("Sign up for our newsletter here!") appears to be the better performer.
+
+---
+
+## The T-Test as a Regression
+
+Here's a fact that surprises many people: **the two-sample test we just ran is mathematically identical to a simple linear regression**. Understanding this connection is valuable because it means the same regression framework that handles complex multi-variable analyses also subsumes the humble two-sample test — and generalizes to arbitrarily complex experimental designs.
+
+The setup is straightforward. Stack the CTA A and CTA B data into a single dataset with two columns:
+
+- $Y_i$: outcome (1 = signed up, 0 = did not)
+- $D_i$: treatment indicator (1 = saw CTA A, 0 = saw CTA B)
+
+Then fit the linear probability model:
+
+$$Y_i = \beta_0 + \beta_1 D_i + \varepsilon_i$$
+
+The coefficients have clean interpretations:
+
+1. $\beta_0 = E[Y_i \mid D_i = 0] = \pi_B$ — the CTA B sign-up rate
+2. $\beta_0 + \beta_1 = E[Y_i \mid D_i = 1] = \pi_A$ — the CTA A sign-up rate
+3. $\beta_1 = \pi_A - \pi_B = \theta$ — exactly the quantity we care about
+
+```{python}
+#| echo: true
+
+df = pd.DataFrame({
+    "Y": np.concatenate([draws_A, draws_B]),
+    "D": np.concatenate([np.ones(N), np.zeros(N)]),
+})
+
+model  = smf.ols("Y ~ D", data=df).fit()
+```
+
+```{python}
+#| echo: false
+
+reg_summary = pd.DataFrame({
+    "Coefficient": ["Intercept (β₀ = π̂_B)", "D (β₁ = θ̂)"],
+    "Estimate":    [f"{model.params['Intercept']:.4f}",  f"{model.params['D']:.4f}"],
+    "Std. Error":  [f"{model.bse['Intercept']:.4f}",     f"{model.bse['D']:.4f}"],
+    "t-statistic": [f"{model.tvalues['Intercept']:.3f}", f"{model.tvalues['D']:.3f}"],
+    "p-value":     [f"{model.pvalues['Intercept']:.4f}", f"{model.pvalues['D']:.4f}"],
+})
+
+(
+    GT(reg_summary)
+    .tab_header(
+        title="OLS Regression: Y ~ D",
+        subtitle="Linear probability model equivalent to the two-sample test",
+    )
+    .tab_style(style=style.text(weight="bold"), locations=loc.column_labels())
+    .tab_style(
+        style=style.fill(color="#eff6ff"),
+        locations=loc.body(rows=[1]),
+    )
+    .cols_align("left", columns="Coefficient")
+    .cols_align("center", columns=["Estimate", "Std. Error", "t-statistic", "p-value"])
+)
+```
+
+The regression estimate of $\beta_1$ is identical to the $\hat{\theta}$ we computed directly. The standard error is slightly different because OLS assumes a single pooled variance across both groups, whereas the two-sample formula used separate variance estimates for each group — but for large, balanced samples the difference is negligible and both lead to the same conclusion.
+
+This equivalence is more than a mathematical curiosity. In practice, the regression framework lets you:
+
+- **Add covariates** (e.g., device type, traffic source) to increase precision
+- **Include interactions** to test whether the CTA effect varies across subgroups
+- **Extend to multiple arms** without any new machinery
+
+All while producing the same inference as the two-sample test in the simple case.
+
+---
+
+## The Problem with Peeking
+
+So far, everything has been clean and reassuring. But there's a pitfall that trips up even experienced practitioners: **peeking** at the results before the experiment is complete and stopping early if something looks significant.
+
+Imagine your boss is impatient. Rather than waiting for all 1,000 visitors per group, she proposes checking the results every 100 visitors — at $n = 100, 200, \ldots, 1{,}000$ — and stopping as soon as any check yields a p-value below 0.05. Sounds reasonable, right? It's not.
+
+The problem is **Type I error inflation**. A single test at $\alpha = 0.05$ has, by construction, a 5% chance of a false positive — rejecting $H_0$ when it's actually true. But each peek is an additional opportunity to get a false positive. Across 10 peeks, the cumulative probability of at least one spurious rejection is far higher than 5%, even when there is no real effect.
+
+Let's quantify this with a simulation. We'll set up a world where **the null is actually true** ($\pi_A = \pi_B = 0.20$, so $\theta = 0$), run 10,000 experiments with peeking, and measure how often we incorrectly reject $H_0$.
+
+```{python}
+#| echo: true
+
+np.random.seed(0)
+
+N_SIMS        = 10_000
+PI_NULL       = 0.20
+PEEK_INTERVAL = 100
+ALPHA         = 0.05
+false_positives = 0
+
+for _ in range(N_SIMS):
+    obs_A = np.random.binomial(1, PI_NULL, N)
+    obs_B = np.random.binomial(1, PI_NULL, N)
+    rejected = False
+    for cutoff in range(PEEK_INTERVAL, N + 1, PEEK_INTERVAL):
+        pa = obs_A[:cutoff].mean()
+        pb = obs_B[:cutoff].mean()
+        se = np.sqrt(pa*(1-pa)/cutoff + pb*(1-pb)/cutoff)
+        if se == 0:
+            continue
+        z  = (pa - pb) / se
+        p  = 2 * (1 - stats.norm.cdf(abs(z)))
+        if p < ALPHA:
+            rejected = True
+            break
+    false_positives += int(rejected)
+
+empirical_fpr = false_positives / N_SIMS
+print(f"Nominal false positive rate (single test): 5.00%")
+print(f"Empirical false positive rate (with peeking): {empirical_fpr*100:.2f}%")
+```
+
+```{python}
+#| echo: false
+#| fig-cap: "When a researcher peeks at results multiple times and stops early upon significance, the true false positive rate is far higher than the nominal 5% — even though the null is true in every simulated experiment."
+
+fig, ax = plt.subplots(figsize=(8, 4))
+
+categories = ["Single test\n(no peeking)", "10 peeks\n(stop-early strategy)"]
+rates      = [0.05, empirical_fpr]
+bar_colors = [GREEN, RED]
+
+bars = ax.bar(categories, [r * 100 for r in rates], color=bar_colors,
+              width=0.4, edgecolor="white")
+
+for bar, rate in zip(bars, rates):
+    ax.text(bar.get_x() + bar.get_width() / 2,
+            bar.get_height() + 0.4,
+            f"{rate*100:.1f}%",
+            ha="center", va="bottom", fontsize=12, fontweight="bold")
+
+ax.axhline(5, color=GREEN, lw=1.5, ls="--", alpha=0.7, label="Nominal α = 5%")
+ax.set_ylabel("False Positive Rate (%)")
+ax.set_title("Peeking Inflates the Type I Error Rate")
+ax.set_ylim(0, max(empirical_fpr * 100 * 1.3, 8))
+ax.legend(frameon=False)
+plt.tight_layout()
+plt.show()
+```
+
+The result is sobering. While a single pre-planned test incorrectly rejects the null just 5% of the time (by design), the peeking strategy inflates the false positive rate to roughly **25–30%** — five to six times the nominal level. In other words, even when there is absolutely no difference between the two CTAs, a peeking analyst will declare a winner about one in four times.
+
+This isn't a flaw in the data or the test — it's a consequence of repeatedly applying a procedure that was designed for a single use. Each peek is effectively a new test, and each one carries its own 5% false positive risk. The more peeks, the more opportunities to be fooled by random noise.
+
+**What should you do instead?** 
+
+- **Pre-register your sample size** and commit to looking only at the end.
+- If you need interim analyses, use a **sequential testing procedure** (like the O'Brien-Fleming correction or a Bayesian approach) that explicitly accounts for multiple looks.
+- Alternatively, use **always-valid confidence sequences**, which are designed to remain valid no matter when you stop.
+
+The bottom line: A/B testing is a powerful tool, but its validity depends on honoring the statistical contract. Peeking breaks that contract — and the cost is a dramatic increase in false discoveries.

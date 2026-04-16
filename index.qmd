@@ -1,0 +1,120 @@
+---
+title: "Shreya Anekar"
+image: "files/DSC00084.jpg"
+about:
+  template: jolla
+  links:
+    - icon: envelope
+      href: mailto:shreyaanekar27@address.com
+    - icon: linkedin
+      href: https://www.linkedin.com/in/sanekar27
+---
+
+```{=html}
+<style>
+.about-bio {
+  max-width: 680px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+
+.nav-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-top: 2.5rem;
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.nav-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1.4rem 1rem;
+  border: 1.5px solid #e5e7eb;
+  border-radius: 12px;
+  text-decoration: none !important;
+  background: #ffffff;
+  transition: all 0.22s ease;
+  gap: 0.5rem;
+  color: #374151 !important;
+}
+
+.nav-card:hover {
+  border-color: #1a6cf5;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(26,108,245,0.12);
+  color: #1a6cf5 !important;
+}
+
+.nav-card .nav-icon {
+  font-size: 1.6rem;
+}
+
+.nav-card .nav-label {
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.nav-card .nav-desc {
+  font-size: 0.75rem;
+  color: #9ca3af;
+  text-align: center;
+  line-height: 1.4;
+}
+
+.section-divider {
+  border: none;
+  border-top: 1px solid #e5e7eb;
+  margin: 2rem auto;
+  max-width: 680px;
+}
+</style>
+
+<div class="about-bio">
+
+
+<p>
+I'm a data engineer and analytics professional with 4+ years of experience building production-grade data pipelines, ML models, and analytics platforms across fintech, banking, and enterprise software. I currently work toward my <strong>M.S. in Business Analytics at UC San Diego</strong>, where I focus on predictive modeling, customer analytics, and big data engineering.
+</p>
+
+<p>
+My career spans two high-impact roles — at <strong>Addepar</strong>, engineering financial data infrastructure for clients managing $500M+ AUM, and at <strong>Fiserv</strong>, delivering zero-data-loss migrations of $2B+ in banking assets. I love the intersection of rigorous engineering and analytical storytelling: turning messy, fragmented data into systems and insights that drive real decisions.
+</p>
+
+<p>
+Beyond data, I'm a <strong>competitive chess player</strong> who represented India at the World Chess Championship during my undergraduate years — an experience that sharpened my instinct for strategic thinking, pattern recognition, and staying calm under pressure. Those same skills follow me into every complex data problem I take on.
+</p>
+
+<p>
+I'm passionate about forecasting, customer intelligence, and building tools that make data accessible and actionable. If I'm not buried in a Databricks notebook, I'm probably playing chess or exploring a new dataset.
+</p>
+
+</div>
+
+<hr class="section-divider">
+
+<div class="nav-cards">
+  <a href="experience.qmd" class="nav-card">
+    <span class="nav-icon">💼</span>
+    <span class="nav-label">Experience</span>
+    <span class="nav-desc">Addepar · Fiserv and more</span>
+  </a>
+  <a href="projects.qmd" class="nav-card">
+    <span class="nav-icon">🔬</span>
+    <span class="nav-label">Projects</span>
+    <span class="nav-desc">ML, forecasting & dashboards</span>
+  </a>
+  <a href="resume.qmd" class="nav-card">
+    <span class="nav-icon">📄</span>
+    <span class="nav-label">Resume</span>
+    <span class="nav-desc">Download or view inline</span>
+  </a>
+</div>
+```
