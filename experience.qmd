@@ -185,7 +185,7 @@ h2 {
 
 <div class="exp-container">
 
-## Experience
+<h2>Experience</h2>
 
 <div class="exp-entry">
   <div class="exp-header">
@@ -216,7 +216,7 @@ h2 {
   </ul>
 </div>
 
-## Education
+<h2>Education</h2>
 
 <div class="edu-section">
   <div class="edu-entry">
@@ -235,7 +235,7 @@ h2 {
   </div>
 </div>
 
-## Skills
+<h2>Skills</h2>
 
 <div class="skills-grid">
   <div class="skill-group">
