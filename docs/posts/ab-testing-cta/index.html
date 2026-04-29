@@ -6,8 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Shreya">
-<meta name="dcterms.date" content="2026-04-15">
+<meta name="author" content="Shreya Anekar">
+<meta name="dcterms.date" content="2026-04-28">
 
 <title>A/B Testing a Call to Action – Shreya Anekar</title>
 <style>
@@ -77,7 +77,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting-ac077c1e730dfeb5e42400639d17284e.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-33739b14e33afe508c6395e2ce99107f.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-6d686eafd35adbb22360ec64974041e1.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -229,14 +229,14 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Author</div>
     <div class="quarto-title-meta-contents">
-             <p>Shreya </p>
+             <p>Shreya Anekar </p>
           </div>
   </div>
     
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">April 15, 2026</p>
+      <p class="date">April 28, 2026</p>
     </div>
   </div>
   
@@ -278,7 +278,7 @@ window.Quarto = {
 <h2 class="anchored" data-anchor-id="simulating-data">Simulating Data</h2>
 <p>In a real experiment we would never know the true values of <span class="math inline">\(\pi_A\)</span> and <span class="math inline">\(\pi_B\)</span> — that’s precisely why we collect data. But for the purpose of studying the <em>behavior</em> of our estimator, we can set the true parameters ourselves and then verify that our methods recover them. This is the power of simulation: we get to play God, know the ground truth, and check whether our statistical machinery works as advertised.</p>
 <p>I’ll set <span class="math inline">\(\pi_A = 0.22\)</span> and <span class="math inline">\(\pi_B = 0.18\)</span>, so the true difference is <span class="math inline">\(\theta = 0.04\)</span> — a small but real effect. I simulate 1,000 visitors assigned to each CTA group.</p>
-<div id="d3bcc124" class="cell" data-execution_count="2">
+<div id="e01edad9" class="cell" data-execution_count="2">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>np.random.seed(<span class="dv">42</span>)</span>
@@ -309,14 +309,14 @@ window.Quarto = {
 <p>The <strong>Law of Large Numbers (LLN)</strong> is one of the most reassuring results in probability. It says: as the sample size grows, the sample mean converges to the true population mean. No matter how noisy individual observations are, <em>averaging enough of them</em> will reliably get you close to the truth.</p>
 <p>For our estimator <span class="math inline">\(\hat{\theta} = \bar{X}_A - \bar{X}_B\)</span>, the LLN is the foundation of our confidence. It tells us that if we collect enough visitors, our estimate of the difference in sign-up rates will converge to the true difference <span class="math inline">\(\theta = 0.04\)</span>.</p>
 <p>We can see this directly by computing the <strong>running (cumulative) average</strong> of the element-wise differences between the two groups — that is, after each new pair of observations, we recompute <span class="math inline">\(\hat{\theta}\)</span> using all the data seen so far.</p>
-<div id="06183e69" class="cell" data-execution_count="3">
+<div id="d219b011" class="cell" data-execution_count="3">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>diffs        <span class="op">=</span> draws_A <span class="op">-</span> draws_B</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>running_mean <span class="op">=</span> np.cumsum(diffs) <span class="op">/</span> np.arange(<span class="dv">1</span>, N <span class="op">+</span> <span class="dv">1</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
-<div id="70ebd87a" class="cell" data-execution_count="4">
+<div id="84e187a9" class="cell" data-execution_count="4">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -333,7 +333,7 @@ window.Quarto = {
 <h2 class="anchored" data-anchor-id="bootstrap-standard-errors">Bootstrap Standard Errors</h2>
 <p>Knowing our estimator converges to the truth is reassuring, but it doesn’t tell us <em>how precise</em> it is for a given sample size. For that, we need a <strong>standard error</strong> — a measure of the typical estimation error.</p>
 <p>One elegant approach is the <strong>bootstrap</strong>, introduced by Bradley Efron in 1979. The idea is beautifully simple: instead of deriving a formula for the variability of <span class="math inline">\(\hat{\theta}\)</span>, we <em>simulate</em> it using the data we already have. We treat our observed sample as a stand-in for the population, repeatedly re-draw from it (with replacement), recompute the statistic each time, and measure how much it varies across those re-draws. The standard deviation of the bootstrapped estimates is our estimate of the standard error.</p>
-<div id="475d56c4" class="cell" data-execution_count="5">
+<div id="400b23ed" class="cell" data-execution_count="5">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>B <span class="op">=</span> <span class="dv">1_000</span>   <span class="co"># number of bootstrap replicates</span></span>
@@ -349,7 +349,7 @@ window.Quarto = {
 </div>
 <p>We can also compute the <strong>analytical standard error</strong> using the closed-form formula for the difference in proportions from two independent groups:</p>
 <p><span class="math display">\[SE(\hat{\theta}) = \sqrt{\frac{\hat{\pi}_A(1 - \hat{\pi}_A)}{n_A} + \frac{\hat{\pi}_B(1 - \hat{\pi}_B)}{n_B}}\]</span></p>
-<div id="f5ef6a32" class="cell" data-execution_count="6">
+<div id="3bbf02c0" class="cell" data-execution_count="6">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>pi_hat_A <span class="op">=</span> draws_A.mean()</span>
@@ -364,57 +364,57 @@ window.Quarto = {
 <span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>ci_upper <span class="op">=</span> theta_hat <span class="op">+</span> <span class="fl">1.96</span> <span class="op">*</span> se_bootstrap</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
-<div id="a4fdd54c" class="cell" data-execution_count="7">
+<div id="49e55578" class="cell" data-execution_count="7">
 <div class="cell-output cell-output-display" data-execution_count="7">
-<div id="zrhriefrtu" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="dajvispfak" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>
-#zrhriefrtu table {
+#dajvispfak table {
           font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
           -webkit-font-smoothing: antialiased;
           -moz-osx-font-smoothing: grayscale;
         }
 
-#zrhriefrtu thead, tbody, tfoot, tr, td, th { border-style: none; }
+#dajvispfak thead, tbody, tfoot, tr, td, th { border-style: none; }
  tr { background-color: transparent; }
-#zrhriefrtu p { margin: 0; padding: 0; }
- #zrhriefrtu .gt_table { display: table; border-collapse: collapse; line-height: normal; margin-left: auto; margin-right: auto; color: #333333; font-size: 16px; font-weight: normal; font-style: normal; background-color: #FFFFFF; width: auto; border-top-style: solid; border-top-width: 2px; border-top-color: #A8A8A8; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #A8A8A8; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; }
- #zrhriefrtu .gt_caption { padding-top: 4px; padding-bottom: 4px; }
- #zrhriefrtu .gt_title { color: #333333; font-size: 125%; font-weight: initial; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; border-bottom-color: #FFFFFF; border-bottom-width: 0; }
- #zrhriefrtu .gt_subtitle { color: #333333; font-size: 85%; font-weight: initial; padding-top: 3px; padding-bottom: 5px; padding-left: 5px; padding-right: 5px; border-top-color: #FFFFFF; border-top-width: 0; }
- #zrhriefrtu .gt_heading { background-color: #FFFFFF; text-align: center; border-bottom-color: #FFFFFF; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; }
- #zrhriefrtu .gt_bottom_border { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
- #zrhriefrtu .gt_col_headings { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; }
- #zrhriefrtu .gt_col_heading { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 5px; padding-left: 5px; padding-right: 5px; overflow-x: hidden; }
- #zrhriefrtu .gt_column_spanner_outer { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; padding-top: 0; padding-bottom: 0; padding-left: 4px; padding-right: 4px; }
- #zrhriefrtu .gt_column_spanner_outer:first-child { padding-left: 0; }
- #zrhriefrtu .gt_column_spanner_outer:last-child { padding-right: 0; }
- #zrhriefrtu .gt_column_spanner { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 5px; overflow-x: hidden; display: inline-block; width: 100%; }
- #zrhriefrtu .gt_spanner_row { border-bottom-style: hidden; }
- #zrhriefrtu .gt_group_heading { padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; text-align: left; }
- #zrhriefrtu .gt_empty_group_heading { padding: 0.5px; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; vertical-align: middle; }
- #zrhriefrtu .gt_from_md> :first-child { margin-top: 0; }
- #zrhriefrtu .gt_from_md> :last-child { margin-bottom: 0; }
- #zrhriefrtu .gt_row { padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; }
- #zrhriefrtu .gt_stub { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-right-style: solid; border-right-width: 2px; border-right-color: #D3D3D3; padding-left: 5px; padding-right: 5px; }
- #zrhriefrtu .gt_stub_row_group { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-right-style: solid; border-right-width: 2px; border-right-color: #D3D3D3; padding-left: 5px; padding-right: 5px; vertical-align: top; }
- #zrhriefrtu .gt_row_group_first td { border-top-width: 2px; }
- #zrhriefrtu .gt_row_group_first th { border-top-width: 2px; }
- #zrhriefrtu .gt_striped { color: #333333; background-color: #F4F4F4; }
- #zrhriefrtu .gt_table_body { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
- #zrhriefrtu .gt_grand_summary_row { color: #333333; background-color: #FFFFFF; text-transform: inherit; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; }
- #zrhriefrtu .gt_first_grand_summary_row_bottom { border-top-style: double; border-top-width: 6px; border-top-color: #D3D3D3; }
- #zrhriefrtu .gt_last_grand_summary_row_top { border-bottom-style: double; border-bottom-width: 6px; border-bottom-color: #D3D3D3; }
- #zrhriefrtu .gt_sourcenotes { color: #333333; background-color: #FFFFFF; border-bottom-style: none; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; }
- #zrhriefrtu .gt_sourcenote { font-size: 90%; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; text-align: left; }
- #zrhriefrtu .gt_left { text-align: left; }
- #zrhriefrtu .gt_center { text-align: center; }
- #zrhriefrtu .gt_right { text-align: right; font-variant-numeric: tabular-nums; }
- #zrhriefrtu .gt_font_normal { font-weight: normal; }
- #zrhriefrtu .gt_font_bold { font-weight: bold; }
- #zrhriefrtu .gt_font_italic { font-style: italic; }
- #zrhriefrtu .gt_super { font-size: 65%; }
- #zrhriefrtu .gt_footnote_marks { font-size: 75%; vertical-align: 0.4em; position: initial; }
- #zrhriefrtu .gt_asterisk { font-size: 100%; vertical-align: 0; }
+#dajvispfak p { margin: 0; padding: 0; }
+ #dajvispfak .gt_table { display: table; border-collapse: collapse; line-height: normal; margin-left: auto; margin-right: auto; color: #333333; font-size: 16px; font-weight: normal; font-style: normal; background-color: #FFFFFF; width: auto; border-top-style: solid; border-top-width: 2px; border-top-color: #A8A8A8; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #A8A8A8; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; }
+ #dajvispfak .gt_caption { padding-top: 4px; padding-bottom: 4px; }
+ #dajvispfak .gt_title { color: #333333; font-size: 125%; font-weight: initial; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; border-bottom-color: #FFFFFF; border-bottom-width: 0; }
+ #dajvispfak .gt_subtitle { color: #333333; font-size: 85%; font-weight: initial; padding-top: 3px; padding-bottom: 5px; padding-left: 5px; padding-right: 5px; border-top-color: #FFFFFF; border-top-width: 0; }
+ #dajvispfak .gt_heading { background-color: #FFFFFF; text-align: center; border-bottom-color: #FFFFFF; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; }
+ #dajvispfak .gt_bottom_border { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
+ #dajvispfak .gt_col_headings { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; }
+ #dajvispfak .gt_col_heading { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 5px; padding-left: 5px; padding-right: 5px; overflow-x: hidden; }
+ #dajvispfak .gt_column_spanner_outer { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; padding-top: 0; padding-bottom: 0; padding-left: 4px; padding-right: 4px; }
+ #dajvispfak .gt_column_spanner_outer:first-child { padding-left: 0; }
+ #dajvispfak .gt_column_spanner_outer:last-child { padding-right: 0; }
+ #dajvispfak .gt_column_spanner { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 5px; overflow-x: hidden; display: inline-block; width: 100%; }
+ #dajvispfak .gt_spanner_row { border-bottom-style: hidden; }
+ #dajvispfak .gt_group_heading { padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; text-align: left; }
+ #dajvispfak .gt_empty_group_heading { padding: 0.5px; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; vertical-align: middle; }
+ #dajvispfak .gt_from_md> :first-child { margin-top: 0; }
+ #dajvispfak .gt_from_md> :last-child { margin-bottom: 0; }
+ #dajvispfak .gt_row { padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; }
+ #dajvispfak .gt_stub { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-right-style: solid; border-right-width: 2px; border-right-color: #D3D3D3; padding-left: 5px; padding-right: 5px; }
+ #dajvispfak .gt_stub_row_group { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-right-style: solid; border-right-width: 2px; border-right-color: #D3D3D3; padding-left: 5px; padding-right: 5px; vertical-align: top; }
+ #dajvispfak .gt_row_group_first td { border-top-width: 2px; }
+ #dajvispfak .gt_row_group_first th { border-top-width: 2px; }
+ #dajvispfak .gt_striped { color: #333333; background-color: #F4F4F4; }
+ #dajvispfak .gt_table_body { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
+ #dajvispfak .gt_grand_summary_row { color: #333333; background-color: #FFFFFF; text-transform: inherit; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; }
+ #dajvispfak .gt_first_grand_summary_row_bottom { border-top-style: double; border-top-width: 6px; border-top-color: #D3D3D3; }
+ #dajvispfak .gt_last_grand_summary_row_top { border-bottom-style: double; border-bottom-width: 6px; border-bottom-color: #D3D3D3; }
+ #dajvispfak .gt_sourcenotes { color: #333333; background-color: #FFFFFF; border-bottom-style: none; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; }
+ #dajvispfak .gt_sourcenote { font-size: 90%; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; text-align: left; }
+ #dajvispfak .gt_left { text-align: left; }
+ #dajvispfak .gt_center { text-align: center; }
+ #dajvispfak .gt_right { text-align: right; font-variant-numeric: tabular-nums; }
+ #dajvispfak .gt_font_normal { font-weight: normal; }
+ #dajvispfak .gt_font_bold { font-weight: bold; }
+ #dajvispfak .gt_font_italic { font-style: italic; }
+ #dajvispfak .gt_super { font-size: 65%; }
+ #dajvispfak .gt_footnote_marks { font-size: 75%; vertical-align: 0.4em; position: initial; }
+ #dajvispfak .gt_asterisk { font-size: 100%; vertical-align: 0; }
  
 </style>
 
@@ -461,7 +461,7 @@ window.Quarto = {
 <p>The bootstrap gave us a standard error, but where does the 1.96 multiplier for the confidence interval come from? It comes from the <strong>Central Limit Theorem (CLT)</strong> — arguably the most important result in all of statistics.</p>
 <p>The CLT states: regardless of the shape of the underlying population distribution, the sampling distribution of the sample mean becomes approximately <strong>Normal</strong> as the sample size grows. For our estimator <span class="math inline">\(\hat{\theta} = \bar{X}_A - \bar{X}_B\)</span>, this means that for large enough samples, <span class="math inline">\(\hat{\theta}\)</span> is approximately Normal with mean <span class="math inline">\(\theta\)</span> and standard deviation <span class="math inline">\(SE(\hat{\theta})\)</span>.</p>
 <p>The remarkable thing is that our data are Bernoulli — binary 0/1 values, as far from bell-shaped as you can get — yet the distribution of their <em>average</em> converges to a Normal. Let’s watch it happen.</p>
-<div id="6b9a86f6" class="cell" data-execution_count="8">
+<div id="42a59ad6" class="cell" data-execution_count="8">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>sample_sizes  <span class="op">=</span> [<span class="dv">25</span>, <span class="dv">50</span>, <span class="dv">100</span>, <span class="dv">500</span>]</span>
@@ -476,7 +476,7 @@ window.Quarto = {
 <span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>    theta_distributions[n] <span class="op">=</span> thetas</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
-<div id="17720512" class="cell" data-execution_count="9">
+<div id="ffb4931e" class="cell" data-execution_count="9">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -505,7 +505,7 @@ window.Quarto = {
 <p><span class="math display">\[z \;\dot{\sim}\; N(0,1) \quad \text{under } H_0\]</span></p>
 <p>This is powerful: we now know the <em>exact</em> (approximate) distribution of our test statistic under the null, which lets us compute a <strong>p-value</strong> — the probability of observing a <span class="math inline">\(z\)</span> this extreme or more extreme if <span class="math inline">\(H_0\)</span> were true. If the p-value is below our threshold <span class="math inline">\(\alpha = 0.05\)</span>, we reject <span class="math inline">\(H_0\)</span>.</p>
 <p><strong>A note on nomenclature.</strong> You’ll sometimes hear this called a “t-test.” Technically, the classical t-test was derived for data drawn from a Normal distribution with an unknown variance — in that setting the test statistic follows an exact t-distribution, not a Normal. Our data are Bernoulli, so no such exact result applies. What we’re really doing is a <strong>z-test</strong> justified by the CLT. For large samples (<span class="math inline">\(n \geq 30\)</span> or so), the t-distribution and the standard Normal are nearly indistinguishable, so the practical difference is negligible — but the conceptual distinction matters.</p>
-<div id="04d7f2ee" class="cell" data-execution_count="10">
+<div id="1e87d13e" class="cell" data-execution_count="10">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>se_test <span class="op">=</span> se_analytical</span>
@@ -524,57 +524,57 @@ z-stat   = 2.1388
 p-value  = 0.0325</code></pre>
 </div>
 </div>
-<div id="41c39b15" class="cell" data-execution_count="11">
+<div id="d44bb42d" class="cell" data-execution_count="11">
 <div class="cell-output cell-output-display" data-execution_count="11">
-<div id="luwolqbhxg" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="fjmkfvuyzm" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>
-#luwolqbhxg table {
+#fjmkfvuyzm table {
           font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
           -webkit-font-smoothing: antialiased;
           -moz-osx-font-smoothing: grayscale;
         }
 
-#luwolqbhxg thead, tbody, tfoot, tr, td, th { border-style: none; }
+#fjmkfvuyzm thead, tbody, tfoot, tr, td, th { border-style: none; }
  tr { background-color: transparent; }
-#luwolqbhxg p { margin: 0; padding: 0; }
- #luwolqbhxg .gt_table { display: table; border-collapse: collapse; line-height: normal; margin-left: auto; margin-right: auto; color: #333333; font-size: 16px; font-weight: normal; font-style: normal; background-color: #FFFFFF; width: auto; border-top-style: solid; border-top-width: 2px; border-top-color: #A8A8A8; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #A8A8A8; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; }
- #luwolqbhxg .gt_caption { padding-top: 4px; padding-bottom: 4px; }
- #luwolqbhxg .gt_title { color: #333333; font-size: 125%; font-weight: initial; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; border-bottom-color: #FFFFFF; border-bottom-width: 0; }
- #luwolqbhxg .gt_subtitle { color: #333333; font-size: 85%; font-weight: initial; padding-top: 3px; padding-bottom: 5px; padding-left: 5px; padding-right: 5px; border-top-color: #FFFFFF; border-top-width: 0; }
- #luwolqbhxg .gt_heading { background-color: #FFFFFF; text-align: center; border-bottom-color: #FFFFFF; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; }
- #luwolqbhxg .gt_bottom_border { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
- #luwolqbhxg .gt_col_headings { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; }
- #luwolqbhxg .gt_col_heading { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 5px; padding-left: 5px; padding-right: 5px; overflow-x: hidden; }
- #luwolqbhxg .gt_column_spanner_outer { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; padding-top: 0; padding-bottom: 0; padding-left: 4px; padding-right: 4px; }
- #luwolqbhxg .gt_column_spanner_outer:first-child { padding-left: 0; }
- #luwolqbhxg .gt_column_spanner_outer:last-child { padding-right: 0; }
- #luwolqbhxg .gt_column_spanner { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 5px; overflow-x: hidden; display: inline-block; width: 100%; }
- #luwolqbhxg .gt_spanner_row { border-bottom-style: hidden; }
- #luwolqbhxg .gt_group_heading { padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; text-align: left; }
- #luwolqbhxg .gt_empty_group_heading { padding: 0.5px; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; vertical-align: middle; }
- #luwolqbhxg .gt_from_md> :first-child { margin-top: 0; }
- #luwolqbhxg .gt_from_md> :last-child { margin-bottom: 0; }
- #luwolqbhxg .gt_row { padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; }
- #luwolqbhxg .gt_stub { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-right-style: solid; border-right-width: 2px; border-right-color: #D3D3D3; padding-left: 5px; padding-right: 5px; }
- #luwolqbhxg .gt_stub_row_group { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-right-style: solid; border-right-width: 2px; border-right-color: #D3D3D3; padding-left: 5px; padding-right: 5px; vertical-align: top; }
- #luwolqbhxg .gt_row_group_first td { border-top-width: 2px; }
- #luwolqbhxg .gt_row_group_first th { border-top-width: 2px; }
- #luwolqbhxg .gt_striped { color: #333333; background-color: #F4F4F4; }
- #luwolqbhxg .gt_table_body { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
- #luwolqbhxg .gt_grand_summary_row { color: #333333; background-color: #FFFFFF; text-transform: inherit; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; }
- #luwolqbhxg .gt_first_grand_summary_row_bottom { border-top-style: double; border-top-width: 6px; border-top-color: #D3D3D3; }
- #luwolqbhxg .gt_last_grand_summary_row_top { border-bottom-style: double; border-bottom-width: 6px; border-bottom-color: #D3D3D3; }
- #luwolqbhxg .gt_sourcenotes { color: #333333; background-color: #FFFFFF; border-bottom-style: none; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; }
- #luwolqbhxg .gt_sourcenote { font-size: 90%; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; text-align: left; }
- #luwolqbhxg .gt_left { text-align: left; }
- #luwolqbhxg .gt_center { text-align: center; }
- #luwolqbhxg .gt_right { text-align: right; font-variant-numeric: tabular-nums; }
- #luwolqbhxg .gt_font_normal { font-weight: normal; }
- #luwolqbhxg .gt_font_bold { font-weight: bold; }
- #luwolqbhxg .gt_font_italic { font-style: italic; }
- #luwolqbhxg .gt_super { font-size: 65%; }
- #luwolqbhxg .gt_footnote_marks { font-size: 75%; vertical-align: 0.4em; position: initial; }
- #luwolqbhxg .gt_asterisk { font-size: 100%; vertical-align: 0; }
+#fjmkfvuyzm p { margin: 0; padding: 0; }
+ #fjmkfvuyzm .gt_table { display: table; border-collapse: collapse; line-height: normal; margin-left: auto; margin-right: auto; color: #333333; font-size: 16px; font-weight: normal; font-style: normal; background-color: #FFFFFF; width: auto; border-top-style: solid; border-top-width: 2px; border-top-color: #A8A8A8; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #A8A8A8; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; }
+ #fjmkfvuyzm .gt_caption { padding-top: 4px; padding-bottom: 4px; }
+ #fjmkfvuyzm .gt_title { color: #333333; font-size: 125%; font-weight: initial; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; border-bottom-color: #FFFFFF; border-bottom-width: 0; }
+ #fjmkfvuyzm .gt_subtitle { color: #333333; font-size: 85%; font-weight: initial; padding-top: 3px; padding-bottom: 5px; padding-left: 5px; padding-right: 5px; border-top-color: #FFFFFF; border-top-width: 0; }
+ #fjmkfvuyzm .gt_heading { background-color: #FFFFFF; text-align: center; border-bottom-color: #FFFFFF; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; }
+ #fjmkfvuyzm .gt_bottom_border { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
+ #fjmkfvuyzm .gt_col_headings { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; }
+ #fjmkfvuyzm .gt_col_heading { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 5px; padding-left: 5px; padding-right: 5px; overflow-x: hidden; }
+ #fjmkfvuyzm .gt_column_spanner_outer { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; padding-top: 0; padding-bottom: 0; padding-left: 4px; padding-right: 4px; }
+ #fjmkfvuyzm .gt_column_spanner_outer:first-child { padding-left: 0; }
+ #fjmkfvuyzm .gt_column_spanner_outer:last-child { padding-right: 0; }
+ #fjmkfvuyzm .gt_column_spanner { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 5px; overflow-x: hidden; display: inline-block; width: 100%; }
+ #fjmkfvuyzm .gt_spanner_row { border-bottom-style: hidden; }
+ #fjmkfvuyzm .gt_group_heading { padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; text-align: left; }
+ #fjmkfvuyzm .gt_empty_group_heading { padding: 0.5px; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; vertical-align: middle; }
+ #fjmkfvuyzm .gt_from_md> :first-child { margin-top: 0; }
+ #fjmkfvuyzm .gt_from_md> :last-child { margin-bottom: 0; }
+ #fjmkfvuyzm .gt_row { padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; }
+ #fjmkfvuyzm .gt_stub { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-right-style: solid; border-right-width: 2px; border-right-color: #D3D3D3; padding-left: 5px; padding-right: 5px; }
+ #fjmkfvuyzm .gt_stub_row_group { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-right-style: solid; border-right-width: 2px; border-right-color: #D3D3D3; padding-left: 5px; padding-right: 5px; vertical-align: top; }
+ #fjmkfvuyzm .gt_row_group_first td { border-top-width: 2px; }
+ #fjmkfvuyzm .gt_row_group_first th { border-top-width: 2px; }
+ #fjmkfvuyzm .gt_striped { color: #333333; background-color: #F4F4F4; }
+ #fjmkfvuyzm .gt_table_body { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
+ #fjmkfvuyzm .gt_grand_summary_row { color: #333333; background-color: #FFFFFF; text-transform: inherit; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; }
+ #fjmkfvuyzm .gt_first_grand_summary_row_bottom { border-top-style: double; border-top-width: 6px; border-top-color: #D3D3D3; }
+ #fjmkfvuyzm .gt_last_grand_summary_row_top { border-bottom-style: double; border-bottom-width: 6px; border-bottom-color: #D3D3D3; }
+ #fjmkfvuyzm .gt_sourcenotes { color: #333333; background-color: #FFFFFF; border-bottom-style: none; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; }
+ #fjmkfvuyzm .gt_sourcenote { font-size: 90%; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; text-align: left; }
+ #fjmkfvuyzm .gt_left { text-align: left; }
+ #fjmkfvuyzm .gt_center { text-align: center; }
+ #fjmkfvuyzm .gt_right { text-align: right; font-variant-numeric: tabular-nums; }
+ #fjmkfvuyzm .gt_font_normal { font-weight: normal; }
+ #fjmkfvuyzm .gt_font_bold { font-weight: bold; }
+ #fjmkfvuyzm .gt_font_italic { font-style: italic; }
+ #fjmkfvuyzm .gt_super { font-size: 65%; }
+ #fjmkfvuyzm .gt_footnote_marks { font-size: 75%; vertical-align: 0.4em; position: initial; }
+ #fjmkfvuyzm .gt_asterisk { font-size: 100%; vertical-align: 0; }
  
 </style>
 
@@ -635,7 +635,7 @@ p-value  = 0.0325</code></pre>
 <li><span class="math inline">\(\beta_0 + \beta_1 = E[Y_i \mid D_i = 1] = \pi_A\)</span> — the CTA A sign-up rate</li>
 <li><span class="math inline">\(\beta_1 = \pi_A - \pi_B = \theta\)</span> — exactly the quantity we care about</li>
 </ol>
-<div id="cfb3856c" class="cell" data-execution_count="12">
+<div id="d3410687" class="cell" data-execution_count="12">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame({</span>
@@ -646,57 +646,57 @@ p-value  = 0.0325</code></pre>
 <span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>model  <span class="op">=</span> smf.ols(<span class="st">"Y ~ D"</span>, data<span class="op">=</span>df).fit()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
-<div id="a03d11c9" class="cell" data-execution_count="13">
+<div id="598146ef" class="cell" data-execution_count="13">
 <div class="cell-output cell-output-display" data-execution_count="13">
-<div id="rbkxetdueh" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="felvhvdvfz" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>
-#rbkxetdueh table {
+#felvhvdvfz table {
           font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
           -webkit-font-smoothing: antialiased;
           -moz-osx-font-smoothing: grayscale;
         }
 
-#rbkxetdueh thead, tbody, tfoot, tr, td, th { border-style: none; }
+#felvhvdvfz thead, tbody, tfoot, tr, td, th { border-style: none; }
  tr { background-color: transparent; }
-#rbkxetdueh p { margin: 0; padding: 0; }
- #rbkxetdueh .gt_table { display: table; border-collapse: collapse; line-height: normal; margin-left: auto; margin-right: auto; color: #333333; font-size: 16px; font-weight: normal; font-style: normal; background-color: #FFFFFF; width: auto; border-top-style: solid; border-top-width: 2px; border-top-color: #A8A8A8; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #A8A8A8; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; }
- #rbkxetdueh .gt_caption { padding-top: 4px; padding-bottom: 4px; }
- #rbkxetdueh .gt_title { color: #333333; font-size: 125%; font-weight: initial; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; border-bottom-color: #FFFFFF; border-bottom-width: 0; }
- #rbkxetdueh .gt_subtitle { color: #333333; font-size: 85%; font-weight: initial; padding-top: 3px; padding-bottom: 5px; padding-left: 5px; padding-right: 5px; border-top-color: #FFFFFF; border-top-width: 0; }
- #rbkxetdueh .gt_heading { background-color: #FFFFFF; text-align: center; border-bottom-color: #FFFFFF; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; }
- #rbkxetdueh .gt_bottom_border { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
- #rbkxetdueh .gt_col_headings { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; }
- #rbkxetdueh .gt_col_heading { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 5px; padding-left: 5px; padding-right: 5px; overflow-x: hidden; }
- #rbkxetdueh .gt_column_spanner_outer { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; padding-top: 0; padding-bottom: 0; padding-left: 4px; padding-right: 4px; }
- #rbkxetdueh .gt_column_spanner_outer:first-child { padding-left: 0; }
- #rbkxetdueh .gt_column_spanner_outer:last-child { padding-right: 0; }
- #rbkxetdueh .gt_column_spanner { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 5px; overflow-x: hidden; display: inline-block; width: 100%; }
- #rbkxetdueh .gt_spanner_row { border-bottom-style: hidden; }
- #rbkxetdueh .gt_group_heading { padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; text-align: left; }
- #rbkxetdueh .gt_empty_group_heading { padding: 0.5px; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; vertical-align: middle; }
- #rbkxetdueh .gt_from_md> :first-child { margin-top: 0; }
- #rbkxetdueh .gt_from_md> :last-child { margin-bottom: 0; }
- #rbkxetdueh .gt_row { padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; }
- #rbkxetdueh .gt_stub { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-right-style: solid; border-right-width: 2px; border-right-color: #D3D3D3; padding-left: 5px; padding-right: 5px; }
- #rbkxetdueh .gt_stub_row_group { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-right-style: solid; border-right-width: 2px; border-right-color: #D3D3D3; padding-left: 5px; padding-right: 5px; vertical-align: top; }
- #rbkxetdueh .gt_row_group_first td { border-top-width: 2px; }
- #rbkxetdueh .gt_row_group_first th { border-top-width: 2px; }
- #rbkxetdueh .gt_striped { color: #333333; background-color: #F4F4F4; }
- #rbkxetdueh .gt_table_body { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
- #rbkxetdueh .gt_grand_summary_row { color: #333333; background-color: #FFFFFF; text-transform: inherit; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; }
- #rbkxetdueh .gt_first_grand_summary_row_bottom { border-top-style: double; border-top-width: 6px; border-top-color: #D3D3D3; }
- #rbkxetdueh .gt_last_grand_summary_row_top { border-bottom-style: double; border-bottom-width: 6px; border-bottom-color: #D3D3D3; }
- #rbkxetdueh .gt_sourcenotes { color: #333333; background-color: #FFFFFF; border-bottom-style: none; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; }
- #rbkxetdueh .gt_sourcenote { font-size: 90%; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; text-align: left; }
- #rbkxetdueh .gt_left { text-align: left; }
- #rbkxetdueh .gt_center { text-align: center; }
- #rbkxetdueh .gt_right { text-align: right; font-variant-numeric: tabular-nums; }
- #rbkxetdueh .gt_font_normal { font-weight: normal; }
- #rbkxetdueh .gt_font_bold { font-weight: bold; }
- #rbkxetdueh .gt_font_italic { font-style: italic; }
- #rbkxetdueh .gt_super { font-size: 65%; }
- #rbkxetdueh .gt_footnote_marks { font-size: 75%; vertical-align: 0.4em; position: initial; }
- #rbkxetdueh .gt_asterisk { font-size: 100%; vertical-align: 0; }
+#felvhvdvfz p { margin: 0; padding: 0; }
+ #felvhvdvfz .gt_table { display: table; border-collapse: collapse; line-height: normal; margin-left: auto; margin-right: auto; color: #333333; font-size: 16px; font-weight: normal; font-style: normal; background-color: #FFFFFF; width: auto; border-top-style: solid; border-top-width: 2px; border-top-color: #A8A8A8; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #A8A8A8; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; }
+ #felvhvdvfz .gt_caption { padding-top: 4px; padding-bottom: 4px; }
+ #felvhvdvfz .gt_title { color: #333333; font-size: 125%; font-weight: initial; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; border-bottom-color: #FFFFFF; border-bottom-width: 0; }
+ #felvhvdvfz .gt_subtitle { color: #333333; font-size: 85%; font-weight: initial; padding-top: 3px; padding-bottom: 5px; padding-left: 5px; padding-right: 5px; border-top-color: #FFFFFF; border-top-width: 0; }
+ #felvhvdvfz .gt_heading { background-color: #FFFFFF; text-align: center; border-bottom-color: #FFFFFF; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; }
+ #felvhvdvfz .gt_bottom_border { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
+ #felvhvdvfz .gt_col_headings { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; }
+ #felvhvdvfz .gt_col_heading { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 5px; padding-left: 5px; padding-right: 5px; overflow-x: hidden; }
+ #felvhvdvfz .gt_column_spanner_outer { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; padding-top: 0; padding-bottom: 0; padding-left: 4px; padding-right: 4px; }
+ #felvhvdvfz .gt_column_spanner_outer:first-child { padding-left: 0; }
+ #felvhvdvfz .gt_column_spanner_outer:last-child { padding-right: 0; }
+ #felvhvdvfz .gt_column_spanner { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 5px; overflow-x: hidden; display: inline-block; width: 100%; }
+ #felvhvdvfz .gt_spanner_row { border-bottom-style: hidden; }
+ #felvhvdvfz .gt_group_heading { padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; text-align: left; }
+ #felvhvdvfz .gt_empty_group_heading { padding: 0.5px; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; vertical-align: middle; }
+ #felvhvdvfz .gt_from_md> :first-child { margin-top: 0; }
+ #felvhvdvfz .gt_from_md> :last-child { margin-bottom: 0; }
+ #felvhvdvfz .gt_row { padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; }
+ #felvhvdvfz .gt_stub { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-right-style: solid; border-right-width: 2px; border-right-color: #D3D3D3; padding-left: 5px; padding-right: 5px; }
+ #felvhvdvfz .gt_stub_row_group { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-right-style: solid; border-right-width: 2px; border-right-color: #D3D3D3; padding-left: 5px; padding-right: 5px; vertical-align: top; }
+ #felvhvdvfz .gt_row_group_first td { border-top-width: 2px; }
+ #felvhvdvfz .gt_row_group_first th { border-top-width: 2px; }
+ #felvhvdvfz .gt_striped { color: #333333; background-color: #F4F4F4; }
+ #felvhvdvfz .gt_table_body { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
+ #felvhvdvfz .gt_grand_summary_row { color: #333333; background-color: #FFFFFF; text-transform: inherit; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; }
+ #felvhvdvfz .gt_first_grand_summary_row_bottom { border-top-style: double; border-top-width: 6px; border-top-color: #D3D3D3; }
+ #felvhvdvfz .gt_last_grand_summary_row_top { border-bottom-style: double; border-bottom-width: 6px; border-bottom-color: #D3D3D3; }
+ #felvhvdvfz .gt_sourcenotes { color: #333333; background-color: #FFFFFF; border-bottom-style: none; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; }
+ #felvhvdvfz .gt_sourcenote { font-size: 90%; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; text-align: left; }
+ #felvhvdvfz .gt_left { text-align: left; }
+ #felvhvdvfz .gt_center { text-align: center; }
+ #felvhvdvfz .gt_right { text-align: right; font-variant-numeric: tabular-nums; }
+ #felvhvdvfz .gt_font_normal { font-weight: normal; }
+ #felvhvdvfz .gt_font_bold { font-weight: bold; }
+ #felvhvdvfz .gt_font_italic { font-style: italic; }
+ #felvhvdvfz .gt_super { font-size: 65%; }
+ #felvhvdvfz .gt_footnote_marks { font-size: 75%; vertical-align: 0.4em; position: initial; }
+ #felvhvdvfz .gt_asterisk { font-size: 100%; vertical-align: 0; }
  
 </style>
 
@@ -754,7 +754,7 @@ p-value  = 0.0325</code></pre>
 <p>Imagine your boss is impatient. Rather than waiting for all 1,000 visitors per group, she proposes checking the results every 100 visitors — at <span class="math inline">\(n = 100, 200, \ldots, 1{,}000\)</span> — and stopping as soon as any check yields a p-value below 0.05. Sounds reasonable, right? It’s not.</p>
 <p>The problem is <strong>Type I error inflation</strong>. A single test at <span class="math inline">\(\alpha = 0.05\)</span> has, by construction, a 5% chance of a false positive — rejecting <span class="math inline">\(H_0\)</span> when it’s actually true. But each peek is an additional opportunity to get a false positive. Across 10 peeks, the cumulative probability of at least one spurious rejection is far higher than 5%, even when there is no real effect.</p>
 <p>Let’s quantify this with a simulation. We’ll set up a world where <strong>the null is actually true</strong> (<span class="math inline">\(\pi_A = \pi_B = 0.20\)</span>, so <span class="math inline">\(\theta = 0\)</span>), run 10,000 experiments with peeking, and measure how often we incorrectly reject <span class="math inline">\(H_0\)</span>.</p>
-<div id="728c1d9b" class="cell" data-execution_count="14">
+<div id="ac2562ec" class="cell" data-execution_count="14">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>np.random.seed(<span class="dv">0</span>)</span>
@@ -791,7 +791,7 @@ p-value  = 0.0325</code></pre>
 Empirical false positive rate (with peeking): 18.92%</code></pre>
 </div>
 </div>
-<div id="6c803045" class="cell" data-execution_count="15">
+<div id="e8932931" class="cell" data-execution_count="15">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -809,7 +809,8 @@ Empirical false positive rate (with peeking): 18.92%</code></pre>
 <li>If you need interim analyses, use a <strong>sequential testing procedure</strong> (like the O’Brien-Fleming correction or a Bayesian approach) that explicitly accounts for multiple looks.</li>
 <li>Alternatively, use <strong>always-valid confidence sequences</strong>, which are designed to remain valid no matter when you stop.</li>
 </ul>
-<p>The bottom line: A/B testing is a powerful tool, but its validity depends on honoring the statistical contract. Peeking breaks that contract — and the cost is a dramatic increase in false discoveries.</p>
+<p>The bottom line: A/B testing is a powerful tool, but its validity depends on honoring the statistical contract. Peeking breaks that contract — and the cost is a dramatic increase in false discoveries. ### Business Takeaway</p>
+<p>The results suggest CTA A outperforms CTA B by approximately 3.8 percentage points. In practical terms, this means that for every 1,000 users, CTA A could generate about 38 additional conversions. This difference is not only statistically significant but also meaningful from a business perspective.</p>
 
 
 <!-- -->
@@ -1271,7 +1272,7 @@ Empirical false positive rate (with peeking): 18.92%</code></pre>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "A/B Testing a Call to Action"</span></span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="an">subtitle:</span><span class="co"> "Simulating Key Ideas from Classical Frequentist Statistics"</span></span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> "Shreya"</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> "Shreya Anekar"</span></span>
 <span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> today</span></span>
 <span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a><span class="an">categories:</span><span class="co"> [statistics, simulation, A/B testing, python]</span></span>
 <span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a><span class="an">image:</span><span class="co"> thumbnail.png</span></span>
@@ -1783,13 +1784,19 @@ Empirical false positive rate (with peeking): 18.92%</code></pre>
 <span id="cb12-543"><a href="#cb12-543" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb12-544"><a href="#cb12-544" aria-hidden="true" tabindex="-1"></a>This isn't a flaw in the data or the test — it's a consequence of repeatedly applying a procedure that was designed for a single use. Each peek is effectively a new test, and each one carries its own 5% false positive risk. The more peeks, the more opportunities to be fooled by random noise.</span>
 <span id="cb12-545"><a href="#cb12-545" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-546"><a href="#cb12-546" aria-hidden="true" tabindex="-1"></a>**What should you do instead?** </span>
+<span id="cb12-546"><a href="#cb12-546" aria-hidden="true" tabindex="-1"></a>**What should you do instead?**</span>
 <span id="cb12-547"><a href="#cb12-547" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb12-548"><a href="#cb12-548" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Pre-register your sample size** and commit to looking only at the end.</span>
 <span id="cb12-549"><a href="#cb12-549" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>If you need interim analyses, use a **sequential testing procedure** (like the O'Brien-Fleming correction or a Bayesian approach) that explicitly accounts for multiple looks.</span>
 <span id="cb12-550"><a href="#cb12-550" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Alternatively, use **always-valid confidence sequences**, which are designed to remain valid no matter when you stop.</span>
 <span id="cb12-551"><a href="#cb12-551" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb12-552"><a href="#cb12-552" aria-hidden="true" tabindex="-1"></a>The bottom line: A/B testing is a powerful tool, but its validity depends on honoring the statistical contract. Peeking breaks that contract — and the cost is a dramatic increase in false discoveries.</span>
+<span id="cb12-553"><a href="#cb12-553" aria-hidden="true" tabindex="-1"></a><span class="fu">### Business Takeaway</span></span>
+<span id="cb12-554"><a href="#cb12-554" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-555"><a href="#cb12-555" aria-hidden="true" tabindex="-1"></a>The results suggest CTA A outperforms CTA B by approximately 3.8 percentage points.</span>
+<span id="cb12-556"><a href="#cb12-556" aria-hidden="true" tabindex="-1"></a>In practical terms, this means that for every 1,000 users, CTA A could generate about</span>
+<span id="cb12-557"><a href="#cb12-557" aria-hidden="true" tabindex="-1"></a>38 additional conversions. This difference is not only statistically significant but</span>
+<span id="cb12-558"><a href="#cb12-558" aria-hidden="true" tabindex="-1"></a>also meaningful from a business perspective.</span>
 </code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->

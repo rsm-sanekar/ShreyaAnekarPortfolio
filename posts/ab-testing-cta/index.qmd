@@ -1,7 +1,7 @@
 ---
 title: "A/B Testing a Call to Action"
 subtitle: "Simulating Key Ideas from Classical Frequentist Statistics"
-author: "Shreya"
+author: "Shreya Anekar"
 date: today
 categories: [statistics, simulation, A/B testing, python]
 image: thumbnail.png
@@ -513,10 +513,16 @@ The result is sobering. While a single pre-planned test incorrectly rejects the 
 
 This isn't a flaw in the data or the test — it's a consequence of repeatedly applying a procedure that was designed for a single use. Each peek is effectively a new test, and each one carries its own 5% false positive risk. The more peeks, the more opportunities to be fooled by random noise.
 
-**What should you do instead?** 
+**What should you do instead?**
 
 - **Pre-register your sample size** and commit to looking only at the end.
 - If you need interim analyses, use a **sequential testing procedure** (like the O'Brien-Fleming correction or a Bayesian approach) that explicitly accounts for multiple looks.
 - Alternatively, use **always-valid confidence sequences**, which are designed to remain valid no matter when you stop.
 
 The bottom line: A/B testing is a powerful tool, but its validity depends on honoring the statistical contract. Peeking breaks that contract — and the cost is a dramatic increase in false discoveries.
+### Business Takeaway
+
+The results suggest CTA A outperforms CTA B by approximately 3.8 percentage points.
+In practical terms, this means that for every 1,000 users, CTA A could generate about
+38 additional conversions. This difference is not only statistically significant but
+also meaningful from a business perspective.
