@@ -323,7 +323,7 @@ $$z \;\dot{\sim}\; N(0,1) \quad \text{under } H_0$$
 
 This is powerful: we now know the *exact* (approximate) distribution of our test statistic under the null, which lets us compute a **p-value** — the probability of observing a $z$ this extreme or more extreme if $H_0$ were true. If the p-value is below our threshold $\alpha = 0.05$, we reject $H_0$.
 
-**A note on nomenclature.** You'll sometimes hear this called a "t-test." Technically, the classical t-test was derived for data drawn from a Normal distribution with an unknown variance — in that setting the test statistic follows an exact t-distribution, not a Normal. Our data are Bernoulli, so no such exact result applies. What we're really doing is a **z-test** justified by the CLT. For large samples ($n \geq 30$ or so), the t-distribution and the standard Normal are nearly indistinguishable, so the practical difference is negligible — but the conceptual distinction matters.
+**A note on nomenclature.** You'll sometimes hear this called a "t-test." Technically, the classical t-test was derived for data drawn from a Normal distribution with an unknown variance — in that setting, the test statistic follows an exact t-distribution, not a Normal. Our data are Bernoulli, so no such exact result applies. What we're really doing is a **z-test** justified by the CLT. For large samples ($n \geq 30$ or so), the t-distribution and the standard Normal are nearly indistinguishable, so the practical difference is negligible — but the conceptual distinction matters.
 
 ```{python}
 #| echo: true
@@ -520,9 +520,9 @@ This isn't a flaw in the data or the test — it's a consequence of repeatedly a
 - Alternatively, use **always-valid confidence sequences**, which are designed to remain valid no matter when you stop.
 
 The bottom line: A/B testing is a powerful tool, but its validity depends on honoring the statistical contract. Peeking breaks that contract — and the cost is a dramatic increase in false discoveries.
-### Business Takeaway
 
-The results suggest CTA A outperforms CTA B by approximately 3.8 percentage points.
-In practical terms, this means that for every 1,000 users, CTA A could generate about
-38 additional conversions. This difference is not only statistically significant but
-also meaningful from a business perspective.
+---
+
+## Business Takeaway
+
+The results suggest CTA A outperforms CTA B by approximately 3.8 percentage points. In practical terms, this means that switching from CTA B to CTA A could generate roughly 38 additional sign-ups per 1,000 visitors. This difference is not only statistically significant but also meaningful from a business perspective.
