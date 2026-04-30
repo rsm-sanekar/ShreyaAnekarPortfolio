@@ -1,18 +1,18 @@
 [
   {
+    "listing": "/blog.html",
+    "items": [
+      "/posts/card-krueger-1994/index.html",
+      "/posts/ab-testing-cta/index.html"
+    ]
+  },
+  {
     "listing": "/projects.html",
     "items": [
       "/projects/Project4/index.html",
       "/projects/project1/index.html",
       "/projects/project3/index.html",
       "/projects/project2/index.html"
-    ]
-  },
-  {
-    "listing": "/blog.html",
-    "items": [
-      "/posts/card-krueger-1994/index.html",
-      "/posts/ab-testing-cta/index.html"
     ]
   }
 ]
