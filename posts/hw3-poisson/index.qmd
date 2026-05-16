@@ -450,29 +450,34 @@ The Custom MLE column and the GLM column are identical to four decimal places �
 
 ```{python}
 #| echo: false
-#| fig-cap: "Coefficient plot for the Poisson regression. Error bars show ±1.96 SE (95% confidence interval). The customer effect and both age terms are the only predictors with confidence intervals that clearly exclude zero."
+#| fig-cap: "Coefficient plot for the Poisson regression (intercept excluded for scale). Error bars show ±1.96 SE (95% confidence interval). The customer effect and both age terms are the only predictors with confidence intervals that clearly exclude zero."
 
-fig, ax = plt.subplots(figsize=(9, 5))
+# Exclude intercept — it's on a very different scale and not substantively interesting
+plot_names  = col_names[1:]
+plot_betas  = glm.params[1:]
+plot_ses    = glm.bse[1:]
 
-betas = glm.params
-ses   = glm.bse
-labels = col_names
-colors_list = [RED if abs(b/s) > 1.96 else GRAY for b, s in zip(betas, ses)]
+colors_list = [RED if abs(b/s) > 1.96 else GRAY for b, s in zip(plot_betas, plot_ses)]
 colors_list[-1] = BLUE  # iscustomer always highlighted
 
-y_pos = np.arange(len(labels))
-ax.barh(y_pos, betas, xerr=1.96*ses, color=colors_list, alpha=0.85,
-        error_kw=dict(ecolor='#374151', capsize=4, lw=1.5), edgecolor='white')
+y_pos = np.arange(len(plot_names))
+
+fig, ax = plt.subplots(figsize=(9, 5))
+fig.subplots_adjust(left=0.18)   # extra left margin so labels aren't clipped
+
+ax.barh(y_pos, plot_betas, xerr=1.96*plot_ses, color=colors_list, alpha=0.85,
+        error_kw=dict(ecolor='#374151', capsize=4, lw=1.5), edgecolor='white',
+        height=0.55)
 ax.axvline(0, color='#374151', lw=1.2, ls='--')
 ax.set_yticks(y_pos)
-ax.set_yticklabels(labels, fontsize=10)
+ax.set_yticklabels(plot_names, fontsize=11)
 ax.set_xlabel("Coefficient estimate (log scale)")
 ax.set_title("Poisson Regression Coefficients with 95% Confidence Intervals")
 
 legend_elements = [
-    plt.Rectangle((0,0),1,1, facecolor=BLUE, alpha=0.85, label='iscustomer (key variable)'),
-    plt.Rectangle((0,0),1,1, facecolor=RED, alpha=0.85, label='Statistically significant (p < 0.05)'),
-    plt.Rectangle((0,0),1,1, facecolor=GRAY, alpha=0.85, label='Not significant'),
+    plt.Rectangle((0,0),1,1, facecolor=BLUE,  alpha=0.85, label='iscustomer (key variable)'),
+    plt.Rectangle((0,0),1,1, facecolor=RED,   alpha=0.85, label='Statistically significant (p < 0.05)'),
+    plt.Rectangle((0,0),1,1, facecolor=GRAY,  alpha=0.85, label='Not significant'),
 ]
 ax.legend(handles=legend_elements, loc='lower right', fontsize=8.5, frameon=True)
 plt.tight_layout()
