@@ -358,7 +358,6 @@ result_reg = sp_opt.minimize(
     neg_ll, beta0,
     jac=grad,
     method='BFGS',
-    hess_inv_update=True,
     options={'maxiter': 10_000, 'gtol': 1e-8}
 )
 beta_hat = result_reg.x
