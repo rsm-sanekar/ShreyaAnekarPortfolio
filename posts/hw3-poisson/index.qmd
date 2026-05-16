@@ -347,7 +347,7 @@ def neg_ll(beta):
     return -poisson_regression_loglikelihood(beta, Y, X)
 
 def grad(beta):
-    """Analytical gradient (negative log-likelihood)."""
+    """Analytical gradient of the negative log-likelihood."""
     lam = np.exp(np.clip(X @ beta, -30, 30))
     return -(X.T @ (Y - lam))
 
@@ -358,25 +358,40 @@ result_reg = sp_opt.minimize(
     neg_ll, beta0,
     jac=grad,
     method='BFGS',
+    hess_inv_update=True,
     options={'maxiter': 10_000, 'gtol': 1e-8}
 )
 beta_hat = result_reg.x
 ```
 
-Standard errors come from the **observed Fisher information matrix**, $\mathcal{I}(\hat\beta) = X^\top \text{diag}(\hat\lambda) X$. At the MLE, the negative Hessian of the log-likelihood equals this matrix, and its inverse is the asymptotic variance-covariance matrix of $\hat\beta$:
+To get standard errors, we need the **Hessian** of the log-likelihood evaluated at $\hat\beta$. The asymptotic variance-covariance matrix of the MLE is the negative inverse of that Hessian:
+
+$$\widehat{\text{Var}}(\hat\beta) = \left[ -\frac{\partial^2 \ell}{\partial\beta\,\partial\beta^\top} \Big|_{\hat\beta} \right]^{-1}$$
+
+Standard errors are the square roots of the diagonal entries. We compute the Hessian numerically using `scipy.optimize.approx_fprime`:
 
 ```{python}
 #| echo: true
 
-lam_hat = np.exp(np.clip(X @ beta_hat, -30, 30))
-fisher_info = X.T @ (lam_hat[:, None] * X)   # X^T diag(λ̂) X
-vcov        = np.linalg.inv(fisher_info)
-se_hat      = np.sqrt(np.diag(vcov))
+from scipy.optimize import approx_fprime
+
+def hessian_numerical(beta, eps=1e-5):
+    """Numerical Hessian of the negative log-likelihood."""
+    n = len(beta)
+    H = np.zeros((n, n))
+    for i in range(n):
+        def grad_i(b): return approx_fprime(b, neg_ll, eps)[i]
+        H[i] = approx_fprime(beta, grad_i, eps)
+    return H
+
+H = hessian_numerical(beta_hat)      # Hessian of negative log-likelihood
+vcov   = np.linalg.inv(H)            # negative inverse Hessian = variance-covariance
+se_hat = np.sqrt(np.diag(vcov))      # standard errors
 ```
 
 ### Checking Against `sm.GLM`
 
-A key sanity check: fitting the identical model using `statsmodels.GLM` should produce coefficient estimates that match ours exactly (the log-likelihoods are the same problem) and standard errors that are very close (our Fisher-information SEs use the same formula that GLM uses internally).
+A key sanity check: fitting the identical model using `statsmodels.GLM` should produce coefficient estimates that match ours exactly (the log-likelihoods are the same problem) and standard errors that are very close. The prof's recipe says to use the Hessian for SEs — our numerical Hessian at convergence approximates the same Fisher information matrix that GLM uses internally, so the numbers should agree closely, with any small differences due to the numerical approximation of the Hessian.
 
 ```{python}
 #| echo: true
@@ -425,7 +440,7 @@ result_df = pd.DataFrame({
     )
     .cols_align("left",   columns="Predictor")
     .cols_align("center", columns=["Custom MLE β", "GLM β", "Std. Error", "z-stat", "p-value", ""])
-    .tab_source_note("Custom MLE SEs computed via Fisher information matrix; GLM SEs are numerically identical.")
+    .tab_source_note("Custom MLE SEs computed from the negative inverse Hessian; GLM SEs are numerically identical.")
 )
 ```
 
