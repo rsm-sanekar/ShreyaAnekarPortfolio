@@ -1,7 +1,7 @@
 ---
 title: "Does Better Software Mean More Patents?"
 subtitle: "Maximum Likelihood Estimation and Poisson Regression in a Real-World Case Study"
-author: "Shreya"
+author: "Shreya Anekar"
 date: today
 categories: [statistics, MLE, Poisson regression, python, marketing analytics]
 image: thumbnail.png
@@ -388,9 +388,9 @@ vcov   = np.linalg.inv(H)            # negative inverse Hessian = variance-covar
 se_hat = np.sqrt(np.diag(vcov))      # standard errors
 ```
 
-### Checking Against `sm.GLM`
+### Validating with `statsmodels.GLM`
 
-A key sanity check: fitting the identical model using `statsmodels.GLM` should produce coefficient estimates that match ours exactly (the log-likelihoods are the same problem) and standard errors that are very close. The prof's recipe says to use the Hessian for SEs — our numerical Hessian at convergence approximates the same Fisher information matrix that GLM uses internally, so the numbers should agree closely, with any small differences due to the numerical approximation of the Hessian.
+To validate the custom implementation, I fit the same model using `statsmodels.GLM` — if both approaches are optimizing the same log-likelihood, their coefficient estimates must agree exactly at convergence. Standard errors may differ slightly, since the numerical Hessian approximates the same Fisher information matrix that GLM computes analytically; any small gap reflects finite-difference precision rather than an error in the optimization.
 
 ```{python}
 #| echo: true
@@ -413,13 +413,14 @@ for p in pvals:
     else:           stars.append("")
 
 result_df = pd.DataFrame({
-    "Predictor":    col_names,
-    "Custom MLE β": [f"{b:.4f}" for b in beta_hat],
-    "GLM β":        [f"{b:.4f}" for b in glm.params],
-    "Std. Error":   [f"{s:.4f}" for s in glm.bse],
-    "z-stat":       [f"{z:.3f}" for z in z_stats],
-    "p-value":      [f"{p:.4f}" for p in pvals],
-    "":             stars,
+    "Predictor":      col_names,
+    "Custom MLE β":   [f"{b:.4f}" for b in beta_hat],
+    "GLM β":          [f"{b:.4f}" for b in glm.params],
+    "SE (Hessian)":   [f"{s:.4f}" for s in se_hat],
+    "SE (GLM)":       [f"{s:.4f}" for s in glm.bse],
+    "z-stat":         [f"{z:.3f}" for z in z_stats],
+    "p-value":        [f"{p:.4f}" for p in pvals],
+    "":               stars,
 })
 
 (
@@ -438,18 +439,20 @@ result_df = pd.DataFrame({
         loc.body(rows=[1, 2])
     )
     .cols_align("left",   columns="Predictor")
-    .cols_align("center", columns=["Custom MLE β", "GLM β", "Std. Error", "z-stat", "p-value", ""])
-    .tab_source_note("Custom MLE SEs computed from the negative inverse Hessian; GLM SEs are numerically identical.")
+    .cols_align("center", columns=["Custom MLE β", "GLM β", "SE (Hessian)", "SE (GLM)", "z-stat", "p-value", ""])
+    .tab_source_note("Custom MLE SEs from the negative inverse Hessian; GLM SEs agree closely (small differences reflect numerical Hessian approximation).")
 )
 ```
 
-The Custom MLE column and the GLM column are identical to four decimal places — a strong confirmation that the optimizer found the true maximum. The standard errors also agree exactly because both approaches use the same Fisher information formula at convergence.
+The Custom MLE column and the GLM column are identical to four decimal places — a strong confirmation that the optimizer found the true maximum. The standard errors agree closely; any small differences are due to the numerical approximation of the Hessian, exactly as expected.
 
 ### Interpreting the Coefficients
 
 ```{python}
 #| echo: false
 #| fig-cap: "Coefficient plot for the Poisson regression (intercept excluded for scale). Error bars show ±1.96 SE (95% confidence interval). The customer effect and both age terms are the only predictors with confidence intervals that clearly exclude zero."
+#| fig-width: 10
+#| fig-height: 5
 
 # Exclude intercept — it's on a very different scale and not substantively interesting
 plot_names  = col_names[1:]
@@ -461,8 +464,7 @@ colors_list[-1] = BLUE  # iscustomer always highlighted
 
 y_pos = np.arange(len(plot_names))
 
-fig, ax = plt.subplots(figsize=(9, 5))
-fig.subplots_adjust(left=0.18)   # extra left margin so labels aren't clipped
+fig, ax = plt.subplots(figsize=(10, 5))
 
 ax.barh(y_pos, plot_betas, xerr=1.96*plot_ses, color=colors_list, alpha=0.85,
         error_kw=dict(ecolor='#374151', capsize=4, lw=1.5), edgecolor='white',
@@ -475,11 +477,11 @@ ax.set_title("Poisson Regression Coefficients with 95% Confidence Intervals")
 
 legend_elements = [
     plt.Rectangle((0,0),1,1, facecolor=BLUE,  alpha=0.85, label='iscustomer (key variable)'),
-    plt.Rectangle((0,0),1,1, facecolor=RED,   alpha=0.85, label='Statistically significant (p < 0.05)'),
+    plt.Rectangle((0,0),1,1, facecolor=RED,   alpha=0.85, label='Significant (p < 0.05)'),
     plt.Rectangle((0,0),1,1, facecolor=GRAY,  alpha=0.85, label='Not significant'),
 ]
-ax.legend(handles=legend_elements, loc='lower right', fontsize=8.5, frameon=True)
-plt.tight_layout()
+ax.legend(handles=legend_elements, loc='lower right', fontsize=9, frameon=True, framealpha=0.9)
+plt.tight_layout(pad=2.0)
 plt.show()
 ```
 
