@@ -485,7 +485,7 @@ plt.tight_layout(pad=2.0)
 plt.show()
 ```
 
-Walking through the key findings:
+A few coefficients stand out:
 
 - **Age** ($\hat\beta = 0.149$, $p < 0.001$): Older firms patent more — each additional year of age is associated with roughly a 16% increase in expected patent count ($e^{0.149} \approx 1.16$). This reflects accumulated experience and deeper R&D pipelines.
 - **Age²** ($\hat\beta = -0.003$, $p < 0.001$): The squared term is negative, meaning the age premium flattens and eventually reverses for the oldest firms. The relationship is an inverted U-shape, which is economically intuitive — very mature firms may focus less on innovation.
@@ -498,7 +498,7 @@ Walking through the key findings:
 
 ### Counterfactual Prediction
 
-Because the Poisson model is multiplicative, the coefficient 0.208 does not directly translate into "additional patents." To get a dollar figure on the patent gap, we use a **counterfactual approach**: ask the fitted model what it would predict for each firm under two scenarios — one where no one is a Blueprinty customer, and one where everyone is.
+Because the Poisson model is multiplicative, the coefficient 0.208 does not directly translate into "additional patents." To get a concrete, interpretable estimate of the patent gap, I use a **counterfactual approach**: ask the fitted model what it would predict for each firm under two scenarios — one where no firm is a Blueprinty customer, and one where every firm is.
 
 ```{python}
 #| echo: true

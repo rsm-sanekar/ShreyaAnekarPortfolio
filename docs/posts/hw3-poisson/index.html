@@ -279,7 +279,7 @@ window.Quarto = {
 </section>
 <section id="exploring-the-data" class="level2">
 <h2 class="anchored" data-anchor-id="exploring-the-data">Exploring the Data</h2>
-<div id="0aad03b2" class="cell" data-execution_count="2">
+<div id="11dfa10f" class="cell" data-execution_count="2">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">"blueprinty.csv"</span>)</span>
@@ -348,7 +348,7 @@ window.Quarto = {
 <p>The dataset has 1,500 rows and four variables: <code>patents</code> (integer count), <code>region</code> (categorical), <code>age</code> (continuous, years since incorporation), and <code>iscustomer</code> (binary, 1 = Blueprinty customer).</p>
 <section id="patent-counts-by-customer-status" class="level3">
 <h3 class="anchored" data-anchor-id="patent-counts-by-customer-status">Patent Counts by Customer Status</h3>
-<div id="9aea6057" class="cell" data-execution_count="3">
+<div id="84778c46" class="cell" data-execution_count="3">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -362,7 +362,7 @@ window.Quarto = {
 </section>
 <section id="regional-distribution" class="level3">
 <h3 class="anchored" data-anchor-id="regional-distribution">Regional Distribution</h3>
-<div id="1dda37de" class="cell" data-execution_count="4">
+<div id="10958a90" class="cell" data-execution_count="4">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -376,7 +376,7 @@ window.Quarto = {
 </section>
 <section id="firm-age-distribution" class="level3">
 <h3 class="anchored" data-anchor-id="firm-age-distribution">Firm Age Distribution</h3>
-<div id="a472a6d7" class="cell" data-execution_count="5">
+<div id="875ed357" class="cell" data-execution_count="5">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -410,7 +410,7 @@ window.Quarto = {
 </section>
 <section id="coding-the-log-likelihood" class="level3">
 <h3 class="anchored" data-anchor-id="coding-the-log-likelihood">Coding the Log-Likelihood</h3>
-<div id="864711b5" class="cell" data-execution_count="6">
+<div id="fdd45059" class="cell" data-execution_count="6">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.special <span class="im">import</span> gammaln  <span class="co"># numerically stable log(Y!)</span></span>
@@ -426,7 +426,7 @@ window.Quarto = {
 <section id="visualizing-the-log-likelihood" class="level3">
 <h3 class="anchored" data-anchor-id="visualizing-the-log-likelihood">Visualizing the Log-Likelihood</h3>
 <p>With the function in hand, we can evaluate it across a grid of <span class="math inline">\(\lambda\)</span> values and plot the curve. The peak of this curve is the MLE.</p>
-<div id="4b288baa" class="cell" data-execution_count="7">
+<div id="24be08a5" class="cell" data-execution_count="7">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>Y <span class="op">=</span> df[<span class="st">'patents'</span>].values</span>
@@ -434,7 +434,7 @@ window.Quarto = {
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>ll_vals <span class="op">=</span> [poisson_loglikelihood(lam, Y) <span class="cf">for</span> lam <span class="kw">in</span> lambda_grid]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
-<div id="383da559" class="cell" data-execution_count="8">
+<div id="b5dcedfd" class="cell" data-execution_count="8">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -454,7 +454,7 @@ window.Quarto = {
 </section>
 <section id="numerical-confirmation" class="level3">
 <h3 class="anchored" data-anchor-id="numerical-confirmation">Numerical Confirmation</h3>
-<div id="896c0437" class="cell" data-execution_count="9">
+<div id="43e2d6e5" class="cell" data-execution_count="9">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>result <span class="op">=</span> sp_opt.minimize_scalar(</span>
@@ -498,7 +498,7 @@ Difference:                  4.54e-08</code></pre>
 <li><strong>Four regional dummies</strong> (Midwest, Northwest, South, Southwest) — the Northeast is omitted as the reference category, both because it is the largest region and to avoid perfect collinearity with the intercept.</li>
 <li><strong><code>iscustomer</code></strong> — the variable of primary interest.</li>
 </ul>
-<div id="176edc69" class="cell" data-execution_count="10">
+<div id="d44d2fb4" class="cell" data-execution_count="10">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>df2 <span class="op">=</span> df.copy()</span>
@@ -526,7 +526,7 @@ Difference:                  4.54e-08</code></pre>
 </section>
 <section id="updating-the-log-likelihood" class="level3">
 <h3 class="anchored" data-anchor-id="updating-the-log-likelihood">Updating the Log-Likelihood</h3>
-<div id="dd4db127" class="cell" data-execution_count="11">
+<div id="18c3031b" class="cell" data-execution_count="11">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> poisson_regression_loglikelihood(beta, Y, X):</span>
@@ -539,7 +539,7 @@ Difference:                  4.54e-08</code></pre>
 </section>
 <section id="finding-the-mle-numerically" class="level3">
 <h3 class="anchored" data-anchor-id="finding-the-mle-numerically">Finding the MLE Numerically</h3>
-<div id="9187b1c3" class="cell" data-execution_count="12">
+<div id="b8225044" class="cell" data-execution_count="12">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> neg_ll(beta):</span>
@@ -565,7 +565,7 @@ Difference:                  4.54e-08</code></pre>
 <p>To get standard errors, we need the <strong>Hessian</strong> of the log-likelihood evaluated at <span class="math inline">\(\hat\beta\)</span>. The asymptotic variance-covariance matrix of the MLE is the negative inverse of that Hessian:</p>
 <p><span class="math display">\[\widehat{\text{Var}}(\hat\beta) = \left[ -\frac{\partial^2 \ell}{\partial\beta\,\partial\beta^\top} \Big|_{\hat\beta} \right]^{-1}\]</span></p>
 <p>Standard errors are the square roots of the diagonal entries. We compute the Hessian numerically using <code>scipy.optimize.approx_fprime</code>:</p>
-<div id="561fbc78" class="cell" data-execution_count="13">
+<div id="3cd00a40" class="cell" data-execution_count="13">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.optimize <span class="im">import</span> approx_fprime</span>
@@ -588,63 +588,63 @@ Difference:                  4.54e-08</code></pre>
 <section id="validating-with-statsmodels.glm" class="level3">
 <h3 class="anchored" data-anchor-id="validating-with-statsmodels.glm">Validating with <code>statsmodels.GLM</code></h3>
 <p>To validate the custom implementation, I fit the same model using <code>statsmodels.GLM</code> — if both approaches are optimizing the same log-likelihood, their coefficient estimates must agree exactly at convergence. Standard errors may differ slightly, since the numerical Hessian approximates the same Fisher information matrix that GLM computes analytically; any small gap reflects finite-difference precision rather than an error in the optimization.</p>
-<div id="1b8ab1b6" class="cell" data-execution_count="14">
+<div id="639a6f97" class="cell" data-execution_count="14">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>glm <span class="op">=</span> sm.GLM(Y, X, family<span class="op">=</span>sm.families.Poisson()).fit()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
-<div id="0e7404a1" class="cell" data-execution_count="15">
+<div id="9b281d4c" class="cell" data-execution_count="15">
 <div class="cell-output cell-output-display" data-execution_count="15">
-<div id="asiihiyyuj" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="bwmntlvfhc" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>
-#asiihiyyuj table {
+#bwmntlvfhc table {
           font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
           -webkit-font-smoothing: antialiased;
           -moz-osx-font-smoothing: grayscale;
         }
 
-#asiihiyyuj thead, tbody, tfoot, tr, td, th { border-style: none; }
+#bwmntlvfhc thead, tbody, tfoot, tr, td, th { border-style: none; }
  tr { background-color: transparent; }
-#asiihiyyuj p { margin: 0; padding: 0; }
- #asiihiyyuj .gt_table { display: table; border-collapse: collapse; line-height: normal; margin-left: auto; margin-right: auto; color: #333333; font-size: 16px; font-weight: normal; font-style: normal; background-color: #FFFFFF; width: auto; border-top-style: solid; border-top-width: 2px; border-top-color: #A8A8A8; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #A8A8A8; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; }
- #asiihiyyuj .gt_caption { padding-top: 4px; padding-bottom: 4px; }
- #asiihiyyuj .gt_title { color: #333333; font-size: 125%; font-weight: initial; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; border-bottom-color: #FFFFFF; border-bottom-width: 0; }
- #asiihiyyuj .gt_subtitle { color: #333333; font-size: 85%; font-weight: initial; padding-top: 3px; padding-bottom: 5px; padding-left: 5px; padding-right: 5px; border-top-color: #FFFFFF; border-top-width: 0; }
- #asiihiyyuj .gt_heading { background-color: #FFFFFF; text-align: center; border-bottom-color: #FFFFFF; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; }
- #asiihiyyuj .gt_bottom_border { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
- #asiihiyyuj .gt_col_headings { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; }
- #asiihiyyuj .gt_col_heading { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 5px; padding-left: 5px; padding-right: 5px; overflow-x: hidden; }
- #asiihiyyuj .gt_column_spanner_outer { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; padding-top: 0; padding-bottom: 0; padding-left: 4px; padding-right: 4px; }
- #asiihiyyuj .gt_column_spanner_outer:first-child { padding-left: 0; }
- #asiihiyyuj .gt_column_spanner_outer:last-child { padding-right: 0; }
- #asiihiyyuj .gt_column_spanner { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 5px; overflow-x: hidden; display: inline-block; width: 100%; }
- #asiihiyyuj .gt_spanner_row { border-bottom-style: hidden; }
- #asiihiyyuj .gt_group_heading { padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; text-align: left; }
- #asiihiyyuj .gt_empty_group_heading { padding: 0.5px; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; vertical-align: middle; }
- #asiihiyyuj .gt_from_md> :first-child { margin-top: 0; }
- #asiihiyyuj .gt_from_md> :last-child { margin-bottom: 0; }
- #asiihiyyuj .gt_row { padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; }
- #asiihiyyuj .gt_stub { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-right-style: solid; border-right-width: 2px; border-right-color: #D3D3D3; padding-left: 5px; padding-right: 5px; }
- #asiihiyyuj .gt_stub_row_group { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-right-style: solid; border-right-width: 2px; border-right-color: #D3D3D3; padding-left: 5px; padding-right: 5px; vertical-align: top; }
- #asiihiyyuj .gt_row_group_first td { border-top-width: 2px; }
- #asiihiyyuj .gt_row_group_first th { border-top-width: 2px; }
- #asiihiyyuj .gt_striped { color: #333333; background-color: #F4F4F4; }
- #asiihiyyuj .gt_table_body { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
- #asiihiyyuj .gt_grand_summary_row { color: #333333; background-color: #FFFFFF; text-transform: inherit; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; }
- #asiihiyyuj .gt_first_grand_summary_row_bottom { border-top-style: double; border-top-width: 6px; border-top-color: #D3D3D3; }
- #asiihiyyuj .gt_last_grand_summary_row_top { border-bottom-style: double; border-bottom-width: 6px; border-bottom-color: #D3D3D3; }
- #asiihiyyuj .gt_sourcenotes { color: #333333; background-color: #FFFFFF; border-bottom-style: none; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; }
- #asiihiyyuj .gt_sourcenote { font-size: 90%; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; text-align: left; }
- #asiihiyyuj .gt_left { text-align: left; }
- #asiihiyyuj .gt_center { text-align: center; }
- #asiihiyyuj .gt_right { text-align: right; font-variant-numeric: tabular-nums; }
- #asiihiyyuj .gt_font_normal { font-weight: normal; }
- #asiihiyyuj .gt_font_bold { font-weight: bold; }
- #asiihiyyuj .gt_font_italic { font-style: italic; }
- #asiihiyyuj .gt_super { font-size: 65%; }
- #asiihiyyuj .gt_footnote_marks { font-size: 75%; vertical-align: 0.4em; position: initial; }
- #asiihiyyuj .gt_asterisk { font-size: 100%; vertical-align: 0; }
+#bwmntlvfhc p { margin: 0; padding: 0; }
+ #bwmntlvfhc .gt_table { display: table; border-collapse: collapse; line-height: normal; margin-left: auto; margin-right: auto; color: #333333; font-size: 16px; font-weight: normal; font-style: normal; background-color: #FFFFFF; width: auto; border-top-style: solid; border-top-width: 2px; border-top-color: #A8A8A8; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #A8A8A8; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; }
+ #bwmntlvfhc .gt_caption { padding-top: 4px; padding-bottom: 4px; }
+ #bwmntlvfhc .gt_title { color: #333333; font-size: 125%; font-weight: initial; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; border-bottom-color: #FFFFFF; border-bottom-width: 0; }
+ #bwmntlvfhc .gt_subtitle { color: #333333; font-size: 85%; font-weight: initial; padding-top: 3px; padding-bottom: 5px; padding-left: 5px; padding-right: 5px; border-top-color: #FFFFFF; border-top-width: 0; }
+ #bwmntlvfhc .gt_heading { background-color: #FFFFFF; text-align: center; border-bottom-color: #FFFFFF; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; }
+ #bwmntlvfhc .gt_bottom_border { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
+ #bwmntlvfhc .gt_col_headings { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; }
+ #bwmntlvfhc .gt_col_heading { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 5px; padding-left: 5px; padding-right: 5px; overflow-x: hidden; }
+ #bwmntlvfhc .gt_column_spanner_outer { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; padding-top: 0; padding-bottom: 0; padding-left: 4px; padding-right: 4px; }
+ #bwmntlvfhc .gt_column_spanner_outer:first-child { padding-left: 0; }
+ #bwmntlvfhc .gt_column_spanner_outer:last-child { padding-right: 0; }
+ #bwmntlvfhc .gt_column_spanner { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 5px; overflow-x: hidden; display: inline-block; width: 100%; }
+ #bwmntlvfhc .gt_spanner_row { border-bottom-style: hidden; }
+ #bwmntlvfhc .gt_group_heading { padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; text-align: left; }
+ #bwmntlvfhc .gt_empty_group_heading { padding: 0.5px; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; vertical-align: middle; }
+ #bwmntlvfhc .gt_from_md> :first-child { margin-top: 0; }
+ #bwmntlvfhc .gt_from_md> :last-child { margin-bottom: 0; }
+ #bwmntlvfhc .gt_row { padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; }
+ #bwmntlvfhc .gt_stub { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-right-style: solid; border-right-width: 2px; border-right-color: #D3D3D3; padding-left: 5px; padding-right: 5px; }
+ #bwmntlvfhc .gt_stub_row_group { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-right-style: solid; border-right-width: 2px; border-right-color: #D3D3D3; padding-left: 5px; padding-right: 5px; vertical-align: top; }
+ #bwmntlvfhc .gt_row_group_first td { border-top-width: 2px; }
+ #bwmntlvfhc .gt_row_group_first th { border-top-width: 2px; }
+ #bwmntlvfhc .gt_striped { color: #333333; background-color: #F4F4F4; }
+ #bwmntlvfhc .gt_table_body { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
+ #bwmntlvfhc .gt_grand_summary_row { color: #333333; background-color: #FFFFFF; text-transform: inherit; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; }
+ #bwmntlvfhc .gt_first_grand_summary_row_bottom { border-top-style: double; border-top-width: 6px; border-top-color: #D3D3D3; }
+ #bwmntlvfhc .gt_last_grand_summary_row_top { border-bottom-style: double; border-bottom-width: 6px; border-bottom-color: #D3D3D3; }
+ #bwmntlvfhc .gt_sourcenotes { color: #333333; background-color: #FFFFFF; border-bottom-style: none; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; }
+ #bwmntlvfhc .gt_sourcenote { font-size: 90%; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; text-align: left; }
+ #bwmntlvfhc .gt_left { text-align: left; }
+ #bwmntlvfhc .gt_center { text-align: center; }
+ #bwmntlvfhc .gt_right { text-align: right; font-variant-numeric: tabular-nums; }
+ #bwmntlvfhc .gt_font_normal { font-weight: normal; }
+ #bwmntlvfhc .gt_font_bold { font-weight: bold; }
+ #bwmntlvfhc .gt_font_italic { font-style: italic; }
+ #bwmntlvfhc .gt_super { font-size: 65%; }
+ #bwmntlvfhc .gt_footnote_marks { font-size: 75%; vertical-align: 0.4em; position: initial; }
+ #bwmntlvfhc .gt_asterisk { font-size: 100%; vertical-align: 0; }
  
 </style>
 
@@ -764,7 +764,7 @@ Difference:                  4.54e-08</code></pre>
 </section>
 <section id="interpreting-the-coefficients" class="level3">
 <h3 class="anchored" data-anchor-id="interpreting-the-coefficients">Interpreting the Coefficients</h3>
-<div id="96d55e79" class="cell" data-fig-height="5" data-fig-width="10" data-execution_count="16">
+<div id="fac7941f" class="cell" data-fig-height="5" data-fig-width="10" data-execution_count="16">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -774,7 +774,7 @@ Difference:                  4.54e-08</code></pre>
 </div>
 </div>
 </div>
-<p>Walking through the key findings:</p>
+<p>A few coefficients stand out:</p>
 <ul>
 <li><strong>Age</strong> (<span class="math inline">\(\hat\beta = 0.149\)</span>, <span class="math inline">\(p &lt; 0.001\)</span>): Older firms patent more — each additional year of age is associated with roughly a 16% increase in expected patent count (<span class="math inline">\(e^{0.149} \approx 1.16\)</span>). This reflects accumulated experience and deeper R&amp;D pipelines.</li>
 <li><strong>Age²</strong> (<span class="math inline">\(\hat\beta = -0.003\)</span>, <span class="math inline">\(p &lt; 0.001\)</span>): The squared term is negative, meaning the age premium flattens and eventually reverses for the oldest firms. The relationship is an inverted U-shape, which is economically intuitive — very mature firms may focus less on innovation.</li>
@@ -788,8 +788,8 @@ Difference:                  4.54e-08</code></pre>
 <h2 class="anchored" data-anchor-id="the-effect-of-blueprintys-software">The Effect of Blueprinty’s Software</h2>
 <section id="counterfactual-prediction" class="level3">
 <h3 class="anchored" data-anchor-id="counterfactual-prediction">Counterfactual Prediction</h3>
-<p>Because the Poisson model is multiplicative, the coefficient 0.208 does not directly translate into “additional patents.” To get a dollar figure on the patent gap, we use a <strong>counterfactual approach</strong>: ask the fitted model what it would predict for each firm under two scenarios — one where no one is a Blueprinty customer, and one where everyone is.</p>
-<div id="6d6588aa" class="cell" data-execution_count="17">
+<p>Because the Poisson model is multiplicative, the coefficient 0.208 does not directly translate into “additional patents.” To get a concrete, interpretable estimate of the patent gap, I use a <strong>counterfactual approach</strong>: ask the fitted model what it would predict for each firm under two scenarios — one where no firm is a Blueprinty customer, and one where every firm is.</p>
+<div id="4d8f12b2" class="cell" data-execution_count="17">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># X₀: every firm marked as non-customer</span></span>
@@ -813,7 +813,7 @@ Average predicted patents (customer):     4.2290
 Average treatment effect:                 0.7928 patents</code></pre>
 </div>
 </div>
-<div id="4a82c791" class="cell" data-execution_count="18">
+<div id="5f3dba5c" class="cell" data-execution_count="18">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -823,57 +823,57 @@ Average treatment effect:                 0.7928 patents</code></pre>
 </div>
 </div>
 </div>
-<div id="d7acda0f" class="cell" data-execution_count="19">
+<div id="4ef80dd9" class="cell" data-execution_count="19">
 <div class="cell-output cell-output-display" data-execution_count="19">
-<div id="pgglxfsvqi" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="wzntqzhfsm" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>
-#pgglxfsvqi table {
+#wzntqzhfsm table {
           font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
           -webkit-font-smoothing: antialiased;
           -moz-osx-font-smoothing: grayscale;
         }
 
-#pgglxfsvqi thead, tbody, tfoot, tr, td, th { border-style: none; }
+#wzntqzhfsm thead, tbody, tfoot, tr, td, th { border-style: none; }
  tr { background-color: transparent; }
-#pgglxfsvqi p { margin: 0; padding: 0; }
- #pgglxfsvqi .gt_table { display: table; border-collapse: collapse; line-height: normal; margin-left: auto; margin-right: auto; color: #333333; font-size: 16px; font-weight: normal; font-style: normal; background-color: #FFFFFF; width: auto; border-top-style: solid; border-top-width: 2px; border-top-color: #A8A8A8; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #A8A8A8; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; }
- #pgglxfsvqi .gt_caption { padding-top: 4px; padding-bottom: 4px; }
- #pgglxfsvqi .gt_title { color: #333333; font-size: 125%; font-weight: initial; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; border-bottom-color: #FFFFFF; border-bottom-width: 0; }
- #pgglxfsvqi .gt_subtitle { color: #333333; font-size: 85%; font-weight: initial; padding-top: 3px; padding-bottom: 5px; padding-left: 5px; padding-right: 5px; border-top-color: #FFFFFF; border-top-width: 0; }
- #pgglxfsvqi .gt_heading { background-color: #FFFFFF; text-align: center; border-bottom-color: #FFFFFF; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; }
- #pgglxfsvqi .gt_bottom_border { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
- #pgglxfsvqi .gt_col_headings { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; }
- #pgglxfsvqi .gt_col_heading { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 5px; padding-left: 5px; padding-right: 5px; overflow-x: hidden; }
- #pgglxfsvqi .gt_column_spanner_outer { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; padding-top: 0; padding-bottom: 0; padding-left: 4px; padding-right: 4px; }
- #pgglxfsvqi .gt_column_spanner_outer:first-child { padding-left: 0; }
- #pgglxfsvqi .gt_column_spanner_outer:last-child { padding-right: 0; }
- #pgglxfsvqi .gt_column_spanner { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 5px; overflow-x: hidden; display: inline-block; width: 100%; }
- #pgglxfsvqi .gt_spanner_row { border-bottom-style: hidden; }
- #pgglxfsvqi .gt_group_heading { padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; text-align: left; }
- #pgglxfsvqi .gt_empty_group_heading { padding: 0.5px; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; vertical-align: middle; }
- #pgglxfsvqi .gt_from_md> :first-child { margin-top: 0; }
- #pgglxfsvqi .gt_from_md> :last-child { margin-bottom: 0; }
- #pgglxfsvqi .gt_row { padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; }
- #pgglxfsvqi .gt_stub { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-right-style: solid; border-right-width: 2px; border-right-color: #D3D3D3; padding-left: 5px; padding-right: 5px; }
- #pgglxfsvqi .gt_stub_row_group { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-right-style: solid; border-right-width: 2px; border-right-color: #D3D3D3; padding-left: 5px; padding-right: 5px; vertical-align: top; }
- #pgglxfsvqi .gt_row_group_first td { border-top-width: 2px; }
- #pgglxfsvqi .gt_row_group_first th { border-top-width: 2px; }
- #pgglxfsvqi .gt_striped { color: #333333; background-color: #F4F4F4; }
- #pgglxfsvqi .gt_table_body { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
- #pgglxfsvqi .gt_grand_summary_row { color: #333333; background-color: #FFFFFF; text-transform: inherit; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; }
- #pgglxfsvqi .gt_first_grand_summary_row_bottom { border-top-style: double; border-top-width: 6px; border-top-color: #D3D3D3; }
- #pgglxfsvqi .gt_last_grand_summary_row_top { border-bottom-style: double; border-bottom-width: 6px; border-bottom-color: #D3D3D3; }
- #pgglxfsvqi .gt_sourcenotes { color: #333333; background-color: #FFFFFF; border-bottom-style: none; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; }
- #pgglxfsvqi .gt_sourcenote { font-size: 90%; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; text-align: left; }
- #pgglxfsvqi .gt_left { text-align: left; }
- #pgglxfsvqi .gt_center { text-align: center; }
- #pgglxfsvqi .gt_right { text-align: right; font-variant-numeric: tabular-nums; }
- #pgglxfsvqi .gt_font_normal { font-weight: normal; }
- #pgglxfsvqi .gt_font_bold { font-weight: bold; }
- #pgglxfsvqi .gt_font_italic { font-style: italic; }
- #pgglxfsvqi .gt_super { font-size: 65%; }
- #pgglxfsvqi .gt_footnote_marks { font-size: 75%; vertical-align: 0.4em; position: initial; }
- #pgglxfsvqi .gt_asterisk { font-size: 100%; vertical-align: 0; }
+#wzntqzhfsm p { margin: 0; padding: 0; }
+ #wzntqzhfsm .gt_table { display: table; border-collapse: collapse; line-height: normal; margin-left: auto; margin-right: auto; color: #333333; font-size: 16px; font-weight: normal; font-style: normal; background-color: #FFFFFF; width: auto; border-top-style: solid; border-top-width: 2px; border-top-color: #A8A8A8; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #A8A8A8; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; }
+ #wzntqzhfsm .gt_caption { padding-top: 4px; padding-bottom: 4px; }
+ #wzntqzhfsm .gt_title { color: #333333; font-size: 125%; font-weight: initial; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; border-bottom-color: #FFFFFF; border-bottom-width: 0; }
+ #wzntqzhfsm .gt_subtitle { color: #333333; font-size: 85%; font-weight: initial; padding-top: 3px; padding-bottom: 5px; padding-left: 5px; padding-right: 5px; border-top-color: #FFFFFF; border-top-width: 0; }
+ #wzntqzhfsm .gt_heading { background-color: #FFFFFF; text-align: center; border-bottom-color: #FFFFFF; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; }
+ #wzntqzhfsm .gt_bottom_border { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
+ #wzntqzhfsm .gt_col_headings { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; }
+ #wzntqzhfsm .gt_col_heading { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 5px; padding-left: 5px; padding-right: 5px; overflow-x: hidden; }
+ #wzntqzhfsm .gt_column_spanner_outer { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; padding-top: 0; padding-bottom: 0; padding-left: 4px; padding-right: 4px; }
+ #wzntqzhfsm .gt_column_spanner_outer:first-child { padding-left: 0; }
+ #wzntqzhfsm .gt_column_spanner_outer:last-child { padding-right: 0; }
+ #wzntqzhfsm .gt_column_spanner { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 5px; overflow-x: hidden; display: inline-block; width: 100%; }
+ #wzntqzhfsm .gt_spanner_row { border-bottom-style: hidden; }
+ #wzntqzhfsm .gt_group_heading { padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; text-align: left; }
+ #wzntqzhfsm .gt_empty_group_heading { padding: 0.5px; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; vertical-align: middle; }
+ #wzntqzhfsm .gt_from_md> :first-child { margin-top: 0; }
+ #wzntqzhfsm .gt_from_md> :last-child { margin-bottom: 0; }
+ #wzntqzhfsm .gt_row { padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; }
+ #wzntqzhfsm .gt_stub { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-right-style: solid; border-right-width: 2px; border-right-color: #D3D3D3; padding-left: 5px; padding-right: 5px; }
+ #wzntqzhfsm .gt_stub_row_group { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-right-style: solid; border-right-width: 2px; border-right-color: #D3D3D3; padding-left: 5px; padding-right: 5px; vertical-align: top; }
+ #wzntqzhfsm .gt_row_group_first td { border-top-width: 2px; }
+ #wzntqzhfsm .gt_row_group_first th { border-top-width: 2px; }
+ #wzntqzhfsm .gt_striped { color: #333333; background-color: #F4F4F4; }
+ #wzntqzhfsm .gt_table_body { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
+ #wzntqzhfsm .gt_grand_summary_row { color: #333333; background-color: #FFFFFF; text-transform: inherit; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; }
+ #wzntqzhfsm .gt_first_grand_summary_row_bottom { border-top-style: double; border-top-width: 6px; border-top-color: #D3D3D3; }
+ #wzntqzhfsm .gt_last_grand_summary_row_top { border-bottom-style: double; border-bottom-width: 6px; border-bottom-color: #D3D3D3; }
+ #wzntqzhfsm .gt_sourcenotes { color: #333333; background-color: #FFFFFF; border-bottom-style: none; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; }
+ #wzntqzhfsm .gt_sourcenote { font-size: 90%; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; text-align: left; }
+ #wzntqzhfsm .gt_left { text-align: left; }
+ #wzntqzhfsm .gt_center { text-align: center; }
+ #wzntqzhfsm .gt_right { text-align: right; font-variant-numeric: tabular-nums; }
+ #wzntqzhfsm .gt_font_normal { font-weight: normal; }
+ #wzntqzhfsm .gt_font_bold { font-weight: bold; }
+ #wzntqzhfsm .gt_font_italic { font-style: italic; }
+ #wzntqzhfsm .gt_super { font-size: 65%; }
+ #wzntqzhfsm .gt_footnote_marks { font-size: 75%; vertical-align: 0.4em; position: initial; }
+ #wzntqzhfsm .gt_asterisk { font-size: 100%; vertical-align: 0; }
  
 </style>
 
@@ -1870,7 +1870,7 @@ Average treatment effect:                 0.7928 patents</code></pre>
 <span id="cb14-517"><a href="#cb14-517" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
 <span id="cb14-518"><a href="#cb14-518" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb14-519"><a href="#cb14-519" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-520"><a href="#cb14-520" aria-hidden="true" tabindex="-1"></a>Walking through the key findings:</span>
+<span id="cb14-520"><a href="#cb14-520" aria-hidden="true" tabindex="-1"></a>A few coefficients stand out:</span>
 <span id="cb14-521"><a href="#cb14-521" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb14-522"><a href="#cb14-522" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Age** ($\hat\beta = 0.149$, $p &lt; 0.001$): Older firms patent more — each additional year of age is associated with roughly a 16% increase in expected patent count ($e^{0.149} \approx 1.16$). This reflects accumulated experience and deeper R&amp;D pipelines.</span>
 <span id="cb14-523"><a href="#cb14-523" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Age²** ($\hat\beta = -0.003$, $p &lt; 0.001$): The squared term is negative, meaning the age premium flattens and eventually reverses for the oldest firms. The relationship is an inverted U-shape, which is economically intuitive — very mature firms may focus less on innovation.</span>
@@ -1883,7 +1883,7 @@ Average treatment effect:                 0.7928 patents</code></pre>
 <span id="cb14-530"><a href="#cb14-530" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb14-531"><a href="#cb14-531" aria-hidden="true" tabindex="-1"></a><span class="fu">### Counterfactual Prediction</span></span>
 <span id="cb14-532"><a href="#cb14-532" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-533"><a href="#cb14-533" aria-hidden="true" tabindex="-1"></a>Because the Poisson model is multiplicative, the coefficient 0.208 does not directly translate into "additional patents." To get a dollar figure on the patent gap, we use a **counterfactual approach**: ask the fitted model what it would predict for each firm under two scenarios — one where no one is a Blueprinty customer, and one where everyone is.</span>
+<span id="cb14-533"><a href="#cb14-533" aria-hidden="true" tabindex="-1"></a>Because the Poisson model is multiplicative, the coefficient 0.208 does not directly translate into "additional patents." To get a concrete, interpretable estimate of the patent gap, I use a **counterfactual approach**: ask the fitted model what it would predict for each firm under two scenarios — one where no firm is a Blueprinty customer, and one where every firm is.</span>
 <span id="cb14-534"><a href="#cb14-534" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb14-537"><a href="#cb14-537" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
 <span id="cb14-538"><a href="#cb14-538" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: true</span></span>
