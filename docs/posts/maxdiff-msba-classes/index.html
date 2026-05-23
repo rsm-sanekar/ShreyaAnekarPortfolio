@@ -6,7 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Shreya">
+<meta name="author" content="Shreya Anekar">
 <meta name="dcterms.date" content="2026-05-23">
 
 <title>MaxDiff Analysis of MSBA Class Preferences – Shreya Anekar</title>
@@ -236,7 +236,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Author</div>
     <div class="quarto-title-meta-contents">
-             <p>Shreya </p>
+             <p>Shreya Anekar </p>
           </div>
   </div>
     
@@ -270,7 +270,7 @@ window.Quarto = {
 </section>
 <section id="the-data" class="level2">
 <h2 class="anchored" data-anchor-id="the-data">The Data</h2>
-<div id="f09baccb" class="cell" data-execution_count="2">
+<div id="d4b5d89b" class="cell" data-execution_count="2">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load data</span></span>
@@ -323,7 +323,7 @@ Total tasks:              680</code></pre>
 </div>
 <section id="sanity-checks" class="level3">
 <h3 class="anchored" data-anchor-id="sanity-checks">Sanity Checks</h3>
-<div id="67aba949" class="cell" data-execution_count="3">
+<div id="042e93e1" class="cell" data-execution_count="3">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Every task must have exactly one best (+1), one worst (−1), two neutrals (0)</span></span>
@@ -366,7 +366,7 @@ Item
 \]</span></p>
 <p>A score near +1 means a class is almost always chosen as the favourite when it appears on screen. Near −1 means it is almost always the least favourite. Near 0 means it sits squarely in the middle, or it is polarizing — loved by some, disliked by others.</p>
 <p>The counts analysis is quick and intuitive, but it treats each “shown” occasion as independent and ignores everything we know about <em>which other items were shown at the same time</em>. That matters: being picked best when shown alongside unpopular classes is less impressive than being picked best in a tough lineup.</p>
-<div id="35cca89c" class="cell" data-execution_count="4">
+<div id="36481211" class="cell" data-execution_count="4">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Aggregate counts per item</span></span>
@@ -406,57 +406,57 @@ Item
 <span id="cb5-35"><a href="#cb5-35" aria-hidden="true" tabindex="-1"></a>item_counts[<span class="st">"ci_hi"</span>] <span class="op">=</span> item_counts[<span class="st">"Item"</span>].<span class="bu">apply</span>(<span class="kw">lambda</span> i: ci_hi[i<span class="op">-</span><span class="dv">1</span>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
-<div id="696c3413" class="cell" data-execution_count="5">
+<div id="a0bafb89" class="cell" data-execution_count="5">
 <div class="cell-output cell-output-display" data-execution_count="5">
-<div id="ujsbeegoiw" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="apwkrfyaew" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>
-#ujsbeegoiw table {
+#apwkrfyaew table {
           font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
           -webkit-font-smoothing: antialiased;
           -moz-osx-font-smoothing: grayscale;
         }
 
-#ujsbeegoiw thead, tbody, tfoot, tr, td, th { border-style: none; }
+#apwkrfyaew thead, tbody, tfoot, tr, td, th { border-style: none; }
  tr { background-color: transparent; }
-#ujsbeegoiw p { margin: 0; padding: 0; }
- #ujsbeegoiw .gt_table { display: table; border-collapse: collapse; line-height: normal; margin-left: auto; margin-right: auto; color: #333333; font-size: 16px; font-weight: normal; font-style: normal; background-color: #FFFFFF; width: auto; border-top-style: solid; border-top-width: 2px; border-top-color: #A8A8A8; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #A8A8A8; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; }
- #ujsbeegoiw .gt_caption { padding-top: 4px; padding-bottom: 4px; }
- #ujsbeegoiw .gt_title { color: #333333; font-size: 125%; font-weight: initial; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; border-bottom-color: #FFFFFF; border-bottom-width: 0; }
- #ujsbeegoiw .gt_subtitle { color: #333333; font-size: 85%; font-weight: initial; padding-top: 3px; padding-bottom: 5px; padding-left: 5px; padding-right: 5px; border-top-color: #FFFFFF; border-top-width: 0; }
- #ujsbeegoiw .gt_heading { background-color: #FFFFFF; text-align: center; border-bottom-color: #FFFFFF; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; }
- #ujsbeegoiw .gt_bottom_border { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
- #ujsbeegoiw .gt_col_headings { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; }
- #ujsbeegoiw .gt_col_heading { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 5px; padding-left: 5px; padding-right: 5px; overflow-x: hidden; }
- #ujsbeegoiw .gt_column_spanner_outer { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; padding-top: 0; padding-bottom: 0; padding-left: 4px; padding-right: 4px; }
- #ujsbeegoiw .gt_column_spanner_outer:first-child { padding-left: 0; }
- #ujsbeegoiw .gt_column_spanner_outer:last-child { padding-right: 0; }
- #ujsbeegoiw .gt_column_spanner { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 5px; overflow-x: hidden; display: inline-block; width: 100%; }
- #ujsbeegoiw .gt_spanner_row { border-bottom-style: hidden; }
- #ujsbeegoiw .gt_group_heading { padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; text-align: left; }
- #ujsbeegoiw .gt_empty_group_heading { padding: 0.5px; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; vertical-align: middle; }
- #ujsbeegoiw .gt_from_md> :first-child { margin-top: 0; }
- #ujsbeegoiw .gt_from_md> :last-child { margin-bottom: 0; }
- #ujsbeegoiw .gt_row { padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; }
- #ujsbeegoiw .gt_stub { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-right-style: solid; border-right-width: 2px; border-right-color: #D3D3D3; padding-left: 5px; padding-right: 5px; }
- #ujsbeegoiw .gt_stub_row_group { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-right-style: solid; border-right-width: 2px; border-right-color: #D3D3D3; padding-left: 5px; padding-right: 5px; vertical-align: top; }
- #ujsbeegoiw .gt_row_group_first td { border-top-width: 2px; }
- #ujsbeegoiw .gt_row_group_first th { border-top-width: 2px; }
- #ujsbeegoiw .gt_striped { color: #333333; background-color: #F4F4F4; }
- #ujsbeegoiw .gt_table_body { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
- #ujsbeegoiw .gt_grand_summary_row { color: #333333; background-color: #FFFFFF; text-transform: inherit; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; }
- #ujsbeegoiw .gt_first_grand_summary_row_bottom { border-top-style: double; border-top-width: 6px; border-top-color: #D3D3D3; }
- #ujsbeegoiw .gt_last_grand_summary_row_top { border-bottom-style: double; border-bottom-width: 6px; border-bottom-color: #D3D3D3; }
- #ujsbeegoiw .gt_sourcenotes { color: #333333; background-color: #FFFFFF; border-bottom-style: none; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; }
- #ujsbeegoiw .gt_sourcenote { font-size: 90%; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; text-align: left; }
- #ujsbeegoiw .gt_left { text-align: left; }
- #ujsbeegoiw .gt_center { text-align: center; }
- #ujsbeegoiw .gt_right { text-align: right; font-variant-numeric: tabular-nums; }
- #ujsbeegoiw .gt_font_normal { font-weight: normal; }
- #ujsbeegoiw .gt_font_bold { font-weight: bold; }
- #ujsbeegoiw .gt_font_italic { font-style: italic; }
- #ujsbeegoiw .gt_super { font-size: 65%; }
- #ujsbeegoiw .gt_footnote_marks { font-size: 75%; vertical-align: 0.4em; position: initial; }
- #ujsbeegoiw .gt_asterisk { font-size: 100%; vertical-align: 0; }
+#apwkrfyaew p { margin: 0; padding: 0; }
+ #apwkrfyaew .gt_table { display: table; border-collapse: collapse; line-height: normal; margin-left: auto; margin-right: auto; color: #333333; font-size: 16px; font-weight: normal; font-style: normal; background-color: #FFFFFF; width: auto; border-top-style: solid; border-top-width: 2px; border-top-color: #A8A8A8; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #A8A8A8; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; }
+ #apwkrfyaew .gt_caption { padding-top: 4px; padding-bottom: 4px; }
+ #apwkrfyaew .gt_title { color: #333333; font-size: 125%; font-weight: initial; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; border-bottom-color: #FFFFFF; border-bottom-width: 0; }
+ #apwkrfyaew .gt_subtitle { color: #333333; font-size: 85%; font-weight: initial; padding-top: 3px; padding-bottom: 5px; padding-left: 5px; padding-right: 5px; border-top-color: #FFFFFF; border-top-width: 0; }
+ #apwkrfyaew .gt_heading { background-color: #FFFFFF; text-align: center; border-bottom-color: #FFFFFF; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; }
+ #apwkrfyaew .gt_bottom_border { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
+ #apwkrfyaew .gt_col_headings { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; }
+ #apwkrfyaew .gt_col_heading { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 5px; padding-left: 5px; padding-right: 5px; overflow-x: hidden; }
+ #apwkrfyaew .gt_column_spanner_outer { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; padding-top: 0; padding-bottom: 0; padding-left: 4px; padding-right: 4px; }
+ #apwkrfyaew .gt_column_spanner_outer:first-child { padding-left: 0; }
+ #apwkrfyaew .gt_column_spanner_outer:last-child { padding-right: 0; }
+ #apwkrfyaew .gt_column_spanner { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 5px; overflow-x: hidden; display: inline-block; width: 100%; }
+ #apwkrfyaew .gt_spanner_row { border-bottom-style: hidden; }
+ #apwkrfyaew .gt_group_heading { padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; text-align: left; }
+ #apwkrfyaew .gt_empty_group_heading { padding: 0.5px; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; vertical-align: middle; }
+ #apwkrfyaew .gt_from_md> :first-child { margin-top: 0; }
+ #apwkrfyaew .gt_from_md> :last-child { margin-bottom: 0; }
+ #apwkrfyaew .gt_row { padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; }
+ #apwkrfyaew .gt_stub { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-right-style: solid; border-right-width: 2px; border-right-color: #D3D3D3; padding-left: 5px; padding-right: 5px; }
+ #apwkrfyaew .gt_stub_row_group { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-right-style: solid; border-right-width: 2px; border-right-color: #D3D3D3; padding-left: 5px; padding-right: 5px; vertical-align: top; }
+ #apwkrfyaew .gt_row_group_first td { border-top-width: 2px; }
+ #apwkrfyaew .gt_row_group_first th { border-top-width: 2px; }
+ #apwkrfyaew .gt_striped { color: #333333; background-color: #F4F4F4; }
+ #apwkrfyaew .gt_table_body { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
+ #apwkrfyaew .gt_grand_summary_row { color: #333333; background-color: #FFFFFF; text-transform: inherit; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; }
+ #apwkrfyaew .gt_first_grand_summary_row_bottom { border-top-style: double; border-top-width: 6px; border-top-color: #D3D3D3; }
+ #apwkrfyaew .gt_last_grand_summary_row_top { border-bottom-style: double; border-bottom-width: 6px; border-bottom-color: #D3D3D3; }
+ #apwkrfyaew .gt_sourcenotes { color: #333333; background-color: #FFFFFF; border-bottom-style: none; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; }
+ #apwkrfyaew .gt_sourcenote { font-size: 90%; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; text-align: left; }
+ #apwkrfyaew .gt_left { text-align: left; }
+ #apwkrfyaew .gt_center { text-align: center; }
+ #apwkrfyaew .gt_right { text-align: right; font-variant-numeric: tabular-nums; }
+ #apwkrfyaew .gt_font_normal { font-weight: normal; }
+ #apwkrfyaew .gt_font_bold { font-weight: bold; }
+ #apwkrfyaew .gt_font_italic { font-style: italic; }
+ #apwkrfyaew .gt_super { font-size: 65%; }
+ #apwkrfyaew .gt_footnote_marks { font-size: 75%; vertical-align: 0.4em; position: initial; }
+ #apwkrfyaew .gt_asterisk { font-size: 100%; vertical-align: 0; }
  
 </style>
 
@@ -573,7 +573,7 @@ Item
 </div>
 </div>
 </div>
-<div id="873202ff" class="cell" data-execution_count="6">
+<div id="9265439f" class="cell" data-execution_count="6">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -599,7 +599,7 @@ P(\text{worst} = c \mid \text{best} = b) = \frac{\exp(-\beta_c)}{\exp(-\beta_a) 
 \]</span></p>
 <p>So each task contributes <em>two</em> log-likelihood terms — one for the best pick and one for the worst — and every item on screen contributes information, not just the one that was chosen.</p>
 <p><strong>Identifiability.</strong> Because softmax probabilities depend only on <em>differences</em> between utilities, adding any constant to every <span class="math inline">\(\beta\)</span> leaves all probabilities unchanged. We therefore fix <span class="math inline">\(\beta_1 = 0\)</span> (MGTA 403 as the reference) and estimate the remaining 9 parameters.</p>
-<div id="3efe4385" class="cell" data-execution_count="7">
+<div id="00405fcf" class="cell" data-execution_count="7">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Reshape to task-level records</span></span>
@@ -638,7 +638,7 @@ Sample task: items=[5 7 4 1], best=7, worst=1</code></pre>
 \Bigr]
 \]</span></p>
 <p>where <span class="math inline">\(j^*_b\)</span> is the class picked best and <span class="math inline">\(j^*_w\)</span> is the class picked worst.</p>
-<div id="f9ca14a2" class="cell" data-execution_count="8">
+<div id="6e3b3b2a" class="cell" data-execution_count="8">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> log_lik(beta_free, <span class="op">*</span>args):</span>
@@ -662,7 +662,7 @@ Sample task: items=[5 7 4 1], best=7, worst=1</code></pre>
 <span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> ll</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
-<div id="cbeff275" class="cell" data-execution_count="9">
+<div id="c782ce9f" class="cell" data-execution_count="9">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>result <span class="op">=</span> minimize(</span>
@@ -680,7 +680,7 @@ Sample task: items=[5 7 4 1], best=7, worst=1</code></pre>
 Log-likelihood at MLE: -1572.73</code></pre>
 </div>
 </div>
-<div id="1ea0e79d" class="cell" data-execution_count="10">
+<div id="a1e58042" class="cell" data-execution_count="10">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Standard errors via numerical Hessian</span></span>
@@ -705,57 +705,57 @@ Log-likelihood at MLE: -1572.73</code></pre>
 <span id="cb11-20"><a href="#cb11-20" aria-hidden="true" tabindex="-1"></a>shares_mle <span class="op">=</span> np.exp(beta_mle) <span class="op">/</span> np.exp(beta_mle).<span class="bu">sum</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
-<div id="88e8bc5b" class="cell" data-execution_count="11">
+<div id="4f13bd5d" class="cell" data-execution_count="11">
 <div class="cell-output cell-output-display" data-execution_count="11">
-<div id="oybhhzgcbt" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="qjujvsvdsj" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>
-#oybhhzgcbt table {
+#qjujvsvdsj table {
           font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
           -webkit-font-smoothing: antialiased;
           -moz-osx-font-smoothing: grayscale;
         }
 
-#oybhhzgcbt thead, tbody, tfoot, tr, td, th { border-style: none; }
+#qjujvsvdsj thead, tbody, tfoot, tr, td, th { border-style: none; }
  tr { background-color: transparent; }
-#oybhhzgcbt p { margin: 0; padding: 0; }
- #oybhhzgcbt .gt_table { display: table; border-collapse: collapse; line-height: normal; margin-left: auto; margin-right: auto; color: #333333; font-size: 16px; font-weight: normal; font-style: normal; background-color: #FFFFFF; width: auto; border-top-style: solid; border-top-width: 2px; border-top-color: #A8A8A8; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #A8A8A8; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; }
- #oybhhzgcbt .gt_caption { padding-top: 4px; padding-bottom: 4px; }
- #oybhhzgcbt .gt_title { color: #333333; font-size: 125%; font-weight: initial; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; border-bottom-color: #FFFFFF; border-bottom-width: 0; }
- #oybhhzgcbt .gt_subtitle { color: #333333; font-size: 85%; font-weight: initial; padding-top: 3px; padding-bottom: 5px; padding-left: 5px; padding-right: 5px; border-top-color: #FFFFFF; border-top-width: 0; }
- #oybhhzgcbt .gt_heading { background-color: #FFFFFF; text-align: center; border-bottom-color: #FFFFFF; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; }
- #oybhhzgcbt .gt_bottom_border { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
- #oybhhzgcbt .gt_col_headings { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; }
- #oybhhzgcbt .gt_col_heading { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 5px; padding-left: 5px; padding-right: 5px; overflow-x: hidden; }
- #oybhhzgcbt .gt_column_spanner_outer { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; padding-top: 0; padding-bottom: 0; padding-left: 4px; padding-right: 4px; }
- #oybhhzgcbt .gt_column_spanner_outer:first-child { padding-left: 0; }
- #oybhhzgcbt .gt_column_spanner_outer:last-child { padding-right: 0; }
- #oybhhzgcbt .gt_column_spanner { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 5px; overflow-x: hidden; display: inline-block; width: 100%; }
- #oybhhzgcbt .gt_spanner_row { border-bottom-style: hidden; }
- #oybhhzgcbt .gt_group_heading { padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; text-align: left; }
- #oybhhzgcbt .gt_empty_group_heading { padding: 0.5px; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; vertical-align: middle; }
- #oybhhzgcbt .gt_from_md> :first-child { margin-top: 0; }
- #oybhhzgcbt .gt_from_md> :last-child { margin-bottom: 0; }
- #oybhhzgcbt .gt_row { padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; }
- #oybhhzgcbt .gt_stub { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-right-style: solid; border-right-width: 2px; border-right-color: #D3D3D3; padding-left: 5px; padding-right: 5px; }
- #oybhhzgcbt .gt_stub_row_group { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-right-style: solid; border-right-width: 2px; border-right-color: #D3D3D3; padding-left: 5px; padding-right: 5px; vertical-align: top; }
- #oybhhzgcbt .gt_row_group_first td { border-top-width: 2px; }
- #oybhhzgcbt .gt_row_group_first th { border-top-width: 2px; }
- #oybhhzgcbt .gt_striped { color: #333333; background-color: #F4F4F4; }
- #oybhhzgcbt .gt_table_body { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
- #oybhhzgcbt .gt_grand_summary_row { color: #333333; background-color: #FFFFFF; text-transform: inherit; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; }
- #oybhhzgcbt .gt_first_grand_summary_row_bottom { border-top-style: double; border-top-width: 6px; border-top-color: #D3D3D3; }
- #oybhhzgcbt .gt_last_grand_summary_row_top { border-bottom-style: double; border-bottom-width: 6px; border-bottom-color: #D3D3D3; }
- #oybhhzgcbt .gt_sourcenotes { color: #333333; background-color: #FFFFFF; border-bottom-style: none; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; }
- #oybhhzgcbt .gt_sourcenote { font-size: 90%; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; text-align: left; }
- #oybhhzgcbt .gt_left { text-align: left; }
- #oybhhzgcbt .gt_center { text-align: center; }
- #oybhhzgcbt .gt_right { text-align: right; font-variant-numeric: tabular-nums; }
- #oybhhzgcbt .gt_font_normal { font-weight: normal; }
- #oybhhzgcbt .gt_font_bold { font-weight: bold; }
- #oybhhzgcbt .gt_font_italic { font-style: italic; }
- #oybhhzgcbt .gt_super { font-size: 65%; }
- #oybhhzgcbt .gt_footnote_marks { font-size: 75%; vertical-align: 0.4em; position: initial; }
- #oybhhzgcbt .gt_asterisk { font-size: 100%; vertical-align: 0; }
+#qjujvsvdsj p { margin: 0; padding: 0; }
+ #qjujvsvdsj .gt_table { display: table; border-collapse: collapse; line-height: normal; margin-left: auto; margin-right: auto; color: #333333; font-size: 16px; font-weight: normal; font-style: normal; background-color: #FFFFFF; width: auto; border-top-style: solid; border-top-width: 2px; border-top-color: #A8A8A8; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #A8A8A8; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; }
+ #qjujvsvdsj .gt_caption { padding-top: 4px; padding-bottom: 4px; }
+ #qjujvsvdsj .gt_title { color: #333333; font-size: 125%; font-weight: initial; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; border-bottom-color: #FFFFFF; border-bottom-width: 0; }
+ #qjujvsvdsj .gt_subtitle { color: #333333; font-size: 85%; font-weight: initial; padding-top: 3px; padding-bottom: 5px; padding-left: 5px; padding-right: 5px; border-top-color: #FFFFFF; border-top-width: 0; }
+ #qjujvsvdsj .gt_heading { background-color: #FFFFFF; text-align: center; border-bottom-color: #FFFFFF; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; }
+ #qjujvsvdsj .gt_bottom_border { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
+ #qjujvsvdsj .gt_col_headings { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; }
+ #qjujvsvdsj .gt_col_heading { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 5px; padding-left: 5px; padding-right: 5px; overflow-x: hidden; }
+ #qjujvsvdsj .gt_column_spanner_outer { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; padding-top: 0; padding-bottom: 0; padding-left: 4px; padding-right: 4px; }
+ #qjujvsvdsj .gt_column_spanner_outer:first-child { padding-left: 0; }
+ #qjujvsvdsj .gt_column_spanner_outer:last-child { padding-right: 0; }
+ #qjujvsvdsj .gt_column_spanner { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 5px; overflow-x: hidden; display: inline-block; width: 100%; }
+ #qjujvsvdsj .gt_spanner_row { border-bottom-style: hidden; }
+ #qjujvsvdsj .gt_group_heading { padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; text-align: left; }
+ #qjujvsvdsj .gt_empty_group_heading { padding: 0.5px; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; vertical-align: middle; }
+ #qjujvsvdsj .gt_from_md> :first-child { margin-top: 0; }
+ #qjujvsvdsj .gt_from_md> :last-child { margin-bottom: 0; }
+ #qjujvsvdsj .gt_row { padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; }
+ #qjujvsvdsj .gt_stub { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-right-style: solid; border-right-width: 2px; border-right-color: #D3D3D3; padding-left: 5px; padding-right: 5px; }
+ #qjujvsvdsj .gt_stub_row_group { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-right-style: solid; border-right-width: 2px; border-right-color: #D3D3D3; padding-left: 5px; padding-right: 5px; vertical-align: top; }
+ #qjujvsvdsj .gt_row_group_first td { border-top-width: 2px; }
+ #qjujvsvdsj .gt_row_group_first th { border-top-width: 2px; }
+ #qjujvsvdsj .gt_striped { color: #333333; background-color: #F4F4F4; }
+ #qjujvsvdsj .gt_table_body { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
+ #qjujvsvdsj .gt_grand_summary_row { color: #333333; background-color: #FFFFFF; text-transform: inherit; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; }
+ #qjujvsvdsj .gt_first_grand_summary_row_bottom { border-top-style: double; border-top-width: 6px; border-top-color: #D3D3D3; }
+ #qjujvsvdsj .gt_last_grand_summary_row_top { border-bottom-style: double; border-bottom-width: 6px; border-bottom-color: #D3D3D3; }
+ #qjujvsvdsj .gt_sourcenotes { color: #333333; background-color: #FFFFFF; border-bottom-style: none; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; }
+ #qjujvsvdsj .gt_sourcenote { font-size: 90%; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; text-align: left; }
+ #qjujvsvdsj .gt_left { text-align: left; }
+ #qjujvsvdsj .gt_center { text-align: center; }
+ #qjujvsvdsj .gt_right { text-align: right; font-variant-numeric: tabular-nums; }
+ #qjujvsvdsj .gt_font_normal { font-weight: normal; }
+ #qjujvsvdsj .gt_font_bold { font-weight: bold; }
+ #qjujvsvdsj .gt_font_italic { font-style: italic; }
+ #qjujvsvdsj .gt_super { font-size: 65%; }
+ #qjujvsvdsj .gt_footnote_marks { font-size: 75%; vertical-align: 0.4em; position: initial; }
+ #qjujvsvdsj .gt_asterisk { font-size: 100%; vertical-align: 0; }
  
 </style>
 
@@ -842,7 +842,7 @@ Log-likelihood at MLE: -1572.73</code></pre>
 </div>
 </div>
 </div>
-<div id="a00dd47e" class="cell" data-execution_count="12">
+<div id="9d7ba634" class="cell" data-execution_count="12">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -865,7 +865,7 @@ Log-likelihood at MLE: -1572.73</code></pre>
 \]</span></p>
 <p>We use a weakly informative prior: <span class="math inline">\(\boldsymbol{\beta} \sim \mathcal{N}(\mathbf{0},\; 10 \cdot I)\)</span>. This says “we have no strong prior belief about which class students prefer, but we’d be surprised to see utility values outside the range <span class="math inline">\([-6, +6]\)</span> or so.”</p>
 <p>To sample from this posterior, we use the <strong>random-walk Metropolis-Hastings</strong> algorithm. At each step, we propose a small random jump from the current position, compute the posterior ratio, and accept or reject based on that ratio. Over many iterations, accepted draws trace out the posterior distribution.</p>
-<div id="a7e7e620" class="cell" data-execution_count="13">
+<div id="3d23f6d4" class="cell" data-execution_count="13">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> log_prior(beta_free):</span>
@@ -896,7 +896,7 @@ Log-likelihood at MLE: -1572.73</code></pre>
 <span id="cb12-26"><a href="#cb12-26" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> draws, n_accept <span class="op">/</span> n_iter</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
-<div id="2e29ebf2" class="cell" data-execution_count="14">
+<div id="ee54815c" class="cell" data-execution_count="14">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>N_ITER  <span class="op">=</span> <span class="dv">11_000</span></span>
@@ -920,7 +920,7 @@ Log-likelihood at MLE: -1572.73</code></pre>
 <section id="convergence-diagnostics" class="level3">
 <h3 class="anchored" data-anchor-id="convergence-diagnostics">Convergence Diagnostics</h3>
 <p>A healthy MCMC chain looks like a “fuzzy caterpillar” — it mixes quickly and doesn’t drift. Slow trends or flat sections are warning signs.</p>
-<div id="df89f786" class="cell" data-execution_count="15">
+<div id="6848898e" class="cell" data-execution_count="15">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -934,7 +934,7 @@ Log-likelihood at MLE: -1572.73</code></pre>
 </section>
 <section id="posterior-summaries" class="level3">
 <h3 class="anchored" data-anchor-id="posterior-summaries">Posterior Summaries</h3>
-<div id="df0d137c" class="cell" data-execution_count="16">
+<div id="5972846e" class="cell" data-execution_count="16">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Posterior mean and 95% credible intervals</span></span>
@@ -952,57 +952,57 @@ Log-likelihood at MLE: -1572.73</code></pre>
 <span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a>shares_bayes_hi   <span class="op">=</span> np.percentile(all_shares, <span class="fl">97.5</span>, axis<span class="op">=</span><span class="dv">0</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
-<div id="2a2d0012" class="cell" data-execution_count="17">
+<div id="831d09c2" class="cell" data-execution_count="17">
 <div class="cell-output cell-output-display" data-execution_count="17">
-<div id="xenlssvcwu" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="kgenvopyiu" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>
-#xenlssvcwu table {
+#kgenvopyiu table {
           font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
           -webkit-font-smoothing: antialiased;
           -moz-osx-font-smoothing: grayscale;
         }
 
-#xenlssvcwu thead, tbody, tfoot, tr, td, th { border-style: none; }
+#kgenvopyiu thead, tbody, tfoot, tr, td, th { border-style: none; }
  tr { background-color: transparent; }
-#xenlssvcwu p { margin: 0; padding: 0; }
- #xenlssvcwu .gt_table { display: table; border-collapse: collapse; line-height: normal; margin-left: auto; margin-right: auto; color: #333333; font-size: 16px; font-weight: normal; font-style: normal; background-color: #FFFFFF; width: auto; border-top-style: solid; border-top-width: 2px; border-top-color: #A8A8A8; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #A8A8A8; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; }
- #xenlssvcwu .gt_caption { padding-top: 4px; padding-bottom: 4px; }
- #xenlssvcwu .gt_title { color: #333333; font-size: 125%; font-weight: initial; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; border-bottom-color: #FFFFFF; border-bottom-width: 0; }
- #xenlssvcwu .gt_subtitle { color: #333333; font-size: 85%; font-weight: initial; padding-top: 3px; padding-bottom: 5px; padding-left: 5px; padding-right: 5px; border-top-color: #FFFFFF; border-top-width: 0; }
- #xenlssvcwu .gt_heading { background-color: #FFFFFF; text-align: center; border-bottom-color: #FFFFFF; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; }
- #xenlssvcwu .gt_bottom_border { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
- #xenlssvcwu .gt_col_headings { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; }
- #xenlssvcwu .gt_col_heading { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 5px; padding-left: 5px; padding-right: 5px; overflow-x: hidden; }
- #xenlssvcwu .gt_column_spanner_outer { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; padding-top: 0; padding-bottom: 0; padding-left: 4px; padding-right: 4px; }
- #xenlssvcwu .gt_column_spanner_outer:first-child { padding-left: 0; }
- #xenlssvcwu .gt_column_spanner_outer:last-child { padding-right: 0; }
- #xenlssvcwu .gt_column_spanner { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 5px; overflow-x: hidden; display: inline-block; width: 100%; }
- #xenlssvcwu .gt_spanner_row { border-bottom-style: hidden; }
- #xenlssvcwu .gt_group_heading { padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; text-align: left; }
- #xenlssvcwu .gt_empty_group_heading { padding: 0.5px; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; vertical-align: middle; }
- #xenlssvcwu .gt_from_md> :first-child { margin-top: 0; }
- #xenlssvcwu .gt_from_md> :last-child { margin-bottom: 0; }
- #xenlssvcwu .gt_row { padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; }
- #xenlssvcwu .gt_stub { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-right-style: solid; border-right-width: 2px; border-right-color: #D3D3D3; padding-left: 5px; padding-right: 5px; }
- #xenlssvcwu .gt_stub_row_group { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-right-style: solid; border-right-width: 2px; border-right-color: #D3D3D3; padding-left: 5px; padding-right: 5px; vertical-align: top; }
- #xenlssvcwu .gt_row_group_first td { border-top-width: 2px; }
- #xenlssvcwu .gt_row_group_first th { border-top-width: 2px; }
- #xenlssvcwu .gt_striped { color: #333333; background-color: #F4F4F4; }
- #xenlssvcwu .gt_table_body { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
- #xenlssvcwu .gt_grand_summary_row { color: #333333; background-color: #FFFFFF; text-transform: inherit; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; }
- #xenlssvcwu .gt_first_grand_summary_row_bottom { border-top-style: double; border-top-width: 6px; border-top-color: #D3D3D3; }
- #xenlssvcwu .gt_last_grand_summary_row_top { border-bottom-style: double; border-bottom-width: 6px; border-bottom-color: #D3D3D3; }
- #xenlssvcwu .gt_sourcenotes { color: #333333; background-color: #FFFFFF; border-bottom-style: none; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; }
- #xenlssvcwu .gt_sourcenote { font-size: 90%; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; text-align: left; }
- #xenlssvcwu .gt_left { text-align: left; }
- #xenlssvcwu .gt_center { text-align: center; }
- #xenlssvcwu .gt_right { text-align: right; font-variant-numeric: tabular-nums; }
- #xenlssvcwu .gt_font_normal { font-weight: normal; }
- #xenlssvcwu .gt_font_bold { font-weight: bold; }
- #xenlssvcwu .gt_font_italic { font-style: italic; }
- #xenlssvcwu .gt_super { font-size: 65%; }
- #xenlssvcwu .gt_footnote_marks { font-size: 75%; vertical-align: 0.4em; position: initial; }
- #xenlssvcwu .gt_asterisk { font-size: 100%; vertical-align: 0; }
+#kgenvopyiu p { margin: 0; padding: 0; }
+ #kgenvopyiu .gt_table { display: table; border-collapse: collapse; line-height: normal; margin-left: auto; margin-right: auto; color: #333333; font-size: 16px; font-weight: normal; font-style: normal; background-color: #FFFFFF; width: auto; border-top-style: solid; border-top-width: 2px; border-top-color: #A8A8A8; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #A8A8A8; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; }
+ #kgenvopyiu .gt_caption { padding-top: 4px; padding-bottom: 4px; }
+ #kgenvopyiu .gt_title { color: #333333; font-size: 125%; font-weight: initial; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; border-bottom-color: #FFFFFF; border-bottom-width: 0; }
+ #kgenvopyiu .gt_subtitle { color: #333333; font-size: 85%; font-weight: initial; padding-top: 3px; padding-bottom: 5px; padding-left: 5px; padding-right: 5px; border-top-color: #FFFFFF; border-top-width: 0; }
+ #kgenvopyiu .gt_heading { background-color: #FFFFFF; text-align: center; border-bottom-color: #FFFFFF; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; }
+ #kgenvopyiu .gt_bottom_border { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
+ #kgenvopyiu .gt_col_headings { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; }
+ #kgenvopyiu .gt_col_heading { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 5px; padding-left: 5px; padding-right: 5px; overflow-x: hidden; }
+ #kgenvopyiu .gt_column_spanner_outer { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; padding-top: 0; padding-bottom: 0; padding-left: 4px; padding-right: 4px; }
+ #kgenvopyiu .gt_column_spanner_outer:first-child { padding-left: 0; }
+ #kgenvopyiu .gt_column_spanner_outer:last-child { padding-right: 0; }
+ #kgenvopyiu .gt_column_spanner { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 5px; overflow-x: hidden; display: inline-block; width: 100%; }
+ #kgenvopyiu .gt_spanner_row { border-bottom-style: hidden; }
+ #kgenvopyiu .gt_group_heading { padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; text-align: left; }
+ #kgenvopyiu .gt_empty_group_heading { padding: 0.5px; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; vertical-align: middle; }
+ #kgenvopyiu .gt_from_md> :first-child { margin-top: 0; }
+ #kgenvopyiu .gt_from_md> :last-child { margin-bottom: 0; }
+ #kgenvopyiu .gt_row { padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; }
+ #kgenvopyiu .gt_stub { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-right-style: solid; border-right-width: 2px; border-right-color: #D3D3D3; padding-left: 5px; padding-right: 5px; }
+ #kgenvopyiu .gt_stub_row_group { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-right-style: solid; border-right-width: 2px; border-right-color: #D3D3D3; padding-left: 5px; padding-right: 5px; vertical-align: top; }
+ #kgenvopyiu .gt_row_group_first td { border-top-width: 2px; }
+ #kgenvopyiu .gt_row_group_first th { border-top-width: 2px; }
+ #kgenvopyiu .gt_striped { color: #333333; background-color: #F4F4F4; }
+ #kgenvopyiu .gt_table_body { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
+ #kgenvopyiu .gt_grand_summary_row { color: #333333; background-color: #FFFFFF; text-transform: inherit; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; }
+ #kgenvopyiu .gt_first_grand_summary_row_bottom { border-top-style: double; border-top-width: 6px; border-top-color: #D3D3D3; }
+ #kgenvopyiu .gt_last_grand_summary_row_top { border-bottom-style: double; border-bottom-width: 6px; border-bottom-color: #D3D3D3; }
+ #kgenvopyiu .gt_sourcenotes { color: #333333; background-color: #FFFFFF; border-bottom-style: none; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; }
+ #kgenvopyiu .gt_sourcenote { font-size: 90%; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; text-align: left; }
+ #kgenvopyiu .gt_left { text-align: left; }
+ #kgenvopyiu .gt_center { text-align: center; }
+ #kgenvopyiu .gt_right { text-align: right; font-variant-numeric: tabular-nums; }
+ #kgenvopyiu .gt_font_normal { font-weight: normal; }
+ #kgenvopyiu .gt_font_bold { font-weight: bold; }
+ #kgenvopyiu .gt_font_italic { font-style: italic; }
+ #kgenvopyiu .gt_super { font-size: 65%; }
+ #kgenvopyiu .gt_footnote_marks { font-size: 75%; vertical-align: 0.4em; position: initial; }
+ #kgenvopyiu .gt_asterisk { font-size: 100%; vertical-align: 0; }
  
 </style>
 
@@ -1089,7 +1089,7 @@ Log-likelihood at MLE: -1572.73</code></pre>
 </div>
 </div>
 </div>
-<div id="023904ea" class="cell" data-execution_count="18">
+<div id="07c916c7" class="cell" data-execution_count="18">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -1100,62 +1100,63 @@ Log-likelihood at MLE: -1572.73</code></pre>
 </div>
 </div>
 <p>The Bayesian and MLE results are closely aligned, as we’d expect with 680 tasks and a diffuse prior. The key advantage of the Bayesian output is the credible intervals on <em>shares</em> — quantities that are nonlinear functions of the raw parameters. Computing these intervals from MLE would require the delta method; in the Bayesian framework, we simply push every posterior draw through the softmax and take quantiles. Easy and exact.</p>
+<p><strong>Posterior SDs vs MLE standard errors.</strong> With a diffuse prior and a large sample, the two should be nearly identical — and they are. The MLE standard errors range from 0.137 to 0.146; the posterior standard deviations (the standard deviation of the post-burn-in draws) range from 0.137 to 0.160. The posterior SDs are slightly <em>larger</em> than the MLE SEs for some parameters. This is expected: the Hessian-based SE is a local quadratic approximation at the mode, while the MCMC posterior captures the full distribution including any asymmetry in the tails. With 680 observations the difference is small, but it would grow with fewer data points where the likelihood surface is less bowl-shaped.</p>
 <hr>
 </section>
 </section>
 <section id="comparing-the-three-methods" class="level2">
 <h2 class="anchored" data-anchor-id="comparing-the-three-methods">Comparing the Three Methods</h2>
-<div id="f78eee93" class="cell" data-execution_count="19">
+<div id="0c1a3ba7" class="cell" data-execution_count="19">
 <div class="cell-output cell-output-display" data-execution_count="19">
-<div id="hgxofridrl" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="swdrjhmzgz" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>
-#hgxofridrl table {
+#swdrjhmzgz table {
           font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
           -webkit-font-smoothing: antialiased;
           -moz-osx-font-smoothing: grayscale;
         }
 
-#hgxofridrl thead, tbody, tfoot, tr, td, th { border-style: none; }
+#swdrjhmzgz thead, tbody, tfoot, tr, td, th { border-style: none; }
  tr { background-color: transparent; }
-#hgxofridrl p { margin: 0; padding: 0; }
- #hgxofridrl .gt_table { display: table; border-collapse: collapse; line-height: normal; margin-left: auto; margin-right: auto; color: #333333; font-size: 16px; font-weight: normal; font-style: normal; background-color: #FFFFFF; width: auto; border-top-style: solid; border-top-width: 2px; border-top-color: #A8A8A8; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #A8A8A8; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; }
- #hgxofridrl .gt_caption { padding-top: 4px; padding-bottom: 4px; }
- #hgxofridrl .gt_title { color: #333333; font-size: 125%; font-weight: initial; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; border-bottom-color: #FFFFFF; border-bottom-width: 0; }
- #hgxofridrl .gt_subtitle { color: #333333; font-size: 85%; font-weight: initial; padding-top: 3px; padding-bottom: 5px; padding-left: 5px; padding-right: 5px; border-top-color: #FFFFFF; border-top-width: 0; }
- #hgxofridrl .gt_heading { background-color: #FFFFFF; text-align: center; border-bottom-color: #FFFFFF; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; }
- #hgxofridrl .gt_bottom_border { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
- #hgxofridrl .gt_col_headings { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; }
- #hgxofridrl .gt_col_heading { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 5px; padding-left: 5px; padding-right: 5px; overflow-x: hidden; }
- #hgxofridrl .gt_column_spanner_outer { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; padding-top: 0; padding-bottom: 0; padding-left: 4px; padding-right: 4px; }
- #hgxofridrl .gt_column_spanner_outer:first-child { padding-left: 0; }
- #hgxofridrl .gt_column_spanner_outer:last-child { padding-right: 0; }
- #hgxofridrl .gt_column_spanner { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 5px; overflow-x: hidden; display: inline-block; width: 100%; }
- #hgxofridrl .gt_spanner_row { border-bottom-style: hidden; }
- #hgxofridrl .gt_group_heading { padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; text-align: left; }
- #hgxofridrl .gt_empty_group_heading { padding: 0.5px; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; vertical-align: middle; }
- #hgxofridrl .gt_from_md> :first-child { margin-top: 0; }
- #hgxofridrl .gt_from_md> :last-child { margin-bottom: 0; }
- #hgxofridrl .gt_row { padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; }
- #hgxofridrl .gt_stub { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-right-style: solid; border-right-width: 2px; border-right-color: #D3D3D3; padding-left: 5px; padding-right: 5px; }
- #hgxofridrl .gt_stub_row_group { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-right-style: solid; border-right-width: 2px; border-right-color: #D3D3D3; padding-left: 5px; padding-right: 5px; vertical-align: top; }
- #hgxofridrl .gt_row_group_first td { border-top-width: 2px; }
- #hgxofridrl .gt_row_group_first th { border-top-width: 2px; }
- #hgxofridrl .gt_striped { color: #333333; background-color: #F4F4F4; }
- #hgxofridrl .gt_table_body { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
- #hgxofridrl .gt_grand_summary_row { color: #333333; background-color: #FFFFFF; text-transform: inherit; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; }
- #hgxofridrl .gt_first_grand_summary_row_bottom { border-top-style: double; border-top-width: 6px; border-top-color: #D3D3D3; }
- #hgxofridrl .gt_last_grand_summary_row_top { border-bottom-style: double; border-bottom-width: 6px; border-bottom-color: #D3D3D3; }
- #hgxofridrl .gt_sourcenotes { color: #333333; background-color: #FFFFFF; border-bottom-style: none; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; }
- #hgxofridrl .gt_sourcenote { font-size: 90%; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; text-align: left; }
- #hgxofridrl .gt_left { text-align: left; }
- #hgxofridrl .gt_center { text-align: center; }
- #hgxofridrl .gt_right { text-align: right; font-variant-numeric: tabular-nums; }
- #hgxofridrl .gt_font_normal { font-weight: normal; }
- #hgxofridrl .gt_font_bold { font-weight: bold; }
- #hgxofridrl .gt_font_italic { font-style: italic; }
- #hgxofridrl .gt_super { font-size: 65%; }
- #hgxofridrl .gt_footnote_marks { font-size: 75%; vertical-align: 0.4em; position: initial; }
- #hgxofridrl .gt_asterisk { font-size: 100%; vertical-align: 0; }
+#swdrjhmzgz p { margin: 0; padding: 0; }
+ #swdrjhmzgz .gt_table { display: table; border-collapse: collapse; line-height: normal; margin-left: auto; margin-right: auto; color: #333333; font-size: 16px; font-weight: normal; font-style: normal; background-color: #FFFFFF; width: auto; border-top-style: solid; border-top-width: 2px; border-top-color: #A8A8A8; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #A8A8A8; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; }
+ #swdrjhmzgz .gt_caption { padding-top: 4px; padding-bottom: 4px; }
+ #swdrjhmzgz .gt_title { color: #333333; font-size: 125%; font-weight: initial; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; border-bottom-color: #FFFFFF; border-bottom-width: 0; }
+ #swdrjhmzgz .gt_subtitle { color: #333333; font-size: 85%; font-weight: initial; padding-top: 3px; padding-bottom: 5px; padding-left: 5px; padding-right: 5px; border-top-color: #FFFFFF; border-top-width: 0; }
+ #swdrjhmzgz .gt_heading { background-color: #FFFFFF; text-align: center; border-bottom-color: #FFFFFF; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; }
+ #swdrjhmzgz .gt_bottom_border { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
+ #swdrjhmzgz .gt_col_headings { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; }
+ #swdrjhmzgz .gt_col_heading { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 5px; padding-left: 5px; padding-right: 5px; overflow-x: hidden; }
+ #swdrjhmzgz .gt_column_spanner_outer { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; padding-top: 0; padding-bottom: 0; padding-left: 4px; padding-right: 4px; }
+ #swdrjhmzgz .gt_column_spanner_outer:first-child { padding-left: 0; }
+ #swdrjhmzgz .gt_column_spanner_outer:last-child { padding-right: 0; }
+ #swdrjhmzgz .gt_column_spanner { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 5px; overflow-x: hidden; display: inline-block; width: 100%; }
+ #swdrjhmzgz .gt_spanner_row { border-bottom-style: hidden; }
+ #swdrjhmzgz .gt_group_heading { padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; text-align: left; }
+ #swdrjhmzgz .gt_empty_group_heading { padding: 0.5px; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; vertical-align: middle; }
+ #swdrjhmzgz .gt_from_md> :first-child { margin-top: 0; }
+ #swdrjhmzgz .gt_from_md> :last-child { margin-bottom: 0; }
+ #swdrjhmzgz .gt_row { padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; }
+ #swdrjhmzgz .gt_stub { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-right-style: solid; border-right-width: 2px; border-right-color: #D3D3D3; padding-left: 5px; padding-right: 5px; }
+ #swdrjhmzgz .gt_stub_row_group { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-right-style: solid; border-right-width: 2px; border-right-color: #D3D3D3; padding-left: 5px; padding-right: 5px; vertical-align: top; }
+ #swdrjhmzgz .gt_row_group_first td { border-top-width: 2px; }
+ #swdrjhmzgz .gt_row_group_first th { border-top-width: 2px; }
+ #swdrjhmzgz .gt_striped { color: #333333; background-color: #F4F4F4; }
+ #swdrjhmzgz .gt_table_body { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
+ #swdrjhmzgz .gt_grand_summary_row { color: #333333; background-color: #FFFFFF; text-transform: inherit; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; }
+ #swdrjhmzgz .gt_first_grand_summary_row_bottom { border-top-style: double; border-top-width: 6px; border-top-color: #D3D3D3; }
+ #swdrjhmzgz .gt_last_grand_summary_row_top { border-bottom-style: double; border-bottom-width: 6px; border-bottom-color: #D3D3D3; }
+ #swdrjhmzgz .gt_sourcenotes { color: #333333; background-color: #FFFFFF; border-bottom-style: none; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; }
+ #swdrjhmzgz .gt_sourcenote { font-size: 90%; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; text-align: left; }
+ #swdrjhmzgz .gt_left { text-align: left; }
+ #swdrjhmzgz .gt_center { text-align: center; }
+ #swdrjhmzgz .gt_right { text-align: right; font-variant-numeric: tabular-nums; }
+ #swdrjhmzgz .gt_font_normal { font-weight: normal; }
+ #swdrjhmzgz .gt_font_bold { font-weight: bold; }
+ #swdrjhmzgz .gt_font_italic { font-style: italic; }
+ #swdrjhmzgz .gt_super { font-size: 65%; }
+ #swdrjhmzgz .gt_footnote_marks { font-size: 75%; vertical-align: 0.4em; position: initial; }
+ #swdrjhmzgz .gt_asterisk { font-size: 100%; vertical-align: 0; }
  
 </style>
 
@@ -1275,7 +1276,7 @@ Log-likelihood at MLE: -1572.73</code></pre>
 </div>
 </div>
 </div>
-<div id="59201647" class="cell" data-execution_count="20">
+<div id="782d7761" class="cell" data-execution_count="20">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -1759,7 +1760,7 @@ Log-likelihood at MLE: -1572.73</code></pre>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "MaxDiff Analysis of MSBA Class Preferences"</span></span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="an">subtitle:</span><span class="co"> "Counts, Maximum Likelihood, and Bayesian Estimation of the MNL Model"</span></span>
-<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> "Shreya"</span></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> "Shreya Anekar"</span></span>
 <span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> today</span></span>
 <span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a><span class="an">categories:</span><span class="co"> [marketing analytics, MNL, bayesian, python, survey analysis]</span></span>
 <span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a><span class="an">image:</span><span class="co"> thumbnail.png</span></span>
@@ -2353,113 +2354,115 @@ Log-likelihood at MLE: -1572.73</code></pre>
 <span id="cb16-631"><a href="#cb16-631" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb16-632"><a href="#cb16-632" aria-hidden="true" tabindex="-1"></a>The Bayesian and MLE results are closely aligned, as we'd expect with 680 tasks and a diffuse prior. The key advantage of the Bayesian output is the credible intervals on *shares* — quantities that are nonlinear functions of the raw parameters. Computing these intervals from MLE would require the delta method; in the Bayesian framework, we simply push every posterior draw through the softmax and take quantiles. Easy and exact.</span>
 <span id="cb16-633"><a href="#cb16-633" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-634"><a href="#cb16-634" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb16-634"><a href="#cb16-634" aria-hidden="true" tabindex="-1"></a>**Posterior SDs vs MLE standard errors.** With a diffuse prior and a large sample, the two should be nearly identical — and they are. The MLE standard errors range from 0.137 to 0.146; the posterior standard deviations (the standard deviation of the post-burn-in draws) range from 0.137 to 0.160. The posterior SDs are slightly *larger* than the MLE SEs for some parameters. This is expected: the Hessian-based SE is a local quadratic approximation at the mode, while the MCMC posterior captures the full distribution including any asymmetry in the tails. With 680 observations the difference is small, but it would grow with fewer data points where the likelihood surface is less bowl-shaped.</span>
 <span id="cb16-635"><a href="#cb16-635" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-636"><a href="#cb16-636" aria-hidden="true" tabindex="-1"></a><span class="fu">## Comparing the Three Methods</span></span>
+<span id="cb16-636"><a href="#cb16-636" aria-hidden="true" tabindex="-1"></a>---</span>
 <span id="cb16-637"><a href="#cb16-637" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-640"><a href="#cb16-640" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
-<span id="cb16-641"><a href="#cb16-641" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
-<span id="cb16-642"><a href="#cb16-642" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-643"><a href="#cb16-643" aria-hidden="true" tabindex="-1"></a><span class="co"># Build comparison table</span></span>
-<span id="cb16-644"><a href="#cb16-644" aria-hidden="true" tabindex="-1"></a>comp <span class="op">=</span> pd.DataFrame({</span>
-<span id="cb16-645"><a href="#cb16-645" aria-hidden="true" tabindex="-1"></a>    <span class="st">"item"</span>:  <span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">11</span>),</span>
-<span id="cb16-646"><a href="#cb16-646" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Class"</span>: [short_labels[i] <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">11</span>)],</span>
-<span id="cb16-647"><a href="#cb16-647" aria-hidden="true" tabindex="-1"></a>})</span>
-<span id="cb16-648"><a href="#cb16-648" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-649"><a href="#cb16-649" aria-hidden="true" tabindex="-1"></a>counts_map <span class="op">=</span> item_counts.set_index(<span class="st">"Item"</span>)[[<span class="st">"score"</span>]].rename(columns<span class="op">=</span>{<span class="st">"score"</span>: <span class="st">"Counts Score"</span>})</span>
-<span id="cb16-650"><a href="#cb16-650" aria-hidden="true" tabindex="-1"></a>counts_map[<span class="st">"Counts Score"</span>] <span class="op">=</span> counts_map[<span class="st">"Counts Score"</span>].<span class="bu">round</span>(<span class="dv">3</span>)</span>
-<span id="cb16-651"><a href="#cb16-651" aria-hidden="true" tabindex="-1"></a>comp <span class="op">=</span> comp.merge(counts_map, left_on<span class="op">=</span><span class="st">"item"</span>, right_index<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb16-652"><a href="#cb16-652" aria-hidden="true" tabindex="-1"></a>comp <span class="op">=</span> comp.sort_values(<span class="st">"Counts Score"</span>, ascending<span class="op">=</span><span class="va">False</span>).reset_index(drop<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb16-653"><a href="#cb16-653" aria-hidden="true" tabindex="-1"></a>comp[<span class="st">"Counts Rank"</span>] <span class="op">=</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">11</span>)</span>
-<span id="cb16-654"><a href="#cb16-654" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-655"><a href="#cb16-655" aria-hidden="true" tabindex="-1"></a>mle_map <span class="op">=</span> pd.Series(shares_mle <span class="op">*</span> <span class="dv">100</span>, index<span class="op">=</span><span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">11</span>)).rename(<span class="st">"MLE Share (%)"</span>)</span>
-<span id="cb16-656"><a href="#cb16-656" aria-hidden="true" tabindex="-1"></a>comp <span class="op">=</span> comp.merge(mle_map.<span class="bu">round</span>(<span class="dv">2</span>), left_on<span class="op">=</span><span class="st">"item"</span>, right_index<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb16-657"><a href="#cb16-657" aria-hidden="true" tabindex="-1"></a>comp <span class="op">=</span> comp.sort_values(<span class="st">"MLE Share (%)"</span>, ascending<span class="op">=</span><span class="va">False</span>).reset_index(drop<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb16-658"><a href="#cb16-658" aria-hidden="true" tabindex="-1"></a>comp[<span class="st">"MLE Rank"</span>] <span class="op">=</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">11</span>)</span>
-<span id="cb16-659"><a href="#cb16-659" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-660"><a href="#cb16-660" aria-hidden="true" tabindex="-1"></a>bayes_map <span class="op">=</span> pd.Series(shares_bayes_mean <span class="op">*</span> <span class="dv">100</span>, index<span class="op">=</span><span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">11</span>)).rename(<span class="st">"Bayes Share (%)"</span>)</span>
-<span id="cb16-661"><a href="#cb16-661" aria-hidden="true" tabindex="-1"></a>comp <span class="op">=</span> comp.merge(bayes_map.<span class="bu">round</span>(<span class="dv">2</span>), left_on<span class="op">=</span><span class="st">"item"</span>, right_index<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb16-662"><a href="#cb16-662" aria-hidden="true" tabindex="-1"></a>comp <span class="op">=</span> comp.sort_values(<span class="st">"Bayes Share (%)"</span>, ascending<span class="op">=</span><span class="va">False</span>).reset_index(drop<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb16-663"><a href="#cb16-663" aria-hidden="true" tabindex="-1"></a>comp[<span class="st">"Bayes Rank"</span>] <span class="op">=</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">11</span>)</span>
-<span id="cb16-664"><a href="#cb16-664" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-665"><a href="#cb16-665" aria-hidden="true" tabindex="-1"></a>comp <span class="op">=</span> comp.sort_values(<span class="st">"MLE Rank"</span>).reset_index(drop<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb16-666"><a href="#cb16-666" aria-hidden="true" tabindex="-1"></a>comp_display <span class="op">=</span> comp[[<span class="st">"Class"</span>,<span class="st">"Counts Score"</span>,<span class="st">"Counts Rank"</span>,<span class="st">"MLE Share (%)"</span>,<span class="st">"MLE Rank"</span>,<span class="st">"Bayes Share (%)"</span>,<span class="st">"Bayes Rank"</span>]]</span>
-<span id="cb16-667"><a href="#cb16-667" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-668"><a href="#cb16-668" aria-hidden="true" tabindex="-1"></a>(</span>
-<span id="cb16-669"><a href="#cb16-669" aria-hidden="true" tabindex="-1"></a>    GT(comp_display)</span>
-<span id="cb16-670"><a href="#cb16-670" aria-hidden="true" tabindex="-1"></a>    .tab_header(</span>
-<span id="cb16-671"><a href="#cb16-671" aria-hidden="true" tabindex="-1"></a>        title<span class="op">=</span><span class="st">"Side-by-Side Comparison of All Three Methods"</span>,</span>
-<span id="cb16-672"><a href="#cb16-672" aria-hidden="true" tabindex="-1"></a>        subtitle<span class="op">=</span><span class="st">"Sorted by MLE rank"</span></span>
-<span id="cb16-673"><a href="#cb16-673" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb16-674"><a href="#cb16-674" aria-hidden="true" tabindex="-1"></a>    .tab_style(style<span class="op">=</span>style.text(weight<span class="op">=</span><span class="st">"bold"</span>), locations<span class="op">=</span>loc.column_labels())</span>
-<span id="cb16-675"><a href="#cb16-675" aria-hidden="true" tabindex="-1"></a>    .tab_style(</span>
-<span id="cb16-676"><a href="#cb16-676" aria-hidden="true" tabindex="-1"></a>        style<span class="op">=</span>style.fill(color<span class="op">=</span><span class="st">"#dcfce7"</span>),</span>
-<span id="cb16-677"><a href="#cb16-677" aria-hidden="true" tabindex="-1"></a>        locations<span class="op">=</span>loc.body(rows<span class="op">=</span>[<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">2</span>])</span>
-<span id="cb16-678"><a href="#cb16-678" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb16-679"><a href="#cb16-679" aria-hidden="true" tabindex="-1"></a>    .tab_style(</span>
-<span id="cb16-680"><a href="#cb16-680" aria-hidden="true" tabindex="-1"></a>        style<span class="op">=</span>style.fill(color<span class="op">=</span><span class="st">"#fee2e2"</span>),</span>
-<span id="cb16-681"><a href="#cb16-681" aria-hidden="true" tabindex="-1"></a>        locations<span class="op">=</span>loc.body(rows<span class="op">=</span>[<span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">9</span>])</span>
-<span id="cb16-682"><a href="#cb16-682" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb16-683"><a href="#cb16-683" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb16-684"><a href="#cb16-684" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb16-685"><a href="#cb16-685" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-688"><a href="#cb16-688" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
-<span id="cb16-689"><a href="#cb16-689" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
-<span id="cb16-690"><a href="#cb16-690" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-cap: "Three panels, one per method, all sharing the same class order (sorted by MLE rank). The top-ranked and bottom-ranked classes are consistent across all three approaches."</span></span>
-<span id="cb16-691"><a href="#cb16-691" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-692"><a href="#cb16-692" aria-hidden="true" tabindex="-1"></a>order <span class="op">=</span> comp.sort_values(<span class="st">"MLE Rank"</span>)[<span class="st">"Class"</span>].tolist()</span>
-<span id="cb16-693"><a href="#cb16-693" aria-hidden="true" tabindex="-1"></a>y_pos <span class="op">=</span> <span class="bu">list</span>(<span class="bu">range</span>(<span class="bu">len</span>(order)))</span>
-<span id="cb16-694"><a href="#cb16-694" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-695"><a href="#cb16-695" aria-hidden="true" tabindex="-1"></a>counts_vals <span class="op">=</span> [comp[comp[<span class="st">"Class"</span>]<span class="op">==</span>c][<span class="st">"Counts Score"</span>].values[<span class="dv">0</span>] <span class="cf">for</span> c <span class="kw">in</span> order]</span>
-<span id="cb16-696"><a href="#cb16-696" aria-hidden="true" tabindex="-1"></a>mle_vals    <span class="op">=</span> [comp[comp[<span class="st">"Class"</span>]<span class="op">==</span>c][<span class="st">"MLE Share (%)"</span>].values[<span class="dv">0</span>] <span class="cf">for</span> c <span class="kw">in</span> order]</span>
-<span id="cb16-697"><a href="#cb16-697" aria-hidden="true" tabindex="-1"></a>bayes_vals  <span class="op">=</span> [comp[comp[<span class="st">"Class"</span>]<span class="op">==</span>c][<span class="st">"Bayes Share (%)"</span>].values[<span class="dv">0</span>] <span class="cf">for</span> c <span class="kw">in</span> order]</span>
-<span id="cb16-698"><a href="#cb16-698" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-699"><a href="#cb16-699" aria-hidden="true" tabindex="-1"></a>fig, axes <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">3</span>, figsize<span class="op">=</span>(<span class="dv">15</span>, <span class="dv">6</span>))</span>
+<span id="cb16-638"><a href="#cb16-638" aria-hidden="true" tabindex="-1"></a><span class="fu">## Comparing the Three Methods</span></span>
+<span id="cb16-639"><a href="#cb16-639" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-642"><a href="#cb16-642" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb16-643"><a href="#cb16-643" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
+<span id="cb16-644"><a href="#cb16-644" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-645"><a href="#cb16-645" aria-hidden="true" tabindex="-1"></a><span class="co"># Build comparison table</span></span>
+<span id="cb16-646"><a href="#cb16-646" aria-hidden="true" tabindex="-1"></a>comp <span class="op">=</span> pd.DataFrame({</span>
+<span id="cb16-647"><a href="#cb16-647" aria-hidden="true" tabindex="-1"></a>    <span class="st">"item"</span>:  <span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">11</span>),</span>
+<span id="cb16-648"><a href="#cb16-648" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Class"</span>: [short_labels[i] <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">11</span>)],</span>
+<span id="cb16-649"><a href="#cb16-649" aria-hidden="true" tabindex="-1"></a>})</span>
+<span id="cb16-650"><a href="#cb16-650" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-651"><a href="#cb16-651" aria-hidden="true" tabindex="-1"></a>counts_map <span class="op">=</span> item_counts.set_index(<span class="st">"Item"</span>)[[<span class="st">"score"</span>]].rename(columns<span class="op">=</span>{<span class="st">"score"</span>: <span class="st">"Counts Score"</span>})</span>
+<span id="cb16-652"><a href="#cb16-652" aria-hidden="true" tabindex="-1"></a>counts_map[<span class="st">"Counts Score"</span>] <span class="op">=</span> counts_map[<span class="st">"Counts Score"</span>].<span class="bu">round</span>(<span class="dv">3</span>)</span>
+<span id="cb16-653"><a href="#cb16-653" aria-hidden="true" tabindex="-1"></a>comp <span class="op">=</span> comp.merge(counts_map, left_on<span class="op">=</span><span class="st">"item"</span>, right_index<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb16-654"><a href="#cb16-654" aria-hidden="true" tabindex="-1"></a>comp <span class="op">=</span> comp.sort_values(<span class="st">"Counts Score"</span>, ascending<span class="op">=</span><span class="va">False</span>).reset_index(drop<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb16-655"><a href="#cb16-655" aria-hidden="true" tabindex="-1"></a>comp[<span class="st">"Counts Rank"</span>] <span class="op">=</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">11</span>)</span>
+<span id="cb16-656"><a href="#cb16-656" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-657"><a href="#cb16-657" aria-hidden="true" tabindex="-1"></a>mle_map <span class="op">=</span> pd.Series(shares_mle <span class="op">*</span> <span class="dv">100</span>, index<span class="op">=</span><span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">11</span>)).rename(<span class="st">"MLE Share (%)"</span>)</span>
+<span id="cb16-658"><a href="#cb16-658" aria-hidden="true" tabindex="-1"></a>comp <span class="op">=</span> comp.merge(mle_map.<span class="bu">round</span>(<span class="dv">2</span>), left_on<span class="op">=</span><span class="st">"item"</span>, right_index<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb16-659"><a href="#cb16-659" aria-hidden="true" tabindex="-1"></a>comp <span class="op">=</span> comp.sort_values(<span class="st">"MLE Share (%)"</span>, ascending<span class="op">=</span><span class="va">False</span>).reset_index(drop<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb16-660"><a href="#cb16-660" aria-hidden="true" tabindex="-1"></a>comp[<span class="st">"MLE Rank"</span>] <span class="op">=</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">11</span>)</span>
+<span id="cb16-661"><a href="#cb16-661" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-662"><a href="#cb16-662" aria-hidden="true" tabindex="-1"></a>bayes_map <span class="op">=</span> pd.Series(shares_bayes_mean <span class="op">*</span> <span class="dv">100</span>, index<span class="op">=</span><span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">11</span>)).rename(<span class="st">"Bayes Share (%)"</span>)</span>
+<span id="cb16-663"><a href="#cb16-663" aria-hidden="true" tabindex="-1"></a>comp <span class="op">=</span> comp.merge(bayes_map.<span class="bu">round</span>(<span class="dv">2</span>), left_on<span class="op">=</span><span class="st">"item"</span>, right_index<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb16-664"><a href="#cb16-664" aria-hidden="true" tabindex="-1"></a>comp <span class="op">=</span> comp.sort_values(<span class="st">"Bayes Share (%)"</span>, ascending<span class="op">=</span><span class="va">False</span>).reset_index(drop<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb16-665"><a href="#cb16-665" aria-hidden="true" tabindex="-1"></a>comp[<span class="st">"Bayes Rank"</span>] <span class="op">=</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">11</span>)</span>
+<span id="cb16-666"><a href="#cb16-666" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-667"><a href="#cb16-667" aria-hidden="true" tabindex="-1"></a>comp <span class="op">=</span> comp.sort_values(<span class="st">"MLE Rank"</span>).reset_index(drop<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb16-668"><a href="#cb16-668" aria-hidden="true" tabindex="-1"></a>comp_display <span class="op">=</span> comp[[<span class="st">"Class"</span>,<span class="st">"Counts Score"</span>,<span class="st">"Counts Rank"</span>,<span class="st">"MLE Share (%)"</span>,<span class="st">"MLE Rank"</span>,<span class="st">"Bayes Share (%)"</span>,<span class="st">"Bayes Rank"</span>]]</span>
+<span id="cb16-669"><a href="#cb16-669" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-670"><a href="#cb16-670" aria-hidden="true" tabindex="-1"></a>(</span>
+<span id="cb16-671"><a href="#cb16-671" aria-hidden="true" tabindex="-1"></a>    GT(comp_display)</span>
+<span id="cb16-672"><a href="#cb16-672" aria-hidden="true" tabindex="-1"></a>    .tab_header(</span>
+<span id="cb16-673"><a href="#cb16-673" aria-hidden="true" tabindex="-1"></a>        title<span class="op">=</span><span class="st">"Side-by-Side Comparison of All Three Methods"</span>,</span>
+<span id="cb16-674"><a href="#cb16-674" aria-hidden="true" tabindex="-1"></a>        subtitle<span class="op">=</span><span class="st">"Sorted by MLE rank"</span></span>
+<span id="cb16-675"><a href="#cb16-675" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb16-676"><a href="#cb16-676" aria-hidden="true" tabindex="-1"></a>    .tab_style(style<span class="op">=</span>style.text(weight<span class="op">=</span><span class="st">"bold"</span>), locations<span class="op">=</span>loc.column_labels())</span>
+<span id="cb16-677"><a href="#cb16-677" aria-hidden="true" tabindex="-1"></a>    .tab_style(</span>
+<span id="cb16-678"><a href="#cb16-678" aria-hidden="true" tabindex="-1"></a>        style<span class="op">=</span>style.fill(color<span class="op">=</span><span class="st">"#dcfce7"</span>),</span>
+<span id="cb16-679"><a href="#cb16-679" aria-hidden="true" tabindex="-1"></a>        locations<span class="op">=</span>loc.body(rows<span class="op">=</span>[<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">2</span>])</span>
+<span id="cb16-680"><a href="#cb16-680" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb16-681"><a href="#cb16-681" aria-hidden="true" tabindex="-1"></a>    .tab_style(</span>
+<span id="cb16-682"><a href="#cb16-682" aria-hidden="true" tabindex="-1"></a>        style<span class="op">=</span>style.fill(color<span class="op">=</span><span class="st">"#fee2e2"</span>),</span>
+<span id="cb16-683"><a href="#cb16-683" aria-hidden="true" tabindex="-1"></a>        locations<span class="op">=</span>loc.body(rows<span class="op">=</span>[<span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">9</span>])</span>
+<span id="cb16-684"><a href="#cb16-684" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb16-685"><a href="#cb16-685" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb16-686"><a href="#cb16-686" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb16-687"><a href="#cb16-687" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-690"><a href="#cb16-690" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb16-691"><a href="#cb16-691" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
+<span id="cb16-692"><a href="#cb16-692" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-cap: "Three panels, one per method, all sharing the same class order (sorted by MLE rank). The top-ranked and bottom-ranked classes are consistent across all three approaches."</span></span>
+<span id="cb16-693"><a href="#cb16-693" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-694"><a href="#cb16-694" aria-hidden="true" tabindex="-1"></a>order <span class="op">=</span> comp.sort_values(<span class="st">"MLE Rank"</span>)[<span class="st">"Class"</span>].tolist()</span>
+<span id="cb16-695"><a href="#cb16-695" aria-hidden="true" tabindex="-1"></a>y_pos <span class="op">=</span> <span class="bu">list</span>(<span class="bu">range</span>(<span class="bu">len</span>(order)))</span>
+<span id="cb16-696"><a href="#cb16-696" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-697"><a href="#cb16-697" aria-hidden="true" tabindex="-1"></a>counts_vals <span class="op">=</span> [comp[comp[<span class="st">"Class"</span>]<span class="op">==</span>c][<span class="st">"Counts Score"</span>].values[<span class="dv">0</span>] <span class="cf">for</span> c <span class="kw">in</span> order]</span>
+<span id="cb16-698"><a href="#cb16-698" aria-hidden="true" tabindex="-1"></a>mle_vals    <span class="op">=</span> [comp[comp[<span class="st">"Class"</span>]<span class="op">==</span>c][<span class="st">"MLE Share (%)"</span>].values[<span class="dv">0</span>] <span class="cf">for</span> c <span class="kw">in</span> order]</span>
+<span id="cb16-699"><a href="#cb16-699" aria-hidden="true" tabindex="-1"></a>bayes_vals  <span class="op">=</span> [comp[comp[<span class="st">"Class"</span>]<span class="op">==</span>c][<span class="st">"Bayes Share (%)"</span>].values[<span class="dv">0</span>] <span class="cf">for</span> c <span class="kw">in</span> order]</span>
 <span id="cb16-700"><a href="#cb16-700" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-701"><a href="#cb16-701" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> draw_panel(ax, values, title, color, show_labels):</span>
-<span id="cb16-702"><a href="#cb16-702" aria-hidden="true" tabindex="-1"></a>    ax.barh(y_pos, values, color<span class="op">=</span>color, alpha<span class="op">=</span><span class="fl">0.8</span>, height<span class="op">=</span><span class="fl">0.7</span>)</span>
-<span id="cb16-703"><a href="#cb16-703" aria-hidden="true" tabindex="-1"></a>    ax.set_yticks(y_pos)</span>
-<span id="cb16-704"><a href="#cb16-704" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> show_labels:</span>
-<span id="cb16-705"><a href="#cb16-705" aria-hidden="true" tabindex="-1"></a>        ax.set_yticklabels(order, fontsize<span class="op">=</span><span class="dv">8</span>)</span>
-<span id="cb16-706"><a href="#cb16-706" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
-<span id="cb16-707"><a href="#cb16-707" aria-hidden="true" tabindex="-1"></a>        ax.set_yticklabels([])</span>
-<span id="cb16-708"><a href="#cb16-708" aria-hidden="true" tabindex="-1"></a>    ax.invert_yaxis()</span>
-<span id="cb16-709"><a href="#cb16-709" aria-hidden="true" tabindex="-1"></a>    ax.set_title(title, fontsize<span class="op">=</span><span class="dv">11</span>, fontweight<span class="op">=</span><span class="st">"bold"</span>)</span>
-<span id="cb16-710"><a href="#cb16-710" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-711"><a href="#cb16-711" aria-hidden="true" tabindex="-1"></a>draw_panel(axes[<span class="dv">0</span>], counts_vals, <span class="st">"Counts</span><span class="ch">\n</span><span class="st">(% Best − % Worst)"</span>,  TEAL,   show_labels<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb16-712"><a href="#cb16-712" aria-hidden="true" tabindex="-1"></a>draw_panel(axes[<span class="dv">1</span>], mle_vals,    <span class="st">"MLE</span><span class="ch">\n</span><span class="st">(Share of Preference %)"</span>, BLUE,   show_labels<span class="op">=</span><span class="va">False</span>)</span>
-<span id="cb16-713"><a href="#cb16-713" aria-hidden="true" tabindex="-1"></a>draw_panel(axes[<span class="dv">2</span>], bayes_vals,  <span class="st">"Bayesian</span><span class="ch">\n</span><span class="st">(Share of Preference %)"</span>, ORANGE, show_labels<span class="op">=</span><span class="va">False</span>)</span>
-<span id="cb16-714"><a href="#cb16-714" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-715"><a href="#cb16-715" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>].set_xlabel(<span class="st">"Score"</span>)</span>
-<span id="cb16-716"><a href="#cb16-716" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>].set_xlabel(<span class="st">"Share (%)"</span>)</span>
-<span id="cb16-717"><a href="#cb16-717" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">2</span>].set_xlabel(<span class="st">"Share (%)"</span>)</span>
-<span id="cb16-718"><a href="#cb16-718" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-719"><a href="#cb16-719" aria-hidden="true" tabindex="-1"></a>fig.suptitle(<span class="st">"All Three Methods — Same Class Order (MLE Rank)"</span>, fontsize<span class="op">=</span><span class="dv">13</span>)</span>
-<span id="cb16-720"><a href="#cb16-720" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
-<span id="cb16-721"><a href="#cb16-721" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
-<span id="cb16-722"><a href="#cb16-722" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb16-723"><a href="#cb16-723" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-724"><a href="#cb16-724" aria-hidden="true" tabindex="-1"></a>**Where the three methods agree.** The ranking is rock-solid across all three approaches: Marketing Analytics (495) is first, **Business Analytics (453)** is second, and **Customer Analytics (455)** is third in every method. The same stability holds at the bottom: Analytics Consulting (444) and Mktg/Fin/Ops (451) occupy the last two positions regardless of method. When the signal is strong — a course that's genuinely loved or genuinely disliked — all three methods converge cleanly.</span>
+<span id="cb16-701"><a href="#cb16-701" aria-hidden="true" tabindex="-1"></a>fig, axes <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">3</span>, figsize<span class="op">=</span>(<span class="dv">15</span>, <span class="dv">6</span>))</span>
+<span id="cb16-702"><a href="#cb16-702" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-703"><a href="#cb16-703" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> draw_panel(ax, values, title, color, show_labels):</span>
+<span id="cb16-704"><a href="#cb16-704" aria-hidden="true" tabindex="-1"></a>    ax.barh(y_pos, values, color<span class="op">=</span>color, alpha<span class="op">=</span><span class="fl">0.8</span>, height<span class="op">=</span><span class="fl">0.7</span>)</span>
+<span id="cb16-705"><a href="#cb16-705" aria-hidden="true" tabindex="-1"></a>    ax.set_yticks(y_pos)</span>
+<span id="cb16-706"><a href="#cb16-706" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> show_labels:</span>
+<span id="cb16-707"><a href="#cb16-707" aria-hidden="true" tabindex="-1"></a>        ax.set_yticklabels(order, fontsize<span class="op">=</span><span class="dv">8</span>)</span>
+<span id="cb16-708"><a href="#cb16-708" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb16-709"><a href="#cb16-709" aria-hidden="true" tabindex="-1"></a>        ax.set_yticklabels([])</span>
+<span id="cb16-710"><a href="#cb16-710" aria-hidden="true" tabindex="-1"></a>    ax.invert_yaxis()</span>
+<span id="cb16-711"><a href="#cb16-711" aria-hidden="true" tabindex="-1"></a>    ax.set_title(title, fontsize<span class="op">=</span><span class="dv">11</span>, fontweight<span class="op">=</span><span class="st">"bold"</span>)</span>
+<span id="cb16-712"><a href="#cb16-712" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-713"><a href="#cb16-713" aria-hidden="true" tabindex="-1"></a>draw_panel(axes[<span class="dv">0</span>], counts_vals, <span class="st">"Counts</span><span class="ch">\n</span><span class="st">(% Best − % Worst)"</span>,  TEAL,   show_labels<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb16-714"><a href="#cb16-714" aria-hidden="true" tabindex="-1"></a>draw_panel(axes[<span class="dv">1</span>], mle_vals,    <span class="st">"MLE</span><span class="ch">\n</span><span class="st">(Share of Preference %)"</span>, BLUE,   show_labels<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb16-715"><a href="#cb16-715" aria-hidden="true" tabindex="-1"></a>draw_panel(axes[<span class="dv">2</span>], bayes_vals,  <span class="st">"Bayesian</span><span class="ch">\n</span><span class="st">(Share of Preference %)"</span>, ORANGE, show_labels<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb16-716"><a href="#cb16-716" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-717"><a href="#cb16-717" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>].set_xlabel(<span class="st">"Score"</span>)</span>
+<span id="cb16-718"><a href="#cb16-718" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>].set_xlabel(<span class="st">"Share (%)"</span>)</span>
+<span id="cb16-719"><a href="#cb16-719" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">2</span>].set_xlabel(<span class="st">"Share (%)"</span>)</span>
+<span id="cb16-720"><a href="#cb16-720" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-721"><a href="#cb16-721" aria-hidden="true" tabindex="-1"></a>fig.suptitle(<span class="st">"All Three Methods — Same Class Order (MLE Rank)"</span>, fontsize<span class="op">=</span><span class="dv">13</span>)</span>
+<span id="cb16-722"><a href="#cb16-722" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb16-723"><a href="#cb16-723" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
+<span id="cb16-724"><a href="#cb16-724" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb16-725"><a href="#cb16-725" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-726"><a href="#cb16-726" aria-hidden="true" tabindex="-1"></a>**Where they disagree.** With this dataset, the three methods land on virtually identical rankings from top to bottom. That's actually informative: it tells us the count of best and worst picks is already a very good signal for these data, and the MNL's adjustments for lineup difficulty don't shift enough items to change the order. In general — with noisier data, fewer respondents, or closer competition between middle-ranked items — you would expect more disagreement in the middle tiers.</span>
+<span id="cb16-726"><a href="#cb16-726" aria-hidden="true" tabindex="-1"></a>**Where the three methods agree.** The ranking is rock-solid across all three approaches: Marketing Analytics (495) is first, **Business Analytics (453)** is second, and **Customer Analytics (455)** is third in every method. The same stability holds at the bottom: Analytics Consulting (444) and Mktg/Fin/Ops (451) occupy the last two positions regardless of method. When the signal is strong — a course that's genuinely loved or genuinely disliked — all three methods converge cleanly.</span>
 <span id="cb16-727"><a href="#cb16-727" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-728"><a href="#cb16-728" aria-hidden="true" tabindex="-1"></a>**What the MNL adds over counts.** The MNL uses every item on every screen, not just the one that was chosen. A class picked best while competing against three disliked classes gets less credit than one picked best in a tough lineup. The counts analysis can't distinguish these cases; the MNL can.</span>
+<span id="cb16-728"><a href="#cb16-728" aria-hidden="true" tabindex="-1"></a>**Where they disagree.** With this dataset, the three methods land on virtually identical rankings from top to bottom. That's actually informative: it tells us the count of best and worst picks is already a very good signal for these data, and the MNL's adjustments for lineup difficulty don't shift enough items to change the order. In general — with noisier data, fewer respondents, or closer competition between middle-ranked items — you would expect more disagreement in the middle tiers.</span>
 <span id="cb16-729"><a href="#cb16-729" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-730"><a href="#cb16-730" aria-hidden="true" tabindex="-1"></a>**What Bayes adds over MLE.** The MLE gives one number per parameter. Bayes gives a distribution. That distribution lets us answer questions like "how confident are we that Marketing Analytics's true share exceeds 20%?" or "what's the probability that Customer Analytics outranks Business Analytics?" — all of which flow naturally out of the MCMC draws.</span>
+<span id="cb16-730"><a href="#cb16-730" aria-hidden="true" tabindex="-1"></a>**What the MNL adds over counts.** The MNL uses every item on every screen, not just the one that was chosen. A class picked best while competing against three disliked classes gets less credit than one picked best in a tough lineup. The counts analysis can't distinguish these cases; the MNL can.</span>
 <span id="cb16-731"><a href="#cb16-731" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-732"><a href="#cb16-732" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb16-732"><a href="#cb16-732" aria-hidden="true" tabindex="-1"></a>**What Bayes adds over MLE.** The MLE gives one number per parameter. Bayes gives a distribution. That distribution lets us answer questions like "how confident are we that Marketing Analytics's true share exceeds 20%?" or "what's the probability that Customer Analytics outranks Business Analytics?" — all of which flow naturally out of the MCMC draws.</span>
 <span id="cb16-733"><a href="#cb16-733" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-734"><a href="#cb16-734" aria-hidden="true" tabindex="-1"></a><span class="fu">## Discussion</span></span>
+<span id="cb16-734"><a href="#cb16-734" aria-hidden="true" tabindex="-1"></a>---</span>
 <span id="cb16-735"><a href="#cb16-735" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-736"><a href="#cb16-736" aria-hidden="true" tabindex="-1"></a>If an academic advisor asked "which MSBA courses do students value most?", the answer from all three methods is consistent: **Marketing Analytics (MGTA 495)** is by far the most preferred, attracting roughly 28% of simulated best-picks if all 10 courses competed simultaneously — nearly **three times** the equal-share benchmark of 10%. **Business Analytics (453)** and **Customer Analytics (455)** round out the top tier. Students clearly gravitate toward courses with direct, career-ready analytics applications.</span>
+<span id="cb16-736"><a href="#cb16-736" aria-hidden="true" tabindex="-1"></a><span class="fu">## Discussion</span></span>
 <span id="cb16-737"><a href="#cb16-737" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-738"><a href="#cb16-738" aria-hidden="true" tabindex="-1"></a>At the other end, **Analytics Consulting (444)** and **Mktg/Fin/Ops (451)** are consistently last — both attract far more "worst" picks than "best" picks whenever they appear on screen. The Capstone (454), interestingly, lands almost exactly in the middle with a near-zero net score: students are split, picking it best and worst in nearly equal measure, suggesting it is polarizing rather than uniformly disliked.</span>
+<span id="cb16-738"><a href="#cb16-738" aria-hidden="true" tabindex="-1"></a>If an academic advisor asked "which MSBA courses do students value most?", the answer from all three methods is consistent: **Marketing Analytics (MGTA 495)** is by far the most preferred, attracting roughly 28% of simulated best-picks if all 10 courses competed simultaneously — nearly **three times** the equal-share benchmark of 10%. **Business Analytics (453)** and **Customer Analytics (455)** round out the top tier. Students clearly gravitate toward courses with direct, career-ready analytics applications.</span>
 <span id="cb16-739"><a href="#cb16-739" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-740"><a href="#cb16-740" aria-hidden="true" tabindex="-1"></a>**Which method would you use when?** The counts analysis is an executive dashboard: fast, transparent, and easy to explain to anyone. The MLE is the right choice when you need a single defensible number to report — a $\hat\beta$ with a standard error is something every statistician understands. The Bayesian approach earns its extra complexity when you need uncertainty on derived quantities (shares, ratios, "what if?" simulations) or when you plan to extend the model to individual-level preferences — a natural next step would be a hierarchical (random-effects) MNL that estimates a separate $\boldsymbol{\beta}$ for each student.</span>
+<span id="cb16-740"><a href="#cb16-740" aria-hidden="true" tabindex="-1"></a>At the other end, **Analytics Consulting (444)** and **Mktg/Fin/Ops (451)** are consistently last — both attract far more "worst" picks than "best" picks whenever they appear on screen. The Capstone (454), interestingly, lands almost exactly in the middle with a near-zero net score: students are split, picking it best and worst in nearly equal measure, suggesting it is polarizing rather than uniformly disliked.</span>
 <span id="cb16-741"><a href="#cb16-741" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-742"><a href="#cb16-742" aria-hidden="true" tabindex="-1"></a>**Caveats.** The survey was completed by 85 MSBA students — a self-selected, program-specific sample. Preferences may shift depending on semester standing, prior work experience, or the specific instructor teaching a course that year. Item 11 appeared in a subset of tasks alongside a single class but with no worst pick, suggesting it may be an anchor or "none" option; excluding those tasks was the right call for a clean MNL fit.</span>
+<span id="cb16-742"><a href="#cb16-742" aria-hidden="true" tabindex="-1"></a>**Which method would you use when?** The counts analysis is an executive dashboard: fast, transparent, and easy to explain to anyone. The MLE is the right choice when you need a single defensible number to report — a $\hat\beta$ with a standard error is something every statistician understands. The Bayesian approach earns its extra complexity when you need uncertainty on derived quantities (shares, ratios, "what if?" simulations) or when you plan to extend the model to individual-level preferences — a natural next step would be a hierarchical (random-effects) MNL that estimates a separate $\boldsymbol{\beta}$ for each student.</span>
 <span id="cb16-743"><a href="#cb16-743" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-744"><a href="#cb16-744" aria-hidden="true" tabindex="-1"></a>If I had more time, I'd run the **Latent-Class MNL** — fitting two or three segments of students with different $\boldsymbol{\beta}$ vectors — to see whether there is a subgroup of students who rate the more technical courses (AI Math, Large Data) above the applied analytics courses. That heterogeneity is invisible in any of the three aggregate methods used here.</span>
+<span id="cb16-744"><a href="#cb16-744" aria-hidden="true" tabindex="-1"></a>**Caveats.** The survey was completed by 85 MSBA students — a self-selected, program-specific sample. Preferences may shift depending on semester standing, prior work experience, or the specific instructor teaching a course that year. Item 11 appeared in a subset of tasks alongside a single class but with no worst pick, suggesting it may be an anchor or "none" option; excluding those tasks was the right call for a clean MNL fit.</span>
+<span id="cb16-745"><a href="#cb16-745" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-746"><a href="#cb16-746" aria-hidden="true" tabindex="-1"></a>If I had more time, I'd run the **Latent-Class MNL** — fitting two or three segments of students with different $\boldsymbol{\beta}$ vectors — to see whether there is a subgroup of students who rate the more technical courses (AI Math, Large Data) above the applied analytics courses. That heterogeneity is invisible in any of the three aggregate methods used here.</span>
 </code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->

@@ -1,7 +1,7 @@
 ---
 title: "MaxDiff Analysis of MSBA Class Preferences"
 subtitle: "Counts, Maximum Likelihood, and Bayesian Estimation of the MNL Model"
-author: "Shreya"
+author: "Shreya Anekar"
 date: today
 categories: [marketing analytics, MNL, bayesian, python, survey analysis]
 image: thumbnail.png
@@ -594,6 +594,8 @@ plt.show()
 ```
 
 The Bayesian and MLE results are closely aligned, as we'd expect with 680 tasks and a diffuse prior. The key advantage of the Bayesian output is the credible intervals on *shares* — quantities that are nonlinear functions of the raw parameters. Computing these intervals from MLE would require the delta method; in the Bayesian framework, we simply push every posterior draw through the softmax and take quantiles. Easy and exact.
+
+**Posterior SDs vs MLE standard errors.** With a diffuse prior and a large sample, the two should be nearly identical — and they are. The MLE standard errors range from 0.137 to 0.146; the posterior standard deviations (the standard deviation of the post-burn-in draws) range from 0.137 to 0.160. The posterior SDs are slightly *larger* than the MLE SEs for some parameters. This is expected: the Hessian-based SE is a local quadratic approximation at the mode, while the MCMC posterior captures the full distribution including any asymmetry in the tails. With 680 observations the difference is small, but it would grow with fewer data points where the likelihood surface is less bowl-shaped.
 
 ---
 
