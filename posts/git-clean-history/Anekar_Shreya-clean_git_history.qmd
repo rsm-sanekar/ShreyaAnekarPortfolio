@@ -1,0 +1,225 @@
+---
+title: "Three Habits for a Clean Git History"
+subtitle: "gitignore · git stash · git rebase"
+author: "Shreya Anekar"
+format:
+  revealjs:
+    embed-resources: true
+    theme: theme.scss
+    transition: fade
+    transition-speed: fast
+    slide-number: c/t
+    highlight-style: github
+    code-line-numbers: false
+    center-title-slide: true
+    width: 1280
+    height: 720
+---
+
+## The part tutorials skip {.smaller}
+
+::: {.kicker}
+Beyond fork · clone · branch · commit · push
+:::
+
+Most people learn how to make commits. Almost no one learns how to keep
+a repository and its history clean.
+
+Three small habits do most of the work:
+
+. . .
+
+::: {.columns}
+::: {.column width="33%"}
+### gitignore
+**Prevent** the mess.
+Stop junk from ever entering the repo.
+:::
+::: {.column width="33%"}
+### git stash
+**Avoid** the mess.
+Set work aside without a junk commit.
+:::
+::: {.column width="33%"}
+### git rebase
+**Fix** the mess.
+Rewrite messy commits into clean ones.
+:::
+:::
+
+. . .
+
+> Prevent it, avoid it, or fix it, and your history stays readable.
+
+---
+
+## 1 · `.gitignore` {.smaller}
+
+::: {.kicker}
+Prevent the mess
+:::
+
+A plain text file that tells Git which files to **never track**.
+You commit *code*, not the things around it:
+
+. . .
+
+::: {.columns}
+::: {.column width="50%"}
+- **Data** — `*.csv`, `*.parquet`, raw datasets
+- **Secrets** — `.env` files, API keys
+:::
+::: {.column width="50%"}
+- **Build output** — `_site/`, `__pycache__/`
+- **Artifacts** — trained models, large binaries
+:::
+:::
+
+. . .
+
+```bash
+# .gitignore  →  lives at the root of your repo
+*.csv                 # data stays out of version control
+.env                  # never commit credentials
+__pycache__/          # Python noise
+/_site/  /.quarto/    # Quarto build output
+```
+
+. . .
+
+> A leaked key or a 2 GB file buried in history is *painful* to undo.
+> Prevention always beats cleanup.
+
+---
+
+## 2 · `git stash` {.smaller}
+
+::: {.kicker}
+Avoid the mess
+:::
+
+You're mid-edit when something urgent pulls you to another branch.
+Your changes aren't ready to commit. What now?
+
+. . .
+
+::: {.columns}
+::: {.column width="50%"}
+### ✗ The messy way
+```bash
+git commit -m "WIP dont look"
+```
+A throwaway commit that clutters
+history forever.
+:::
+::: {.column width="50%"}
+### ✓ The clean way
+```bash
+git stash      # set aside
+git checkout main
+git stash pop  # bring back
+```
+Your work is parked safely, then
+restored untouched.
+:::
+:::
+
+. . .
+
+```{=html}
+<div class="terminal">
+  <div class="term-bar">
+    <span class="dot red"></span>
+    <span class="dot yellow"></span>
+    <span class="dot green"></span>
+    <span class="term-title">zsh — ~/portfolio</span>
+  </div>
+  <div class="term-body">
+<div><span class="prompt">~/portfolio (main) $</span> <span class="cmd">git stash</span>          <span class="comment"># shelve current work</span></div>
+<div><span class="out">Saved working directory and index state WIP on main</span></div>
+<div><span class="prompt">~/portfolio (main) $</span> <span class="cmd">git checkout <span class="flag">feature</span></span></div>
+<div><span class="prompt">~/portfolio (feature) $</span> <span class="cmd">git stash pop</span>      <span class="comment"># bring it right back</span></div>
+<div><span class="ok">  ✓ changes restored — exactly where you left off</span><span class="cursor"></span></div>
+  </div>
+</div>
+```
+
+---
+
+## 3 · `git rebase -i` {.smaller}
+
+::: {.kicker}
+Fix the mess
+:::
+
+Real working history is honest, and honestly *ugly*:
+
+```bash
+* a1b2c3d  fix typo again
+* d4e5f6g  oops forgot import
+* h7i8j9k  WIP
+* p3q4r5s  add customer dedup logic
+```
+
+. . .
+
+No reviewer wants to read *"oops"* and *"WIP"*. Interactive rebase lets
+you rewrite these before anyone sees them:
+
+```bash
+git rebase -i HEAD~4     # edit the last 4 commits
+```
+
+. . .
+
+In the editor, change `pick` to `squash` to fold commits together:
+
+```bash
+pick   p3q4r5s  add customer dedup logic
+squash h7i8j9k  WIP
+squash d4e5f6g  oops forgot import
+squash a1b2c3d  fix typo again
+```
+
+---
+
+## The payoff {.smaller}
+
+::: {.kicker}
+Fix the mess
+:::
+
+Four noisy commits become **one** you'd be proud to ship:
+
+::: {.columns}
+::: {.column width="48%"}
+### Before
+```bash
+* fix typo again
+* oops forgot import
+* WIP
+* add dedup logic
+```
+:::
+::: {.column width="52%"}
+### After
+```bash
+* Add customer dedup
+  logic with null
+  handling + tests
+```
+:::
+:::
+
+. . .
+
+::: {.callout-warning}
+Golden rule: rebase only commits you **haven't shared** yet.
+Rewrite local history freely, but never rewrite `main`.
+:::
+
+. . .
+
+> A clean history is a gift to your reviewer, and to *future you*.
+
+### Thank you

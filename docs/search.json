@@ -4,7 +4,7 @@
     "href": "blog.html",
     "title": "Blog",
     "section": "",
-    "text": "Replication of Card and Krueger (1994)\n\n\nMinimum Wages and Employment: A Case Study of the Fast-Food Industry in New Jersey and Pennsylvania\n\n\n\neconometrics\n\ncausal inference\n\ndiff-in-diff\n\npython\n\nlabor economics\n\n\n\n\n\n\n\n\n\nMay 23, 2026\n\n\nShreya Anekar\n\n\n\n\n\n\n\n\n\n\n\n\nMaxDiff Analysis of MSBA Class Preferences\n\n\nCounts, Maximum Likelihood, and Bayesian Estimation of the MNL Model\n\n\n\nmarketing analytics\n\nMNL\n\nbayesian\n\npython\n\nsurvey analysis\n\n\n\n\n\n\n\n\n\nMay 23, 2026\n\n\nShreya Anekar\n\n\n\n\n\n\n\n\n\n\n\n\nA/B Testing a Call to Action\n\n\nSimulating Key Ideas from Classical Frequentist Statistics\n\n\n\nstatistics\n\nsimulation\n\nA/B testing\n\npython\n\n\n\n\n\n\n\n\n\nMay 23, 2026\n\n\nShreya Anekar\n\n\n\n\n\n\n\n\n\n\n\n\nDoes Better Software Mean More Patents?\n\n\nMaximum Likelihood Estimation and Poisson Regression in a Real-World Case Study\n\n\n\nstatistics\n\nMLE\n\nPoisson regression\n\npython\n\nmarketing analytics\n\n\n\n\n\n\n\n\n\nMay 23, 2026\n\n\nShreya Anekar\n\n\n\n\n\nNo matching items"
+    "text": "Three Habits for a Clean Git History\n\n\ngitignore · git stash · git rebase\n\n\n\n\n\n\n\n\nShreya Anekar\n\n\n\n\n\n\n\n\n\n\n\n\nReplication of Card and Krueger (1994)\n\n\nMinimum Wages and Employment: A Case Study of the Fast-Food Industry in New Jersey and Pennsylvania\n\n\n\neconometrics\n\ncausal inference\n\ndiff-in-diff\n\npython\n\nlabor economics\n\n\n\n\n\n\n\n\n\nMay 30, 2026\n\n\nShreya Anekar\n\n\n\n\n\n\n\n\n\n\n\n\nMaxDiff Analysis of MSBA Class Preferences\n\n\nCounts, Maximum Likelihood, and Bayesian Estimation of the MNL Model\n\n\n\nmarketing analytics\n\nMNL\n\nbayesian\n\npython\n\nsurvey analysis\n\n\n\n\n\n\n\n\n\nMay 30, 2026\n\n\nShreya Anekar\n\n\n\n\n\n\n\n\n\n\n\n\nA/B Testing a Call to Action\n\n\nSimulating Key Ideas from Classical Frequentist Statistics\n\n\n\nstatistics\n\nsimulation\n\nA/B testing\n\npython\n\n\n\n\n\n\n\n\n\nMay 30, 2026\n\n\nShreya Anekar\n\n\n\n\n\n\n\n\n\n\n\n\nDoes Better Software Mean More Patents?\n\n\nMaximum Likelihood Estimation and Poisson Regression in a Real-World Case Study\n\n\n\nstatistics\n\nMLE\n\nPoisson regression\n\npython\n\nmarketing analytics\n\n\n\n\n\n\n\n\n\nMay 30, 2026\n\n\nShreya Anekar\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "index.html",
@@ -446,5 +446,96 @@
     "title": "Work Experience",
     "section": "",
     "text": "Experience\n\n\n  \n    Addepar, Inc.\n    Dec 2023 – May 2025\n  \n  Data Engineer\n  \n    Led onboarding for 8+ enterprise clients managing $500M+ AUM — traced data lineage through source systems and engineered trade, position, and cash data pipelines with full schema alignment, reducing onboarding cycle time by 25%\n    Standardized multi-custodian portfolio data by building Python-based transformation workflows in Azure Databricks (Apache Spark), eliminating 90+ hours of monthly manual review and delivering canonical, analysis-ready datasets\n    Conducted root cause analysis on cash breaks, pricing mismatches, and corporate action discrepancies — implemented data governance controls and automated monitoring to eliminate repeat failures\n    Built Python validation scripts to flag and prioritize high-risk pricing and performance discrepancies by materiality, achieving 98% accuracy and preventing $2M+ in reporting errors across live portfolios\n  \n\n\n\n  \n    Fiserv, Inc.\n    Jul 2021 – Dec 2023\n  \n  Data Engineer\n  \n    Delivered 5 enterprise data transformation programs with zero data loss, migrating $2B+ in deposit and loan data via SSIS and SQL Server with end-to-end pipeline reliability across full platform conversions\n    Developed 90+ optimized T-SQL procedures to transform and analyze high-volume transactional and ledger data — identified processing bottlenecks and reduced batch time from 5 to 3 hours per cycle\n    Designed automated validation checks for GL balances, transaction completeness, and interest accruals — surfacing discrepancy patterns early and accelerating testing cycles by 80%\n    Identified systemic reconciliation gaps through SQL data profiling and established canonical source of truth for financial data, reducing manual reconciliation from 110+ to 15 hours per bank\n    Collaborated with banking stakeholders to translate regulatory, operational, and product requirements into ETL workflows and structured financial schemas for compliance during migrations\n  \n\n\nEducation\n\n\n  \n    \n      M.S. in Business Analytics\n      University of California, San Diego · Expected Jun 2026\n      Coursework: Customer Analytics (Uplift Modeling, Next-Product-to-Buy), Big Data Engineering (MapReduce, Apache Spark, HDFS), Statistical Modeling (A/B Testing, Monte Carlo Simulation)\n    \n  \n  \n    \n      B.Tech. in Information Technology\n      MKSSS's Cummins College of Engineering for Women, Pune · Jun 2021\n      🏆 Represented India at the World Chess Championship during undergraduate studies\n    \n  \n\n\nSkills\n\n\n  \n    Languages & Query\n    \n      Python\n      SQL\n      T-SQL\n      PostgreSQL\n    \n  \n  \n    Cloud & Data Platforms\n    \n      Azure Databricks\n      Snowflake\n      AWS S3\n      Redshift\n    \n  \n  \n    ML & Analytics\n    \n      Scikit-learn\n      XGBoost\n      Prophet\n      Hypothesis Testing\n    \n  \n  \n    BI & Visualization\n    \n      Tableau\n      Power BI\n      Streamlit\n      Excel\n    \n  \n  \n    Pipeline & ETL\n    \n      SSIS\n      ETL/ELT\n      Apache Spark\n      Git\n    \n  \n  \n    AI & Automation\n    \n      Prompt Engineering\n      LLM Dev\n      GitHub Copilot"
+  },
+  {
+    "objectID": "posts/git-clean-history/clean-git-history.html#the-part-tutorials-skip",
+    "href": "posts/git-clean-history/clean-git-history.html#the-part-tutorials-skip",
+    "title": "Three Habits for a Clean Git History",
+    "section": "The part tutorials skip",
+    "text": "The part tutorials skip\n\nBeyond fork · clone · branch · commit · push\n\nMost people learn how to make commits. Almost no one learns how to keep a repository — and its history — actually clean.\nThree small habits do most of the work:\n\n\n\ngitignore\nPrevent the mess. Stop junk from ever entering the repo.\n\ngit stash\nAvoid the mess. Set work aside without a junk commit.\n\ngit rebase\nFix the mess. Rewrite messy commits into clean ones.\n\n\n\n\nPrevent it, avoid it, or fix it — and your history stays readable."
+  },
+  {
+    "objectID": "posts/git-clean-history/clean-git-history.html#gitignore-1",
+    "href": "posts/git-clean-history/clean-git-history.html#gitignore-1",
+    "title": "Three Habits for a Clean Git History",
+    "section": "1 · .gitignore",
+    "text": "1 · .gitignore\n\nPrevent the mess\n\nA plain text file that tells Git which files to never track. You commit code — not the things around it:\n\n\n\n\nData — *.csv, *.parquet, raw datasets\nSecrets — .env files, API keys\n\n\n\nBuild output — _site/, __pycache__/\nArtifacts — trained models, large binaries\n\n\n\n\n# .gitignore  →  lives at the root of your repo\n*.csv                 # data stays out of version control\n.env                  # never commit credentials\n__pycache__/          # Python noise\n/_site/  /.quarto/    # Quarto build output\n\n\n\nA leaked key or a 2 GB file buried in history is painful to undo. Prevention always beats cleanup."
+  },
+  {
+    "objectID": "posts/git-clean-history/clean-git-history.html#a-data-focused-.gitignore",
+    "href": "posts/git-clean-history/clean-git-history.html#a-data-focused-.gitignore",
+    "title": "Three Habits for a Clean Git History",
+    "section": "A data-focused .gitignore",
+    "text": "A data-focused .gitignore\n# Data — keep it out of version control\n*.csv\n*.parquet\ndata/raw/\n\n# Secrets — never commit credentials\n.env\nconfig/secrets.yaml\n\n# Python + Quarto noise\n__pycache__/\n.ipynb_checkpoints/\n/_site/\n/.quarto/\n\n\n\n\n\n\n\nTip\n\n\nNeed reproducibility? Commit a small sample, and keep the real data in S3 or a database, referenced from code."
+  },
+  {
+    "objectID": "posts/git-clean-history/clean-git-history.html#git-stash-1",
+    "href": "posts/git-clean-history/clean-git-history.html#git-stash-1",
+    "title": "Three Habits for a Clean Git History",
+    "section": "2 · git stash",
+    "text": "2 · git stash\n\nAvoid the mess\n\nYou’re mid-edit when something urgent pulls you to another branch. Your changes aren’t ready to commit. What now?\n\n\n\n✗ The messy way\ngit commit -m \"WIP dont look\"\nA throwaway commit that clutters history forever.\n\n✓ The clean way\ngit stash      # set aside\ngit checkout main\ngit stash pop  # bring back\nYour work is parked safely, then restored untouched.\n\n\n\n\n  \n    \n    \n    \n    zsh — ~/portfolio\n  \n  \n~/portfolio (main) $ git stash          # shelve current work\nSaved working directory and index state WIP on main\n~/portfolio (main) $ git checkout feature\n~/portfolio (feature) $ git stash pop      # bring it right back\n  ✓ changes restored — exactly where you left off"
+  },
+  {
+    "objectID": "posts/git-clean-history/clean-git-history.html#git-rebase--i",
+    "href": "posts/git-clean-history/clean-git-history.html#git-rebase--i",
+    "title": "Three Habits for a Clean Git History",
+    "section": "3 · git rebase -i",
+    "text": "3 · git rebase -i\n\nFix the mess\n\nReal working history is honest — and honestly ugly:\n* a1b2c3d  fix typo again\n* d4e5f6g  oops forgot import\n* h7i8j9k  WIP\n* p3q4r5s  add customer dedup logic\n\nNo reviewer wants to read “oops” and “WIP”. Interactive rebase lets you rewrite these before anyone sees them:\ngit rebase -i HEAD~4     # edit the last 4 commits\n\n\nIn the editor, change pick to squash to fold commits together:\npick   p3q4r5s  add customer dedup logic\nsquash h7i8j9k  WIP\nsquash d4e5f6g  oops forgot import\nsquash a1b2c3d  fix typo again"
+  },
+  {
+    "objectID": "posts/git-clean-history/clean-git-history.html#squash-into-one-clean-commit",
+    "href": "posts/git-clean-history/clean-git-history.html#squash-into-one-clean-commit",
+    "title": "Three Habits for a Clean Git History",
+    "section": "Squash into one clean commit",
+    "text": "Squash into one clean commit\nChange pick to squash to fold messy commits together:\npick   p3q4r5s  add customer dedup logic\nsquash h7i8j9k  WIP\nsquash d4e5f6g  oops forgot import\nsquash a1b2c3d  fix typo again\n\n\n\nBefore\n* fix typo again\n* oops forgot import\n* WIP\n* add dedup logic\n\nAfter\n* Add customer dedup\n  logic with null\n  handling and tests\n\n\n\n\n\n\n\n\n\nWarning\n\n\nRebase only commits you haven’t shared yet. Rule of thumb: rebase local, never rebase main."
+  },
+  {
+    "objectID": "posts/git-clean-history/clean-git-history.html#three-habits-one-clean-repo",
+    "href": "posts/git-clean-history/clean-git-history.html#three-habits-one-clean-repo",
+    "title": "Three Habits for a Clean Git History",
+    "section": "Three habits, one clean repo",
+    "text": "Three habits, one clean repo\n\n\ngitignore\nPrevent. Never track data, secrets, or build output.\n\ngit stash\nAvoid. Shelve work, skip the junk WIP commits.\n\ngit rebase\nFix. Squash messy commits into clean history.\n\n\n\nA clean history is a gift — to your reviewer, and to future you.\n\n \nThank you"
+  },
+  {
+    "objectID": "posts/git-clean-history/clean-git-history.html#the-payoff",
+    "href": "posts/git-clean-history/clean-git-history.html#the-payoff",
+    "title": "Three Habits for a Clean Git History",
+    "section": "The payoff",
+    "text": "The payoff\n\nFix the mess\n\nFour noisy commits become one you’d be proud to ship:\n\n\nBefore\n* fix typo again\n* oops forgot import\n* WIP\n* add dedup logic\n\nAfter\n* Add customer dedup\n  logic with null\n  handling + tests\n\n\n\n\n\n\n\n\nWarning\n\n\nGolden rule: rebase only commits you haven’t shared yet. Rewrite local history freely — never rewrite main.\n\n\n\n\n\n\nA clean history is a gift — to your reviewer, and to future you.\n\nThank you"
+  },
+  {
+    "objectID": "posts/git-clean-history/Anekar_Shreya-clean_git_history.html#the-part-tutorials-skip",
+    "href": "posts/git-clean-history/Anekar_Shreya-clean_git_history.html#the-part-tutorials-skip",
+    "title": "Three Habits for a Clean Git History",
+    "section": "The part tutorials skip",
+    "text": "The part tutorials skip\n\nBeyond fork · clone · branch · commit · push\n\nMost people learn how to make commits. Almost no one learns how to keep a repository and its history clean.\nThree small habits do most of the work:\n\n\n\ngitignore\nPrevent the mess. Stop junk from ever entering the repo.\n\ngit stash\nAvoid the mess. Set work aside without a junk commit.\n\ngit rebase\nFix the mess. Rewrite messy commits into clean ones.\n\n\n\n\nPrevent it, avoid it, or fix it, and your history stays readable."
+  },
+  {
+    "objectID": "posts/git-clean-history/Anekar_Shreya-clean_git_history.html#gitignore-1",
+    "href": "posts/git-clean-history/Anekar_Shreya-clean_git_history.html#gitignore-1",
+    "title": "Three Habits for a Clean Git History",
+    "section": "1 · .gitignore",
+    "text": "1 · .gitignore\n\nPrevent the mess\n\nA plain text file that tells Git which files to never track. You commit code, not the things around it:\n\n\n\n\nData — *.csv, *.parquet, raw datasets\nSecrets — .env files, API keys\n\n\n\nBuild output — _site/, __pycache__/\nArtifacts — trained models, large binaries\n\n\n\n\n# .gitignore  →  lives at the root of your repo\n*.csv                 # data stays out of version control\n.env                  # never commit credentials\n__pycache__/          # Python noise\n/_site/  /.quarto/    # Quarto build output\n\n\n\nA leaked key or a 2 GB file buried in history is painful to undo. Prevention always beats cleanup."
+  },
+  {
+    "objectID": "posts/git-clean-history/Anekar_Shreya-clean_git_history.html#git-stash-1",
+    "href": "posts/git-clean-history/Anekar_Shreya-clean_git_history.html#git-stash-1",
+    "title": "Three Habits for a Clean Git History",
+    "section": "2 · git stash",
+    "text": "2 · git stash\n\nAvoid the mess\n\nYou’re mid-edit when something urgent pulls you to another branch. Your changes aren’t ready to commit. What now?\n\n\n\n✗ The messy way\ngit commit -m \"WIP dont look\"\nA throwaway commit that clutters history forever.\n\n✓ The clean way\ngit stash      # set aside\ngit checkout main\ngit stash pop  # bring back\nYour work is parked safely, then restored untouched.\n\n\n\n\n  \n    \n    \n    \n    zsh — ~/portfolio\n  \n  \n~/portfolio (main) $ git stash          # shelve current work\nSaved working directory and index state WIP on main\n~/portfolio (main) $ git checkout feature\n~/portfolio (feature) $ git stash pop      # bring it right back\n  ✓ changes restored — exactly where you left off"
+  },
+  {
+    "objectID": "posts/git-clean-history/Anekar_Shreya-clean_git_history.html#git-rebase--i",
+    "href": "posts/git-clean-history/Anekar_Shreya-clean_git_history.html#git-rebase--i",
+    "title": "Three Habits for a Clean Git History",
+    "section": "3 · git rebase -i",
+    "text": "3 · git rebase -i\n\nFix the mess\n\nReal working history is honest, and honestly ugly:\n* a1b2c3d  fix typo again\n* d4e5f6g  oops forgot import\n* h7i8j9k  WIP\n* p3q4r5s  add customer dedup logic\n\nNo reviewer wants to read “oops” and “WIP”. Interactive rebase lets you rewrite these before anyone sees them:\ngit rebase -i HEAD~4     # edit the last 4 commits\n\n\nIn the editor, change pick to squash to fold commits together:\npick   p3q4r5s  add customer dedup logic\nsquash h7i8j9k  WIP\nsquash d4e5f6g  oops forgot import\nsquash a1b2c3d  fix typo again"
+  },
+  {
+    "objectID": "posts/git-clean-history/Anekar_Shreya-clean_git_history.html#the-payoff",
+    "href": "posts/git-clean-history/Anekar_Shreya-clean_git_history.html#the-payoff",
+    "title": "Three Habits for a Clean Git History",
+    "section": "The payoff",
+    "text": "The payoff\n\nFix the mess\n\nFour noisy commits become one you’d be proud to ship:\n\n\nBefore\n* fix typo again\n* oops forgot import\n* WIP\n* add dedup logic\n\nAfter\n* Add customer dedup\n  logic with null\n  handling + tests\n\n\n\n\n\n\n\n\nWarning\n\n\nGolden rule: rebase only commits you haven’t shared yet. Rewrite local history freely, but never rewrite main.\n\n\n\n\n\n\nA clean history is a gift to your reviewer, and to future you.\n\nThank you"
   }
 ]
