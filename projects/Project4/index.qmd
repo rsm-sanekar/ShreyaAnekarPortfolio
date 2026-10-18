@@ -1,0 +1,29 @@
+---
+title: "Qualcomm NRE Cost Forecasting"
+description: "MSBA capstone with Qualcomm: Random Forest and XGBoost models over 198K subledger transactions to forecast Non-Recurring Engineering costs, delivered through a Streamlit what-if dashboard"
+categories: [Python, Machine Learning, Forecasting, Streamlit]
+date: "2026-06-01"
+---
+
+## Overview
+
+MSBA capstone project with **Qualcomm's engineering team** to forecast Non-Recurring Engineering (NRE) costs for RFFE chip programs, so engineering leadership could plan material and workforce spend with more confidence.
+
+## Problem
+
+NRE costs (prototypes, masks, test materials, and engineering labor) are hard to predict program by program, and manual estimates made budget and scenario planning slow.
+
+## Approach
+
+- Engineered features across **198K subledger transactions** to capture program, cost category, and timing patterns
+- Trained and compared **Random Forest** and **XGBoost** models for cost forecasting
+- Built scenario-based budget and **what-if analysis** so leadership could test planning assumptions
+- Delivered forecasts through an **interactive Streamlit dashboard**
+
+## Outcome
+
+Engineering leadership received program-level cost forecasts and a self-serve tool for scenario planning, supporting material and workforce planning decisions.
+
+## Tech Stack
+
+`Python` · `Pandas` · `Scikit-learn` · `XGBoost` · `Random Forest` · `Feature Engineering` · `Streamlit`

@@ -1,0 +1,37 @@
+---
+title: "SDR Onboarding Agent"
+description: "Agentic AI coworker that onboards, coaches, and certifies new sales reps using RAG, MCP tools, and human review gates, validated with 153 tests and a DeepEval suite"
+categories: [Python, GenAI, RAG, Agentic AI, FastAPI, React]
+date: "2026-06-04"
+---
+
+## Overview
+
+An AI coworker that takes a new Sales Development Rep from offer letter to certification. It drafts a personalized onboarding plan, matches a mentor, answers product and policy questions with citations, runs practice cold calls, scores real calls, and produces an evidence-backed certification recommendation. Every AI output stops at a human approve, edit, reject, or escalate gate, and every decision is logged.
+
+**Code:** [github.com/rsm-sanekar/sdr-onboarding-agent](https://github.com/rsm-sanekar/sdr-onboarding-agent)
+
+## Problem
+
+SDR onboarding is manual and inconsistent. Plans take about two hours per hire to customize, managers spend 3 to 5 hours a week reviewing calls with 24 to 72 hour feedback lag, and certification decisions have little documented evidence behind them.
+
+## What I built
+
+- **7 LLM skills and 2 deterministic automations**, chained through a shared JSON envelope with confidence scores and review flags
+- **Two retrievers over a 16-document knowledge base:** BM25 for the pipeline steps and ChromaDB semantic search for the AI Tutor, with approved answers written back into the index
+- **Hallucination guards:** generated plans are checked against a module allow-list, and certification verdicts are recomputed server-side from the scores
+- **MCP servers** that expose the data and workflow steps as tools an agent can call
+- **FastAPI orchestrator and a React UI** with 9 screens across manager and trainee views
+
+## Results
+
+| Area | Result |
+|------|--------|
+| Pre-boarding plan | ~90 to 150 min down to 10 to 20 min of manager time (estimated) |
+| Certification gap analysis | ~45 to 75 min down to 10 to 15 min per rep (estimated) |
+| Automated tests | 153 pytest tests, fully offline |
+| LLM quality (DeepEval) | Mean passes rose from 21.3 to 23.3 of 40, and run-to-run range tightened from 3 to 1 |
+
+## Tech Stack
+
+`Python` · `FastAPI` · `React` · `ChromaDB` · `BM25` · `MCP` · `LLM APIs` · `pytest` · `DeepEval`

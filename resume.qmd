@@ -1,0 +1,71 @@
+---
+title: "My Resume"
+---
+
+```{=html}
+<style>
+.resume-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.2rem;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.resume-toolbar p {
+  margin: 0;
+  color: #6b7280;
+  font-size: 0.875rem;
+}
+
+.download-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #1a6cf5;
+  color: #ffffff !important;
+  font-size: 0.875rem;
+  font-weight: 600;
+  padding: 0.55rem 1.2rem;
+  border-radius: 8px;
+  text-decoration: none !important;
+  transition: background 0.2s ease, transform 0.15s ease;
+  box-shadow: 0 2px 8px rgba(26,108,245,0.3);
+}
+
+.download-btn:hover {
+  background: #1558d0;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 16px rgba(26,108,245,0.4);
+  text-decoration: none !important;
+}
+
+.download-btn svg {
+  width: 15px;
+  height: 15px;
+  fill: currentColor;
+  flex-shrink: 0;
+}
+
+.resume-frame {
+  width: 100%;
+  height: 860px;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+}
+</style>
+
+<div class="resume-toolbar">
+  <p>Viewing resume inline — download a copy below.</p>
+  <a class="download-btn" href="files/FT_ShreyaAnekarResume.pdf" download="Shreya_Anekar_Resume.pdf">
+    <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+      <path d="M10 2a1 1 0 011 1v9.586l2.293-2.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 111.414-1.414L9 12.586V3a1 1 0 011-1zM3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"/>
+    </svg>
+    Download PDF
+  </a>
+</div>
+```
+
+{{< pdf files/FT_ShreyaAnekarResume.pdf width=100% height=800 >}}

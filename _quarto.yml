@@ -1,0 +1,29 @@
+project:
+  type: website
+  output-dir: docs  # <-- add this
+
+website:
+  title: "Shreya Anekar"
+  navbar:
+    left:
+      - href: index.qmd
+        text: About
+      - href: experience.qmd
+        text: Experience
+      - href: projects.qmd
+        text: Projects
+      - href: resume.qmd
+        text: Resume
+      - href: blog.qmd       # ← add this line
+        text: Blog
+      # ... other pages
+  page-footer:
+    center: "© 2026 Shreya Anekar · Built with Quarto"
+
+format:
+  html:
+    theme:
+      - cosmo
+      - brand
+    css: styles.css
+    toc: false

@@ -1,0 +1,22 @@
+[
+  {
+    "listing": "/blog.html",
+    "items": [
+      "/posts/git-clean-history/Anekar_Shreya-clean_git_history.html",
+      "/posts/card-krueger-1994/index.html",
+      "/posts/maxdiff-msba-classes/index.html",
+      "/posts/ab-testing-cta/index.html",
+      "/posts/hw3-poisson/index.html"
+    ]
+  },
+  {
+    "listing": "/projects.html",
+    "items": [
+      "/projects/project5/index.html",
+      "/projects/Project4/index.html",
+      "/projects/project1/index.html",
+      "/projects/project2/index.html",
+      "/projects/project3/index.html"
+    ]
+  }
+]

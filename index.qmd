@@ -1,0 +1,121 @@
+---
+title: "Shreya Anekar"
+image: "files/DSC00084.jpg"
+about:
+  template: jolla
+  links:
+    - icon: envelope
+      href: mailto:shreyaanekar27@gmail.com
+    - icon: linkedin
+      href: https://www.linkedin.com/in/sanekar27
+    - icon: github
+      href: https://github.com/rsm-sanekar
+---
+
+```{=html}
+<style>
+.about-bio {
+  max-width: 680px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+
+.nav-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-top: 2.5rem;
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.nav-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1.4rem 1rem;
+  border: 1.5px solid #e5e7eb;
+  border-radius: 12px;
+  text-decoration: none !important;
+  background: #ffffff;
+  transition: all 0.22s ease;
+  gap: 0.5rem;
+  color: #374151 !important;
+}
+
+.nav-card:hover {
+  border-color: #1a6cf5;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(26,108,245,0.12);
+  color: #1a6cf5 !important;
+}
+
+.nav-card .nav-icon {
+  font-size: 1.6rem;
+}
+
+.nav-card .nav-label {
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.nav-card .nav-desc {
+  font-size: 0.75rem;
+  color: #9ca3af;
+  text-align: center;
+  line-height: 1.4;
+}
+
+.section-divider {
+  border: none;
+  border-top: 1px solid #e5e7eb;
+  margin: 2rem auto;
+  max-width: 680px;
+}
+</style>
+
+<div class="about-bio">
+
+<p>
+I'm a data engineer with around 4 years of experience building data pipelines, data models, and analytics for fintech, banking, and energy. I'm finishing my <strong>M.S. in Business Analytics at UC San Diego</strong> (December 2026) and most recently worked as a <strong>Data Engineer Intern at Tesla</strong>, where I built PySpark and Airflow pipelines over large-scale telemetry data and the dashboards that track feature adoption.
+</p>
+
+<p>
+Before grad school I spent nearly four years as a data engineer at <strong>Addepar</strong>, building ETL pipelines and validation for wealth-management clients, and at <strong>Fiserv</strong>, migrating $2B+ in banking data with zero data loss. I like taking messy, fragmented data and turning it into pipelines and metrics people can trust.
+</p>
+
+<p>
+Lately I've been building with LLMs too, including an agentic onboarding assistant with RAG, MCP tools, and human review built in. I'm looking for full-time roles in data engineering, analytics engineering, and data analytics.
+</p>
+
+<p>
+Outside of work, I'm a <strong>competitive chess player</strong> and represented India at the World Chess Championship during my undergraduate years.
+</p>
+
+</div>
+
+<hr class="section-divider">
+
+<div class="nav-cards">
+  <a href="experience.qmd" class="nav-card">
+    <span class="nav-icon">💼</span>
+    <span class="nav-label">Experience</span>
+    <span class="nav-desc">Tesla · Addepar · Fiserv</span>
+  </a>
+  <a href="projects.qmd" class="nav-card">
+    <span class="nav-icon">🔬</span>
+    <span class="nav-label">Projects</span>
+    <span class="nav-desc">Data engineering, AI agents & ML</span>
+  </a>
+  <a href="resume.qmd" class="nav-card">
+    <span class="nav-icon">📄</span>
+    <span class="nav-label">Resume</span>
+    <span class="nav-desc">Download or view inline</span>
+  </a>
+</div>
+```

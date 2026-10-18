@@ -1,0 +1,331 @@
+---
+title: "Work Experience"
+---
+
+```{=html}
+<style>
+.exp-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.exp-entry {
+  position: relative;
+  padding-left: 2rem;
+  margin-bottom: 3rem;
+  border-left: 2px solid #e5e7eb;
+}
+
+.exp-entry::before {
+  content: '';
+  position: absolute;
+  left: -6px;
+  top: 6px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #1a6cf5;
+  border: 2px solid #ffffff;
+  box-shadow: 0 0 0 2px #1a6cf5;
+}
+
+.exp-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 0.3rem;
+}
+
+.exp-company {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #0f1117;
+  font-family: 'DM Serif Display', Georgia, serif;
+}
+
+.exp-dates {
+  font-size: 0.8rem;
+  color: #6b7280;
+  font-weight: 500;
+  background: #f3f4f6;
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+  white-space: nowrap;
+}
+
+.exp-role {
+  font-size: 0.9rem;
+  color: #1a6cf5;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  letter-spacing: 0.02em;
+}
+
+.exp-bullets {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.exp-bullets li {
+  font-size: 0.9rem;
+  color: #374151;
+  line-height: 1.65;
+  padding-left: 1.2rem;
+  position: relative;
+}
+
+.exp-bullets li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: #1a6cf5;
+  font-size: 0.75rem;
+  top: 0.15rem;
+}
+
+.exp-highlight {
+  display: inline-block;
+  background: #e8f0fe;
+  color: #1a6cf5;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.1rem 0.45rem;
+  border-radius: 4px;
+  white-space: nowrap;
+}
+
+.edu-section {
+  margin-top: 3rem;
+}
+
+.edu-entry {
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.edu-degree {
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: #0f1117;
+}
+
+.edu-school {
+  font-size: 0.85rem;
+  color: #6b7280;
+  margin-top: 0.15rem;
+}
+
+.edu-coursework {
+  font-size: 0.8rem;
+  color: #374151;
+  margin-top: 0.5rem;
+  line-height: 1.6;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.skill-group {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 1rem 1.2rem;
+}
+
+.skill-group-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: #1a6cf5;
+  margin-bottom: 0.5rem;
+}
+
+.skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+}
+
+.skill-tag {
+  font-size: 0.75rem;
+  background: #f3f4f6;
+  color: #374151;
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+h2 {
+  font-family: 'DM Serif Display', Georgia, serif;
+  font-size: 1.6rem;
+  margin-top: 2.5rem;
+  margin-bottom: 1.2rem;
+  color: #0f1117;
+}
+</style>
+
+<div class="exp-container">
+
+<h2>Experience</h2>
+
+<div class="exp-entry">
+  <div class="exp-header">
+    <div class="exp-company">Tesla, Inc.</div>
+    <div class="exp-dates">Jun 2026 – Sep 2026</div>
+  </div>
+  <div class="exp-role">Data Engineer Intern · Palo Alto, CA</div>
+  <ul class="exp-bullets">
+    <li>Built PySpark and SQL pipelines on Airflow processing <span class="exp-highlight">~1 trillion daily telemetry signals</span> into session-level KPIs, establishing the initial metrics framework and creating 3 Tableau dashboards to track feature adoption, savings, and solar usage</li>
+    <li>Increased user coverage by <strong>~90x</strong> by extending PySpark session logic and unifying Airflow pipelines, eliminating redundant scans of batch tables and <strong>reducing compute cost by ~15% per run</strong> through partitioning and broadcast joins</li>
+    <li>Scaled energy-export reporting from <strong>1 to 4 platforms</strong> using partitioned <span class="exp-highlight">Apache Iceberg</span> tables and automated data quality checks in Airflow, enabling consistent and trusted metrics across platforms</li>
+  </ul>
+</div>
+
+<div class="exp-entry">
+  <div class="exp-header">
+    <div class="exp-company">Qualcomm, Inc.</div>
+    <div class="exp-dates">Apr 2026 – Jun 2026</div>
+  </div>
+  <div class="exp-role">Data Analyst Intern (MSBA Capstone) · San Diego, CA</div>
+  <ul class="exp-bullets">
+    <li>Partnered with Qualcomm's engineering team to forecast Non-Recurring Engineering costs for RFFE chip programs, applying feature engineering across <span class="exp-highlight">198K subledger transactions</span> and training Random Forest and XGBoost models</li>
+    <li>Delivered cost forecasts with scenario-based budget and what-if analysis to support material and workforce planning for engineering leadership via an interactive Streamlit dashboard</li>
+  </ul>
+</div>
+
+<div class="exp-entry">
+  <div class="exp-header">
+    <div class="exp-company">Addepar, Inc.</div>
+    <div class="exp-dates">Dec 2023 – May 2025</div>
+  </div>
+  <div class="exp-role">Data Engineer · Pune, India</div>
+  <ul class="exp-bullets">
+    <li>Led onboarding for <span class="exp-highlight">8+ enterprise clients</span> managing $500M+ in assets by building ETL pipelines for trade, position, and cash data, <strong>cutting onboarding time by 25%</strong></li>
+    <li>Standardized multi-custodian portfolio data by building Python-based transformation workflows in <span class="exp-highlight">Azure Databricks</span>, eliminating 90+ hours of monthly manual review and delivering analysis-ready data models</li>
+    <li>Built validation checks in Python and SQL and conducted root cause analysis to flag and prioritize high-risk pricing and performance discrepancies by materiality, achieving <strong>98% accuracy</strong> and preventing reporting errors across portfolios</li>
+  </ul>
+</div>
+
+<div class="exp-entry">
+  <div class="exp-header">
+    <div class="exp-company">Fiserv, Inc.</div>
+    <div class="exp-dates">Jul 2021 – Dec 2023</div>
+  </div>
+  <div class="exp-role">Data Engineer · Pune, India</div>
+  <ul class="exp-bullets">
+    <li>Delivered <span class="exp-highlight">5 enterprise data transformation programs</span> with zero data loss, migrating $2B+ in deposit and loan data via SSIS and SQL Server across full platform conversions</li>
+    <li>Developed <strong>90+ optimized T-SQL procedures</strong> to transform and analyze high-volume transactional and ledger data, resolving bottlenecks to <strong>cut batch time from 5 to 3 hours per cycle</strong></li>
+    <li>Identified reconciliation gaps through SQL data profiling and built a single source-of-truth data model for financial data, <strong>reducing manual reconciliation from 110+ to 15 hours per bank</strong></li>
+    <li>Collaborated with business stakeholders to translate regulatory, operational, and product requirements into ETL workflows, relational data models, and schemas, ensuring compliance and system integrity during migrations</li>
+  </ul>
+</div>
+
+<h2>Education</h2>
+
+<div class="edu-section">
+  <div class="edu-entry">
+    <div>
+      <div class="edu-degree">M.S. in Business Analytics</div>
+      <div class="edu-school">University of California, San Diego · Dec 2026</div>
+      <div class="edu-coursework"><strong>Coursework:</strong> Scalable Analytics (Spark, AWS, MapReduce), GenAI for Business (Agentic AI, RAG, LLM APIs), Business Intelligence (Tableau), Analytics &amp; Statistical Modeling (A/B Testing, Cohort Analysis), Customer Analytics</div>
+    </div>
+  </div>
+  <div class="edu-entry">
+    <div>
+      <div class="edu-degree">B.Tech. in Information Technology</div>
+      <div class="edu-school">MKSSS's Cummins College of Engineering for Women, Pune · Jun 2021</div>
+      <div class="edu-coursework">🏆 Represented <strong>India</strong> at the World Chess Championship during undergraduate studies</div>
+    </div>
+  </div>
+</div>
+
+<h2>Skills</h2>
+
+<div class="skills-grid">
+  <div class="skill-group">
+    <div class="skill-group-label">Languages &amp; Query</div>
+    <div class="skill-tags">
+      <span class="skill-tag">Python</span>
+      <span class="skill-tag">SQL</span>
+      <span class="skill-tag">T-SQL</span>
+      <span class="skill-tag">PostgreSQL</span>
+      <span class="skill-tag">SparkSQL</span>
+    </div>
+  </div>
+  <div class="skill-group">
+    <div class="skill-group-label">Data Engineering</div>
+    <div class="skill-tags">
+      <span class="skill-tag">PySpark</span>
+      <span class="skill-tag">Airflow</span>
+      <span class="skill-tag">dbt</span>
+      <span class="skill-tag">Trino</span>
+      <span class="skill-tag">Apache Iceberg</span>
+      <span class="skill-tag">SSIS</span>
+      <span class="skill-tag">ETL/ELT</span>
+      <span class="skill-tag">Data Modeling</span>
+    </div>
+  </div>
+  <div class="skill-group">
+    <div class="skill-group-label">Cloud &amp; Platforms</div>
+    <div class="skill-tags">
+      <span class="skill-tag">Databricks</span>
+      <span class="skill-tag">Snowflake</span>
+      <span class="skill-tag">AWS S3</span>
+      <span class="skill-tag">Redshift</span>
+      <span class="skill-tag">Docker</span>
+      <span class="skill-tag">CI/CD</span>
+      <span class="skill-tag">Git</span>
+    </div>
+  </div>
+  <div class="skill-group">
+    <div class="skill-group-label">BI &amp; Visualization</div>
+    <div class="skill-tags">
+      <span class="skill-tag">Tableau</span>
+      <span class="skill-tag">Power BI</span>
+      <span class="skill-tag">Streamlit</span>
+      <span class="skill-tag">Excel</span>
+    </div>
+  </div>
+  <div class="skill-group">
+    <div class="skill-group-label">ML &amp; Statistics</div>
+    <div class="skill-tags">
+      <span class="skill-tag">Scikit-learn</span>
+      <span class="skill-tag">XGBoost</span>
+      <span class="skill-tag">Anomaly Detection</span>
+      <span class="skill-tag">Hypothesis Testing</span>
+      <span class="skill-tag">Regression</span>
+    </div>
+  </div>
+  <div class="skill-group">
+    <div class="skill-group-label">AI &amp; Automation</div>
+    <div class="skill-tags">
+      <span class="skill-tag">RAG</span>
+      <span class="skill-tag">Agentic Workflows</span>
+      <span class="skill-tag">Vector Databases</span>
+      <span class="skill-tag">MCP</span>
+      <span class="skill-tag">LLM APIs</span>
+    </div>
+  </div>
+</div>
+
+</div>
+```
