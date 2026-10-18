@@ -1,40 +1,32 @@
 ---
-title: "Customer Analytics & Targeting – Intuit QuickBooks"
-description: "Predictive customer targeting model using logistic regression and random forest to optimize outreach, achieving 0.82 AUC and 18% uplift in conversion rate"
+title: "Customer Analytics & Targeting: Intuit Case Study"
+description: "Customer targeting model with logistic regression and random forest, using breakeven and ROI analysis to set thresholds, projecting an 18% conversion lift and $410K profit"
 categories: [Python, Machine Learning, Customer Analytics, Regression]
 date: "2026-02-01"
 ---
 
 ## Overview
 
-Built a predictive customer targeting model for **Intuit QuickBooks** to optimize marketing outreach strategy. The goal was to identify which customers were most likely to convert, enabling smarter spend allocation and higher ROI on campaigns.
+A customer targeting case study based on **Intuit QuickBooks** marketing data. The goal was to decide which customers to contact in a follow-up campaign so the outreach budget goes to the people most likely to respond.
 
-## Problem Statement
+## Problem
 
-With a large customer base and limited marketing budget, Intuit needed to move beyond broad-reach outreach and instead **target the right customers at the right time**: those with a genuine propensity to convert.
+Mailing every customer is expensive and most won't respond. The business needed a way to rank customers by response likelihood and a clear rule for where to stop targeting.
 
 ## Approach
 
-- Developed and compared **Logistic Regression** and **Random Forest** classification models
-- Engineered features from customer behavioral, demographic, and engagement data
-- Used **uplift modeling** techniques to isolate the causal impact of outreach, not just correlation
-- Evaluated models with AUC-ROC, precision-recall curves, and incremental lift metrics
+- Built customer targeting models with **logistic regression** and **random forest**
+- Segmented customers by predicted response likelihood to prioritize the highest-value outreach
+- Applied **breakeven and ROI analysis** to set the targeting threshold, contacting only customers whose expected profit beats the cost of reaching them
+- Used LLM-assisted development to speed up exploration and iteration
 
 ## Results
 
 | Metric | Value |
 |--------|-------|
-| AUC-ROC | **0.82** |
-| Precision | **76%** |
-| Conversion Rate Uplift | **+18%** |
-| Projected Incremental Profit | **$410K** |
-
-## Key Contributions
-
-- Framed the business question as an **uplift/incremental modeling** problem rather than pure classification
-- Identified the top decile of customers driving the majority of incremental conversions
-- Delivered actionable targeting segments with clear business interpretation for marketing teams
+| Projected conversion lift | **18%** |
+| Projected profit | **$410K** |
 
 ## Tech Stack
 
-`Python` · `Scikit-learn` · `Pandas` · `NumPy` · `Logistic Regression` · `Random Forest` · `Uplift Modeling`
+`Python` · `Pandas` · `Scikit-learn` · `Logistic Regression` · `Random Forest` · `Breakeven & ROI Analysis`

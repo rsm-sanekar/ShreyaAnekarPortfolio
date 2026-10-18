@@ -338,16 +338,16 @@
   {
     "objectID": "projects/project1/index.html",
     "href": "projects/project1/index.html",
-    "title": "Customer Analytics & Targeting – Intuit QuickBooks",
+    "title": "Customer Analytics & Targeting: Intuit Case Study",
     "section": "",
-    "text": "Built a predictive customer targeting model for Intuit QuickBooks to optimize marketing outreach strategy. The goal was to identify which customers were most likely to convert, enabling smarter spend allocation and higher ROI on campaigns."
+    "text": "A customer targeting case study based on Intuit QuickBooks marketing data. The goal was to decide which customers to contact in a follow-up campaign so the outreach budget goes to the people most likely to respond."
   },
   {
     "objectID": "projects/project1/index.html#overview",
     "href": "projects/project1/index.html#overview",
-    "title": "Customer Analytics & Targeting – Intuit QuickBooks",
+    "title": "Customer Analytics & Targeting: Intuit Case Study",
     "section": "",
-    "text": "Built a predictive customer targeting model for Intuit QuickBooks to optimize marketing outreach strategy. The goal was to identify which customers were most likely to convert, enabling smarter spend allocation and higher ROI on campaigns."
+    "text": "A customer targeting case study based on Intuit QuickBooks marketing data. The goal was to decide which customers to contact in a follow-up campaign so the outreach budget goes to the people most likely to respond."
   },
   {
     "objectID": "projects/project1/index.html#problem-statement",
@@ -359,16 +359,16 @@
   {
     "objectID": "projects/project1/index.html#approach",
     "href": "projects/project1/index.html#approach",
-    "title": "Customer Analytics & Targeting – Intuit QuickBooks",
+    "title": "Customer Analytics & Targeting: Intuit Case Study",
     "section": "Approach",
-    "text": "Approach\n\nDeveloped and compared Logistic Regression and Random Forest classification models\nEngineered features from customer behavioral, demographic, and engagement data\nUsed uplift modeling techniques to isolate the causal impact of outreach, not just correlation\nEvaluated models with AUC-ROC, precision-recall curves, and incremental lift metrics"
+    "text": "Approach\n\nBuilt customer targeting models with logistic regression and random forest\nSegmented customers by predicted response likelihood to prioritize the highest-value outreach\nApplied breakeven and ROI analysis to set the targeting threshold, contacting only customers whose expected profit beats the cost of reaching them\nUsed LLM-assisted development to speed up exploration and iteration"
   },
   {
     "objectID": "projects/project1/index.html#results",
     "href": "projects/project1/index.html#results",
-    "title": "Customer Analytics & Targeting – Intuit QuickBooks",
+    "title": "Customer Analytics & Targeting: Intuit Case Study",
     "section": "Results",
-    "text": "Results\n\n\n\nMetric\nValue\n\n\n\n\nAUC-ROC\n0.82\n\n\nPrecision\n76%\n\n\nConversion Rate Uplift\n+18%\n\n\nProjected Incremental Profit\n$410K"
+    "text": "Results\n\n\n\nMetric\nValue\n\n\n\n\nProjected conversion lift\n18%\n\n\nProjected profit\n$410K"
   },
   {
     "objectID": "projects/project1/index.html#key-contributions",
@@ -380,9 +380,9 @@
   {
     "objectID": "projects/project1/index.html#tech-stack",
     "href": "projects/project1/index.html#tech-stack",
-    "title": "Customer Analytics & Targeting – Intuit QuickBooks",
+    "title": "Customer Analytics & Targeting: Intuit Case Study",
     "section": "Tech Stack",
-    "text": "Tech Stack\nPython · Scikit-learn · Pandas · NumPy · Logistic Regression · Random Forest · Uplift Modeling"
+    "text": "Tech Stack\nPython · Pandas · Scikit-learn · Logistic Regression · Random Forest · Breakeven & ROI Analysis"
   },
   {
     "objectID": "projects/Project4/index.html",
@@ -410,7 +410,7 @@
     "href": "projects/Project4/index.html#approach",
     "title": "Qualcomm NRE Cost Forecasting",
     "section": "Approach",
-    "text": "Approach\n\nEngineered features across 198K subledger transactions to capture program, cost category, and timing patterns\nTrained and compared Random Forest and XGBoost models for cost forecasting\nBuilt scenario-based budget and what-if analysis so leadership could test planning assumptions\nDelivered forecasts through an interactive Streamlit dashboard"
+    "text": "Approach\n\nEngineered features across 198K subledger transactions to capture program, cost category, and timing patterns\nTrained and compared Random Forest and XGBoost models for cost forecasting\nDelivered budget forecasts with scenario-based and what-if analysis so leadership could test planning assumptions\nShipped the forecasts through an interactive Streamlit dashboard"
   },
   {
     "objectID": "projects/Project4/index.html#key-contributions",
@@ -438,14 +438,14 @@
     "href": "projects.html",
     "title": "My Projects",
     "section": "",
-    "text": "SDR Onboarding Agent\n\n\n\nPython\n\nGenAI\n\nRAG\n\nAgentic AI\n\nFastAPI\n\nReact\n\n\n\nAgentic AI coworker that onboards, coaches, and certifies new sales reps using RAG, MCP tools, and human review gates, validated with 153 tests and a DeepEval suite\n\n\n\nJun 4, 2026\n\n\n\n\n\n\n\n\n\n\nQualcomm NRE Cost Forecasting\n\n\n\nPython\n\nMachine Learning\n\nForecasting\n\nStreamlit\n\n\n\nMSBA capstone with Qualcomm: Random Forest and XGBoost models over 198K subledger transactions to forecast Non-Recurring Engineering costs, delivered through a Streamlit…\n\n\n\nJun 1, 2026\n\n\n\n\n\n\n\n\n\n\nCustomer Analytics & Targeting – Intuit QuickBooks\n\n\n\nPython\n\nMachine Learning\n\nCustomer Analytics\n\nRegression\n\n\n\nPredictive customer targeting model using logistic regression and random forest to optimize outreach, achieving 0.82 AUC and 18% uplift in conversion rate\n\n\n\nFeb 1, 2026\n\n\n\n\n\n\n\n\n\n\nSocial Sentiment & Financial Analytics Dashboard\n\n\n\nTableau\n\nPython\n\nNLP\n\nData Visualization\n\nFinance\n\n\n\n3 interactive Tableau dashboards with NLP-driven sentiment analysis across 25 companies using RoBERTa and VADER, with custom financial metrics\n\n\n\nDec 1, 2025\n\n\n\n\n\n\n\n\n\n\nContent Intelligence & Market Insights Platform\n\n\n\nPython\n\nMachine Learning\n\nStreamlit\n\nAPI\n\nForecasting\n\n\n\nEnsemble forecasting and anomaly detection platform across 10K+ TMDB titles with 6 Streamlit dashboards and real-time API ingestion for slate optimization\n\n\n\nDec 1, 2025\n\n\n\n\n\n\nNo matching items"
+    "text": "AI-Powered Employee Onboarding Agent\n\n\n\nPython\n\nGenAI\n\nRAG\n\nAgentic AI\n\nFastAPI\n\nReact\n\n\n\nAgentic AI onboarding platform for new sales reps with RAG retrieval, LLM orchestration, and human-in-the-loop approvals, validated with 153 tests and a DeepEval suite\n\n\n\nJun 4, 2026\n\n\n\n\n\n\n\n\n\n\nQualcomm NRE Cost Forecasting\n\n\n\nPython\n\nMachine Learning\n\nForecasting\n\nStreamlit\n\n\n\nMSBA capstone with Qualcomm: Random Forest and XGBoost models over 198K subledger transactions to forecast Non-Recurring Engineering costs, delivered through a Streamlit…\n\n\n\nJun 1, 2026\n\n\n\n\n\n\n\n\n\n\nCustomer Analytics & Targeting: Intuit Case Study\n\n\n\nPython\n\nMachine Learning\n\nCustomer Analytics\n\nRegression\n\n\n\nCustomer targeting model with logistic regression and random forest, using breakeven and ROI analysis to set thresholds, projecting an 18% conversion lift and $410K profit\n\n\n\nFeb 1, 2026\n\n\n\n\n\n\n\n\n\n\nSocial Sentiment & Financial Analytics Dashboard\n\n\n\nTableau\n\nPython\n\nNLP\n\nData Visualization\n\nFinance\n\n\n\n3 interactive Tableau dashboards with NLP-driven sentiment analysis across 25 companies using RoBERTa and VADER, with custom financial metrics\n\n\n\nDec 1, 2025\n\n\n\n\n\n\n\n\n\n\nContent Intelligence & Market Insights Platform\n\n\n\nPython\n\nMachine Learning\n\nStreamlit\n\nAPI\n\nForecasting\n\n\n\nEnsemble forecasting and anomaly detection platform across 10K+ TMDB titles with 6 Streamlit dashboards and real-time API ingestion for slate optimization\n\n\n\nDec 1, 2025\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "experience.html",
     "href": "experience.html",
     "title": "Work Experience",
     "section": "",
-    "text": "Experience\n\n\n  \n    Tesla, Inc.\n    Jun 2026 – Sep 2026\n  \n  Data Engineer Intern · Palo Alto, CA\n  \n    Built PySpark and SQL pipelines on Airflow processing ~1 trillion daily telemetry signals into session-level KPIs, establishing the initial metrics framework and creating 3 Tableau dashboards to track feature adoption, savings, and solar usage\n    Increased user coverage by ~90x by extending PySpark session logic and unifying Airflow pipelines, eliminating redundant scans of batch tables and reducing compute cost by ~15% per run through partitioning and broadcast joins\n    Scaled energy-export reporting from 1 to 4 platforms using partitioned Apache Iceberg tables and automated data quality checks in Airflow, enabling consistent and trusted metrics across platforms\n  \n\n\n\n  \n    Qualcomm, Inc.\n    Apr 2026 – Jun 2026\n  \n  Data Analyst Intern (MSBA Capstone) · San Diego, CA\n  \n    Partnered with Qualcomm's engineering team to forecast Non-Recurring Engineering costs for RFFE chip programs, applying feature engineering across 198K subledger transactions and training Random Forest and XGBoost models\n    Delivered cost forecasts with scenario-based budget and what-if analysis to support material and workforce planning for engineering leadership via an interactive Streamlit dashboard\n  \n\n\n\n  \n    Addepar, Inc.\n    Dec 2023 – May 2025\n  \n  Data Engineer · Pune, India\n  \n    Led onboarding for 8+ enterprise clients managing $500M+ in assets by building ETL pipelines for trade, position, and cash data, cutting onboarding time by 25%\n    Standardized multi-custodian portfolio data by building Python-based transformation workflows in Azure Databricks, eliminating 90+ hours of monthly manual review and delivering analysis-ready data models\n    Built validation checks in Python and SQL and conducted root cause analysis to flag and prioritize high-risk pricing and performance discrepancies by materiality, achieving 98% accuracy and preventing reporting errors across portfolios\n  \n\n\n\n  \n    Fiserv, Inc.\n    Jul 2021 – Dec 2023\n  \n  Data Engineer · Pune, India\n  \n    Delivered 5 enterprise data transformation programs with zero data loss, migrating $2B+ in deposit and loan data via SSIS and SQL Server across full platform conversions\n    Developed 90+ optimized T-SQL procedures to transform and analyze high-volume transactional and ledger data, resolving bottlenecks to cut batch time from 5 to 3 hours per cycle\n    Identified reconciliation gaps through SQL data profiling and built a single source-of-truth data model for financial data, reducing manual reconciliation from 110+ to 15 hours per bank\n    Collaborated with business stakeholders to translate regulatory, operational, and product requirements into ETL workflows, relational data models, and schemas, ensuring compliance and system integrity during migrations\n  \n\n\nEducation\n\n\n  \n    \n      M.S. in Business Analytics\n      University of California, San Diego · Dec 2026\n      Coursework: Scalable Analytics (Spark, AWS, MapReduce), GenAI for Business (Agentic AI, RAG, LLM APIs), Business Intelligence (Tableau), Analytics & Statistical Modeling (A/B Testing, Cohort Analysis), Customer Analytics\n    \n  \n  \n    \n      B.Tech. in Information Technology\n      MKSSS's Cummins College of Engineering for Women, Pune · Jun 2021\n      🏆 Represented India at the World Chess Championship during undergraduate studies\n    \n  \n\n\nSkills\n\n\n  \n    Languages & Query\n    \n      Python\n      SQL\n      T-SQL\n      PostgreSQL\n      SparkSQL\n    \n  \n  \n    Data Engineering\n    \n      PySpark\n      Airflow\n      dbt\n      Trino\n      Apache Iceberg\n      SSIS\n      ETL/ELT\n      Data Modeling\n    \n  \n  \n    Cloud & Platforms\n    \n      Databricks\n      Snowflake\n      AWS S3\n      Redshift\n      Docker\n      CI/CD\n      Git\n    \n  \n  \n    BI & Visualization\n    \n      Tableau\n      Power BI\n      Streamlit\n      Excel\n    \n  \n  \n    ML & Statistics\n    \n      Scikit-learn\n      XGBoost\n      Anomaly Detection\n      Hypothesis Testing\n      Regression\n    \n  \n  \n    AI & Automation\n    \n      RAG\n      Agentic Workflows\n      Vector Databases\n      MCP\n      LLM APIs"
+    "text": "Experience\n\n\n  \n    Tesla, Inc.\n    Jun 2026 – Sep 2026\n  \n  Data Engineer Intern · Palo Alto, CA\n  \n    Built PySpark and SQL pipelines on Airflow processing ~1 trillion daily telemetry signals into session-level KPIs, establishing the initial metrics framework and creating 3 Tableau dashboards to track feature adoption, savings, and solar usage\n    Increased user coverage by ~90x by extending PySpark session logic and unifying Airflow pipelines, eliminating redundant scans of batch tables and reducing compute cost by ~15% per run through partitioning and broadcast joins\n    Scaled energy-export reporting from 1 to 4 platforms using partitioned Apache Iceberg tables and automated data quality checks in Airflow, enabling consistent and trusted metrics across platforms\n  \n\n\n\n  \n    Qualcomm, Inc.\n    Apr 2026 – Jun 2026\n  \n  Data Analyst Intern (MSBA Capstone) · San Diego, CA\n  \n    Partnered with Qualcomm's engineering team to forecast Non-Recurring Engineering costs for RFFE chip programs, applying feature engineering across 198K subledger transactions and training Random Forest and XGBoost models\n    Delivered budget forecasts with scenario-based and what-if analysis to support material and workforce planning for engineering leadership via an interactive Streamlit dashboard\n  \n\n\n\n  \n    Addepar, Inc.\n    Dec 2023 – May 2025\n  \n  Data Engineer · Pune, India\n  \n    Led onboarding for 8+ enterprise clients managing $500M+ in assets by building ETL pipelines for trade, position, and cash data, cutting onboarding time by 25%\n    Standardized multi-custodian portfolio data by building Python-based transformation workflows in Azure Databricks, eliminating 90+ hours of monthly manual review and delivering analysis-ready data models\n    Built validation checks in Python and SQL and conducted root cause analysis to flag and prioritize high-risk pricing and performance discrepancies by materiality, achieving 98% accuracy and preventing reporting errors across portfolios\n  \n\n\n\n  \n    Fiserv, Inc.\n    Jul 2021 – Dec 2023\n  \n  Data Engineer · Pune, India\n  \n    Delivered 5 enterprise data transformation programs with zero data loss, migrating $2B+ in deposit and loan data via SSIS and SQL Server across full platform conversions\n    Developed 90+ optimized T-SQL procedures to transform and analyze high-volume transactional and ledger data, resolving bottlenecks to cut batch time from 5 to 3 hours per cycle\n    Identified reconciliation gaps through SQL data profiling and built a single source-of-truth data model for financial data, reducing manual reconciliation from 110+ to 15 hours per bank\n    Collaborated with business stakeholders to translate regulatory, operational, and product requirements into ETL workflows, relational data models, and schemas, ensuring compliance and system integrity during migrations\n  \n\n\nEducation\n\n\n  \n    \n      M.S. in Business Analytics\n      University of California, San Diego · Dec 2026\n      Coursework: Scalable Analytics (Spark, AWS, Data Warehousing), GenAI for Business (Agentic AI, RAG, LLMs), Business Intelligence (Tableau), Analytics & Statistical Modeling (Correlation Analysis, A/B Testing, Cohort Analysis)\n    \n  \n  \n    \n      B.Tech. in Information Technology\n      MKSSS's Cummins College of Engineering for Women, Pune · Jun 2021\n      🏆 Represented India at the World Chess Championship during undergraduate studies\n    \n  \n\n\nSkills\n\n\n  \n    Languages & Query\n    \n      Python\n      SQL\n      T-SQL\n      PostgreSQL\n      SparkSQL\n    \n  \n  \n    Data Engineering\n    \n      PySpark\n      Airflow\n      dbt\n      Trino\n      Apache Iceberg\n      SSIS\n      ETL/ELT\n      Data Modeling\n    \n  \n  \n    Cloud & Platforms\n    \n      Databricks\n      Snowflake\n      AWS S3\n      Redshift\n      Docker\n      CI/CD\n      Git\n    \n  \n  \n    BI & Visualization\n    \n      Tableau\n      Power BI\n      Streamlit\n      Excel\n    \n  \n  \n    ML & Statistics\n    \n      Scikit-learn\n      XGBoost\n      Anomaly Detection\n      Hypothesis Testing\n      Regression\n    \n  \n  \n    AI & Automation\n    \n      RAG\n      Agentic Workflows\n      Vector Databases\n      MCP\n      LLM APIs"
   },
   {
     "objectID": "posts/git-clean-history/clean-git-history.html#the-part-tutorials-skip",
@@ -555,43 +555,50 @@
   {
     "objectID": "projects/project5/index.html",
     "href": "projects/project5/index.html",
-    "title": "SDR Onboarding Agent",
+    "title": "AI-Powered Employee Onboarding Agent",
     "section": "",
     "text": "An AI coworker that takes a new Sales Development Rep from offer letter to certification. It drafts a personalized onboarding plan, matches a mentor, answers product and policy questions with citations, runs practice cold calls, scores real calls, and produces an evidence-backed certification recommendation. Every AI output stops at a human approve, edit, reject, or escalate gate, and every decision is logged.\nCode: github.com/rsm-sanekar/sdr-onboarding-agent"
   },
   {
     "objectID": "projects/project5/index.html#overview",
     "href": "projects/project5/index.html#overview",
-    "title": "SDR Onboarding Agent",
+    "title": "AI-Powered Employee Onboarding Agent",
     "section": "",
     "text": "An AI coworker that takes a new Sales Development Rep from offer letter to certification. It drafts a personalized onboarding plan, matches a mentor, answers product and policy questions with citations, runs practice cold calls, scores real calls, and produces an evidence-backed certification recommendation. Every AI output stops at a human approve, edit, reject, or escalate gate, and every decision is logged.\nCode: github.com/rsm-sanekar/sdr-onboarding-agent"
   },
   {
     "objectID": "projects/project5/index.html#problem",
     "href": "projects/project5/index.html#problem",
-    "title": "SDR Onboarding Agent",
+    "title": "AI-Powered Employee Onboarding Agent",
     "section": "Problem",
     "text": "Problem\nSDR onboarding is manual and inconsistent. Plans take about two hours per hire to customize, managers spend 3 to 5 hours a week reviewing calls with 24 to 72 hour feedback lag, and certification decisions have little documented evidence behind them."
   },
   {
     "objectID": "projects/project5/index.html#what-i-built",
     "href": "projects/project5/index.html#what-i-built",
-    "title": "SDR Onboarding Agent",
+    "title": "AI-Powered Employee Onboarding Agent",
     "section": "What I built",
-    "text": "What I built\n\n7 LLM skills and 2 deterministic automations, chained through a shared JSON envelope with confidence scores and review flags\nTwo retrievers over a 16-document knowledge base: BM25 for the pipeline steps and ChromaDB semantic search for the AI Tutor, with approved answers written back into the index\nHallucination guards: generated plans are checked against a module allow-list, and certification verdicts are recomputed server-side from the scores\nMCP servers that expose the data and workflow steps as tools an agent can call\nFastAPI orchestrator and a React UI with 9 screens across manager and trainee views"
+    "text": "What I built\n\n7 LLM skills and 2 deterministic automations, chained through a shared JSON envelope with confidence scores and review flags\nSelf-improving ChromaDB vector store: semantic search for the AI Tutor over a 16-document knowledge base, with approved answers written back into the index, plus BM25 retrieval for the pipeline steps that build personalized training plans and mentor matches\nHallucination guards: generated plans are checked against a module allow-list, and certification verdicts are recomputed server-side from the scores\nMCP servers that expose the data and workflow steps as tools an agent can call\nFastAPI orchestrator and a React UI with 9 screens across manager and trainee views"
   },
   {
     "objectID": "projects/project5/index.html#results",
     "href": "projects/project5/index.html#results",
-    "title": "SDR Onboarding Agent",
+    "title": "AI-Powered Employee Onboarding Agent",
     "section": "Results",
     "text": "Results\n\n\n\n\n\n\n\nArea\nResult\n\n\n\n\nPre-boarding plan\n~90 to 150 min down to 10 to 20 min of manager time (estimated)\n\n\nCertification gap analysis\n~45 to 75 min down to 10 to 15 min per rep (estimated)\n\n\nAutomated tests\n153 pytest tests, fully offline\n\n\nLLM quality (DeepEval)\nMean passes rose from 21.3 to 23.3 of 40, and run-to-run range tightened from 3 to 1"
   },
   {
     "objectID": "projects/project5/index.html#tech-stack",
     "href": "projects/project5/index.html#tech-stack",
-    "title": "SDR Onboarding Agent",
+    "title": "AI-Powered Employee Onboarding Agent",
     "section": "Tech Stack",
     "text": "Tech Stack\nPython · FastAPI · React · ChromaDB · BM25 · MCP · LLM APIs · pytest · DeepEval"
+  },
+  {
+    "objectID": "projects/project1/index.html#problem",
+    "href": "projects/project1/index.html#problem",
+    "title": "Customer Analytics & Targeting: Intuit Case Study",
+    "section": "Problem",
+    "text": "Problem\nMailing every customer is expensive and most won’t respond. The business needed a way to rank customers by response likelihood and a clear rule for where to stop targeting."
   }
 ]

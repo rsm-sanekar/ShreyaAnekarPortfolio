@@ -1,6 +1,6 @@
 ---
-title: "SDR Onboarding Agent"
-description: "Agentic AI coworker that onboards, coaches, and certifies new sales reps using RAG, MCP tools, and human review gates, validated with 153 tests and a DeepEval suite"
+title: "AI-Powered Employee Onboarding Agent"
+description: "Agentic AI onboarding platform for new sales reps with RAG retrieval, LLM orchestration, and human-in-the-loop approvals, validated with 153 tests and a DeepEval suite"
 categories: [Python, GenAI, RAG, Agentic AI, FastAPI, React]
 date: "2026-06-04"
 ---
@@ -18,7 +18,7 @@ SDR onboarding is manual and inconsistent. Plans take about two hours per hire t
 ## What I built
 
 - **7 LLM skills and 2 deterministic automations**, chained through a shared JSON envelope with confidence scores and review flags
-- **Two retrievers over a 16-document knowledge base:** BM25 for the pipeline steps and ChromaDB semantic search for the AI Tutor, with approved answers written back into the index
+- **Self-improving ChromaDB vector store:** semantic search for the AI Tutor over a 16-document knowledge base, with approved answers written back into the index, plus BM25 retrieval for the pipeline steps that build personalized training plans and mentor matches
 - **Hallucination guards:** generated plans are checked against a module allow-list, and certification verdicts are recomputed server-side from the scores
 - **MCP servers** that expose the data and workflow steps as tools an agent can call
 - **FastAPI orchestrator and a React UI** with 9 screens across manager and trainee views

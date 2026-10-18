@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="dcterms.date" content="2026-02-01">
-<meta name="description" content="Predictive customer targeting model using logistic regression and random forest to optimize outreach, achieving 0.82 AUC and 18% uplift in conversion rate">
+<meta name="description" content="Customer targeting model with logistic regression and random forest, using breakeven and ROI analysis to set thresholds, projecting an 18% conversion lift and $410K profit">
 
-<title>Customer Analytics &amp; Targeting – Intuit QuickBooks – Shreya Anekar</title>
+<title>Customer Analytics &amp; Targeting: Intuit Case Study – Shreya Anekar</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -134,7 +134,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Customer Analytics &amp; Targeting – Intuit QuickBooks</h1>
+<h1 class="title">Customer Analytics &amp; Targeting: Intuit Case Study</h1>
   <div class="quarto-categories">
     <div class="quarto-category">Python</div>
     <div class="quarto-category">Machine Learning</div>
@@ -145,7 +145,7 @@ ul.task-list li input[type="checkbox"] {
 
 <div>
   <div class="description">
-    Predictive customer targeting model using logistic regression and random forest to optimize outreach, achieving 0.82 AUC and 18% uplift in conversion rate
+    Customer targeting model with logistic regression and random forest, using breakeven and ROI analysis to set thresholds, projecting an 18% conversion lift and $410K profit
   </div>
 </div>
 
@@ -170,19 +170,19 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="overview" class="level2">
 <h2 class="anchored" data-anchor-id="overview">Overview</h2>
-<p>Built a predictive customer targeting model for <strong>Intuit QuickBooks</strong> to optimize marketing outreach strategy. The goal was to identify which customers were most likely to convert, enabling smarter spend allocation and higher ROI on campaigns.</p>
+<p>A customer targeting case study based on <strong>Intuit QuickBooks</strong> marketing data. The goal was to decide which customers to contact in a follow-up campaign so the outreach budget goes to the people most likely to respond.</p>
 </section>
-<section id="problem-statement" class="level2">
-<h2 class="anchored" data-anchor-id="problem-statement">Problem Statement</h2>
-<p>With a large customer base and limited marketing budget, Intuit needed to move beyond broad-reach outreach and instead <strong>target the right customers at the right time</strong>: those with a genuine propensity to convert.</p>
+<section id="problem" class="level2">
+<h2 class="anchored" data-anchor-id="problem">Problem</h2>
+<p>Mailing every customer is expensive and most won’t respond. The business needed a way to rank customers by response likelihood and a clear rule for where to stop targeting.</p>
 </section>
 <section id="approach" class="level2">
 <h2 class="anchored" data-anchor-id="approach">Approach</h2>
 <ul>
-<li>Developed and compared <strong>Logistic Regression</strong> and <strong>Random Forest</strong> classification models</li>
-<li>Engineered features from customer behavioral, demographic, and engagement data</li>
-<li>Used <strong>uplift modeling</strong> techniques to isolate the causal impact of outreach, not just correlation</li>
-<li>Evaluated models with AUC-ROC, precision-recall curves, and incremental lift metrics</li>
+<li>Built customer targeting models with <strong>logistic regression</strong> and <strong>random forest</strong></li>
+<li>Segmented customers by predicted response likelihood to prioritize the highest-value outreach</li>
+<li>Applied <strong>breakeven and ROI analysis</strong> to set the targeting threshold, contacting only customers whose expected profit beats the cost of reaching them</li>
+<li>Used LLM-assisted development to speed up exploration and iteration</li>
 </ul>
 </section>
 <section id="results" class="level2">
@@ -196,35 +196,19 @@ ul.task-list li input[type="checkbox"] {
 </thead>
 <tbody>
 <tr class="odd">
-<td>AUC-ROC</td>
-<td><strong>0.82</strong></td>
+<td>Projected conversion lift</td>
+<td><strong>18%</strong></td>
 </tr>
 <tr class="even">
-<td>Precision</td>
-<td><strong>76%</strong></td>
-</tr>
-<tr class="odd">
-<td>Conversion Rate Uplift</td>
-<td><strong>+18%</strong></td>
-</tr>
-<tr class="even">
-<td>Projected Incremental Profit</td>
+<td>Projected profit</td>
 <td><strong>$410K</strong></td>
 </tr>
 </tbody>
 </table>
 </section>
-<section id="key-contributions" class="level2">
-<h2 class="anchored" data-anchor-id="key-contributions">Key Contributions</h2>
-<ul>
-<li>Framed the business question as an <strong>uplift/incremental modeling</strong> problem rather than pure classification</li>
-<li>Identified the top decile of customers driving the majority of incremental conversions</li>
-<li>Delivered actionable targeting segments with clear business interpretation for marketing teams</li>
-</ul>
-</section>
 <section id="tech-stack" class="level2">
 <h2 class="anchored" data-anchor-id="tech-stack">Tech Stack</h2>
-<p><code>Python</code> · <code>Scikit-learn</code> · <code>Pandas</code> · <code>NumPy</code> · <code>Logistic Regression</code> · <code>Random Forest</code> · <code>Uplift Modeling</code></p>
+<p><code>Python</code> · <code>Pandas</code> · <code>Scikit-learn</code> · <code>Logistic Regression</code> · <code>Random Forest</code> · <code>Breakeven &amp; ROI Analysis</code></p>
 
 
 </section>

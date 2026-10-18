@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="dcterms.date" content="2026-06-04">
-<meta name="description" content="Agentic AI coworker that onboards, coaches, and certifies new sales reps using RAG, MCP tools, and human review gates, validated with 153 tests and a DeepEval suite">
+<meta name="description" content="Agentic AI onboarding platform for new sales reps with RAG retrieval, LLM orchestration, and human-in-the-loop approvals, validated with 153 tests and a DeepEval suite">
 
-<title>SDR Onboarding Agent – Shreya Anekar</title>
+<title>AI-Powered Employee Onboarding Agent – Shreya Anekar</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -134,7 +134,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">SDR Onboarding Agent</h1>
+<h1 class="title">AI-Powered Employee Onboarding Agent</h1>
   <div class="quarto-categories">
     <div class="quarto-category">Python</div>
     <div class="quarto-category">GenAI</div>
@@ -147,7 +147,7 @@ ul.task-list li input[type="checkbox"] {
 
 <div>
   <div class="description">
-    Agentic AI coworker that onboards, coaches, and certifies new sales reps using RAG, MCP tools, and human review gates, validated with 153 tests and a DeepEval suite
+    Agentic AI onboarding platform for new sales reps with RAG retrieval, LLM orchestration, and human-in-the-loop approvals, validated with 153 tests and a DeepEval suite
   </div>
 </div>
 
@@ -183,7 +183,7 @@ ul.task-list li input[type="checkbox"] {
 <h2 class="anchored" data-anchor-id="what-i-built">What I built</h2>
 <ul>
 <li><strong>7 LLM skills and 2 deterministic automations</strong>, chained through a shared JSON envelope with confidence scores and review flags</li>
-<li><strong>Two retrievers over a 16-document knowledge base:</strong> BM25 for the pipeline steps and ChromaDB semantic search for the AI Tutor, with approved answers written back into the index</li>
+<li><strong>Self-improving ChromaDB vector store:</strong> semantic search for the AI Tutor over a 16-document knowledge base, with approved answers written back into the index, plus BM25 retrieval for the pipeline steps that build personalized training plans and mentor matches</li>
 <li><strong>Hallucination guards:</strong> generated plans are checked against a module allow-list, and certification verdicts are recomputed server-side from the scores</li>
 <li><strong>MCP servers</strong> that expose the data and workflow steps as tools an agent can call</li>
 <li><strong>FastAPI orchestrator and a React UI</strong> with 9 screens across manager and trainee views</li>

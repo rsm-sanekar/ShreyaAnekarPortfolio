@@ -14,7 +14,7 @@ Personal website with my experience, projects, resume, and blog.
 
 ## Featured projects
 
-- [SDR Onboarding Agent](https://github.com/rsm-sanekar/sdr-onboarding-agent): agentic AI coworker with RAG, MCP tools, and human review gates
+- [AI-Powered Employee Onboarding Agent](https://github.com/rsm-sanekar/sdr-onboarding-agent): agentic AI onboarding platform with RAG, LLM orchestration, and human-in-the-loop approvals
 - [Netflix Content Intelligence Platform](https://github.com/rsm-sanekar/NetflixProject): Streamlit analytics app on TMDB data with forecasting and anomaly detection ([live app](https://netflixanalytics452.streamlit.app/))
 
 ## Contact

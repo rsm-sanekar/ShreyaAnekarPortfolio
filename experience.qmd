@@ -208,7 +208,7 @@ h2 {
   <div class="exp-role">Data Analyst Intern (MSBA Capstone) · San Diego, CA</div>
   <ul class="exp-bullets">
     <li>Partnered with Qualcomm's engineering team to forecast Non-Recurring Engineering costs for RFFE chip programs, applying feature engineering across <span class="exp-highlight">198K subledger transactions</span> and training Random Forest and XGBoost models</li>
-    <li>Delivered cost forecasts with scenario-based budget and what-if analysis to support material and workforce planning for engineering leadership via an interactive Streamlit dashboard</li>
+    <li>Delivered budget forecasts with scenario-based and what-if analysis to support material and workforce planning for engineering leadership via an interactive Streamlit dashboard</li>
   </ul>
 </div>
 
@@ -246,7 +246,7 @@ h2 {
     <div>
       <div class="edu-degree">M.S. in Business Analytics</div>
       <div class="edu-school">University of California, San Diego · Dec 2026</div>
-      <div class="edu-coursework"><strong>Coursework:</strong> Scalable Analytics (Spark, AWS, MapReduce), GenAI for Business (Agentic AI, RAG, LLM APIs), Business Intelligence (Tableau), Analytics &amp; Statistical Modeling (A/B Testing, Cohort Analysis), Customer Analytics</div>
+      <div class="edu-coursework"><strong>Coursework:</strong> Scalable Analytics (Spark, AWS, Data Warehousing), GenAI for Business (Agentic AI, RAG, LLMs), Business Intelligence (Tableau), Analytics &amp; Statistical Modeling (Correlation Analysis, A/B Testing, Cohort Analysis)</div>
     </div>
   </div>
   <div class="edu-entry">

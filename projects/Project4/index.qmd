@@ -17,8 +17,8 @@ NRE costs (prototypes, masks, test materials, and engineering labor) are hard to
 
 - Engineered features across **198K subledger transactions** to capture program, cost category, and timing patterns
 - Trained and compared **Random Forest** and **XGBoost** models for cost forecasting
-- Built scenario-based budget and **what-if analysis** so leadership could test planning assumptions
-- Delivered forecasts through an **interactive Streamlit dashboard**
+- Delivered **budget forecasts** with scenario-based and **what-if analysis** so leadership could test planning assumptions
+- Shipped the forecasts through an **interactive Streamlit dashboard**
 
 ## Outcome
 
